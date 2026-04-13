@@ -33,7 +33,7 @@ function CountUp({ raw, prefix, suffix }) {
 
 export default function MetricsSection() {
   return (
-    <section className="py-16 lg:py-20 border-y border-border bg-primary/[0.02]">
+    <section className="heritage-band py-16 lg:py-20 border-y border-border bg-primary/[0.02]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
           {METRICS.map((metric, i) => (

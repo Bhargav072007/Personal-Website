@@ -10,7 +10,7 @@ export default function HeroSection() {
   const navigate = useNavigate();
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="home" className="heritage-surface relative min-h-screen flex items-center overflow-hidden">
       {/* Gradient orbs */}
       <div className="absolute top-1/4 -left-40 w-96 h-96 bg-chart-1/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 -right-40 w-96 h-96 bg-chart-2/10 rounded-full blur-3xl pointer-events-none" />
@@ -71,7 +71,7 @@ export default function HeroSection() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative aspect-[4/5] max-w-md mx-auto lg:max-w-none">
+            <div className="heritage-frame relative aspect-[4/5] max-w-md mx-auto lg:max-w-none">
               {/* Glow ring */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-chart-1/30 via-transparent to-chart-2/20 -rotate-3 scale-[1.04] blur-sm" />
               <img
