@@ -33,6 +33,8 @@
     --chart-3: 176 48% 34%;
     --chart-4: 218 32% 28%;
     --chart-5: 12 64% 48%;
+    --frame-accent: 51 100% 50%;
+    --pattern-opacity: 0.32;
     --radius: 0.625rem;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -42,6 +44,60 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  :root[data-brand-theme="air-france"] {
+    --background: 210 25% 98%;
+    --foreground: 222 58% 13%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 58% 13%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 58% 13%;
+    --primary: 222 100% 16%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 18% 95%;
+    --secondary-foreground: 222 58% 13%;
+    --muted: 210 18% 95%;
+    --muted-foreground: 218 15% 43%;
+    --accent: 214 28% 92%;
+    --accent-foreground: 222 58% 13%;
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 222 100% 16%;
+    --chart-1: 222 100% 16%;
+    --chart-2: 356 84% 55%;
+    --chart-3: 210 18% 58%;
+    --chart-4: 217 32% 30%;
+    --chart-5: 356 84% 45%;
+    --frame-accent: 356 84% 55%;
+    --pattern-opacity: 0.22;
+  }
+
+  :root[data-brand-theme="qantas"] {
+    --background: 0 0% 98%;
+    --foreground: 220 12% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 12% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 12% 12%;
+    --primary: 351 100% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 220 12% 12%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 220 8% 42%;
+    --accent: 0 0% 91%;
+    --accent-foreground: 220 12% 12%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 351 100% 45%;
+    --chart-1: 351 100% 45%;
+    --chart-2: 220 10% 16%;
+    --chart-3: 44 82% 48%;
+    --chart-4: 220 8% 45%;
+    --chart-5: 0 0% 100%;
+    --frame-accent: 351 100% 45%;
+    --pattern-opacity: 0.2;
   }
 
   .dark {
@@ -110,7 +166,7 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.32;
+    opacity: var(--pattern-opacity);
     background-image:
       linear-gradient(45deg, transparent 47%, hsl(var(--chart-1) / 0.12) 48%, hsl(var(--chart-1) / 0.12) 52%, transparent 53%),
       linear-gradient(-45deg, transparent 47%, hsl(var(--chart-2) / 0.14) 48%, hsl(var(--chart-2) / 0.14) 52%, transparent 53%);
@@ -142,9 +198,9 @@
     inset: -10px;
     z-index: -1;
     border-radius: 20px;
-    border: 1px solid hsl(var(--chart-2) / 0.45);
+    border: 1px solid hsl(var(--frame-accent) / 0.65);
     background:
       linear-gradient(135deg, hsl(var(--chart-1) / 0.16), transparent 32%),
-      linear-gradient(315deg, hsl(var(--chart-2) / 0.18), transparent 34%);
+      linear-gradient(315deg, hsl(var(--frame-accent) / 0.22), transparent 34%);
   }
 }
