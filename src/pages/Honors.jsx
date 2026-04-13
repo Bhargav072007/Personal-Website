@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
-import { Award, BadgeCheck } from "lucide-react";
+import { Award, BadgeCheck, ExternalLink } from "lucide-react";
 
 const CERTIFICATIONS = [
   {
@@ -9,6 +9,20 @@ const CERTIFICATIONS = [
     issuer: "Inspirit AI",
     description: "Completed the AI Scholars Program and earned recognition as an AI Scholar.",
     image: "/assets/honors/award-pdf-image-5.jpg",
+  },
+  {
+    title: "Trinity College London Grade 5",
+    issuer: "Trinity College London",
+    description: "Earned Grade 5 Communication Skills, Level 2 Certificate, with Distinction.",
+    image: "/assets/honors/trinity-grade-5-preview-small.bmp",
+    pdf: "/assets/honors/trinity-grade-5.pdf",
+  },
+  {
+    title: "Web Development",
+    issuer: "YouVah",
+    description: "Completed Web Development coursework and earned a Certificate of Completion.",
+    image: "/assets/honors/web-development-image-1.jpg",
+    pdf: "/assets/honors/web-development.pdf",
   },
   {
     title: "Football for the Goals Membership",
@@ -29,7 +43,16 @@ const AWARDS = [
     title: "Most Outstanding Delegate",
     issuer: "Asia Youth International Model United Nations",
     description: "Recognized as Most Outstanding Delegate while representing the Republic of Angola.",
-    image: "/assets/honors/award-pdf-image-3.jpg",
+    image: "/assets/honors/delegate-angola-unesco-image-1.jpg",
+    pdf: "/assets/honors/delegate-angola-unesco.pdf",
+    imageClass: "rotate-90 scale-75",
+  },
+  {
+    title: "Best Presenter Award",
+    issuer: "Inspirit AI",
+    description: "Earned Best Presentation recognition through the Inspirit AI Scholars Program.",
+    image: "/assets/honors/inspirit-ai-scholars-image-1.jpg",
+    pdf: "/assets/honors/inspirit-ai-scholars.pdf",
   },
   {
     title: "Dean's List",
@@ -51,7 +74,7 @@ const HonorCard = ({ item, icon: Icon }) => (
       <img
         src={item.image}
         alt={item.title}
-        className="h-full w-full object-contain p-3 group-hover:scale-[1.02] transition-transform duration-300"
+        className={`h-full w-full object-contain p-3 transition-transform duration-300 ${item.imageClass || "group-hover:scale-[1.02]"}`}
       />
     </div>
     <div className="p-6">
@@ -61,6 +84,16 @@ const HonorCard = ({ item, icon: Icon }) => (
       </div>
       <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
       <p className="text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+      {item.pdf && (
+        <a
+          href={item.pdf}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
+        >
+          Open certificate <ExternalLink className="h-4 w-4" />
+        </a>
+      )}
     </div>
   </motion.article>
 );
