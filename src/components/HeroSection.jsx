@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ExternalLink } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const CURRENTLY_BUILDING = ["SmartEvent", "Quantum-Assisted Assurance", "AI + Career Systems", "AviationAI"];
 const PORTRAIT_URL = "/assets/base44/51fc701c8_1775783839100.png";
 
 export default function HeroSection() {
+  const navigate = useNavigate();
+
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Gradient orbs */}
@@ -41,7 +44,7 @@ export default function HeroSection() {
               <Button
                 size="lg"
                 className="gap-2 font-medium bg-gradient-to-r from-chart-1 to-chart-2 border-0 hover:opacity-90 text-white"
-                onClick={() => document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() => navigate("/creations")}
               >
                 Explore my work <ArrowRight className="w-4 h-4" />
               </Button>
