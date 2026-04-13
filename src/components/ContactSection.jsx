@@ -24,7 +24,7 @@ export default function ContactSection() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="mailto:bhargav@placeholder.com">
+            <a href="mailto:m.sribhargav2007@gmail.com">
               <Button
                 size="lg"
                 variant="secondary"
@@ -46,7 +46,11 @@ export default function ContactSection() {
                 <Linkedin className="w-4 h-4" /> LinkedIn
               </Button>
             </a>
-            <a href="#resume-placeholder" download>
+            <a
+              href="/assets/resume/updated-resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button
                 size="lg"
                 variant="outline"
