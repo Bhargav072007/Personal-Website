@@ -28,7 +28,7 @@ export default function Navbar() {
 
     if (location.pathname === to) {
       event.preventDefault();
-      window.location.reload();
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }
   };
 
