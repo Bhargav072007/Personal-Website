@@ -39,8 +39,10 @@ export default function AboutIntro() {
                 >
                   {GREETINGS[greetingIndex]},
                 </motion.span>
-              </span>{" "}
-              I am <span className="font-serif italic font-medium bg-gradient-to-r from-chart-1 to-chart-2 bg-clip-text text-transparent">Bhargav</span>.
+              </span>
+              <span className="block mt-2">
+                I am <span className="font-serif italic font-medium bg-gradient-to-r from-chart-1 to-chart-2 bg-clip-text text-transparent">Bhargav</span>.
+              </span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mb-5">
               I am a Penn State freshman majoring in Computer Science, building at the intersection of AI, research, startups, and community impact.
