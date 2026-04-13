@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const GALLERY_IMAGES = [
-  "/assets/base44/ab81c3d30_image.png",
-  "/assets/base44/a670e2ad6_image.png",
-  "/assets/base44/0e48e723b_image.png",
-  "/assets/base44/389aba964_image.png",
+  { src: "/assets/base44/ab81c3d30_image.png" },
+  { src: "/assets/base44/a670e2ad6_image.png", className: "object-contain bg-card p-2" },
+  { src: "/assets/base44/0e48e723b_image.png" },
+  { src: "/assets/base44/389aba964_image.png" },
 ];
 // Solo photo used as translucent background
 const SOLO_IMG = "/assets/base44/39ea9ac54_085cc689-7653-4aeb-9c09-e518a1157eba_edited.jpg";
@@ -46,12 +46,12 @@ export default function WhatIBuild() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="grid grid-cols-2 gap-4">
-              {GALLERY_IMAGES.map((img, i) => (
+              {GALLERY_IMAGES.map((image, i) => (
                 <img
                   key={i}
-                  src={img}
+                  src={image.src}
                   alt={`Bhargav's work and impact ${i + 1}`}
-                  className="w-full rounded-xl shadow-lg object-cover aspect-square hover:shadow-xl transition-shadow"
+                  className={`w-full rounded-xl shadow-lg object-cover aspect-square hover:shadow-xl transition-shadow ${image.className || ""}`}
                 />
               ))}
             </div>
