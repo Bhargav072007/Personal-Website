@@ -3,7 +3,6 @@ import HeroSection from "../components/HeroSection";
 import MetricsSection from "../components/MetricsSection";
 import AffiliationsStrip from "../components/AffiliationsStrip";
 import WhatIBuild from "../components/WhatIBuild";
-import FocusAreas from "../components/FocusAreas";
 import LinkedInSection from "../components/LinkedInSection";
 import RecommendationsSection from "../components/RecommendationsSection";
 import CurrentFocus from "../components/CurrentFocus";
@@ -18,7 +17,6 @@ export default function Home() {
       <MetricsSection />
       <AffiliationsStrip />
       <WhatIBuild />
-      <FocusAreas />
       <LinkedInSection />
       <RecommendationsSection />
       <ContactSection />
