@@ -3,17 +3,17 @@ import { motion } from "framer-motion";
 
 const PORTRAIT_URL = "/assets/base44/51fc701c8_1775783839100.png";
 const GREETINGS = [
-  "నమస్తే",
-  "Hola",
-  "ನಮಸ್ಕಾರ",
-  "Bonjour",
+  "Hi",
   "नमस्ते",
+  "Bonjour",
+  "Hola",
   "こんにちは",
-  "வணக்கம்",
+  "నమస్తే",
   "안녕하세요",
-  "নমস্কার",
-  "مرحبا",
-  "ਸਤ ਸ੍ਰੀ ਅਕਾਲ",
+  "ನಮಸ್ಕಾರ",
+  "Hallo",
+  "Olá",
+  "Привет",
   "Hallo",
 ];
 
