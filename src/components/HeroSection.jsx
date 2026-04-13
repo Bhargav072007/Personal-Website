@@ -94,7 +94,7 @@ export default function HeroSection() {
                 className="absolute -top-4 -right-4 bg-card border border-border rounded-xl px-4 py-3 shadow-xl"
               >
                 <p className="text-xs font-medium text-muted-foreground mb-0.5">Impact</p>
-                <p className="text-sm font-bold text-foreground">150+ Initiatives</p>
+                <p className="text-sm font-bold text-foreground">4+ Initiatives</p>
               </motion.div>
             </div>
           </motion.div>
