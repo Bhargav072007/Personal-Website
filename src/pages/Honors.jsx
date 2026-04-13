@@ -43,9 +43,8 @@ const AWARDS = [
     title: "Most Outstanding Delegate",
     issuer: "Asia Youth International Model United Nations",
     description: "Recognized as Most Outstanding Delegate while representing the Republic of Angola.",
-    image: "/assets/honors/delegate-angola-unesco-image-1.jpg",
+    image: "/assets/honors/award-pdf-image-3.jpg",
     pdf: "/assets/honors/delegate-angola-unesco.pdf",
-    imageClass: "rotate-90 scale-75",
   },
   {
     title: "Best Presenter Award",
