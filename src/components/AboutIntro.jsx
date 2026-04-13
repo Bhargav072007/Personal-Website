@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const PORTRAIT_URL = "/assets/base44/51fc701c8_1775783839100.png";
-const GREETINGS = ["Hi", "Hola", "Namaste", "Bonjour", "Ciao", "Olá", "Hallo", "Konnichiwa"];
+const GREETINGS = ["Hi", "నమస్తే", "ನಮಸ್ಕಾರ", "नमस्ते", "Hola", "Bonjour", "こんにちは", "안녕하세요", "مرحبا"];
 
 export default function AboutIntro() {
   const [greetingIndex, setGreetingIndex] = useState(0);
