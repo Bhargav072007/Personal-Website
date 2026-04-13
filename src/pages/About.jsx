@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import AboutIntro from "../components/AboutIntro";
 import WhatIBuild from "../components/WhatIBuild";
 import FocusAreas from "../components/FocusAreas";
 import CurrentFocus from "../components/CurrentFocus";
@@ -10,6 +11,7 @@ export default function About() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <div className="pt-20">
+        <AboutIntro />
         <WhatIBuild />
         <MetricsSection />
         <FocusAreas />

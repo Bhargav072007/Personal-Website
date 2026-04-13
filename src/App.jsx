@@ -4,6 +4,7 @@ import { HashRouter as Router, Link, Route, Routes, useLocation } from 'react-ro
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects'; // Creations
+import Honors from './pages/Honors';
 import Experience from './pages/Experience';
 import Contact from './pages/Contact';
 import ScrollToTopButton from './components/ScrollToTopButton';
@@ -33,6 +34,7 @@ const PortfolioRoutes = () => {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/creations" element={<Projects />} />
+      <Route path="/honors" element={<Honors />} />
       <Route path="/experience" element={<Experience />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="*" element={<NotFound />} />
