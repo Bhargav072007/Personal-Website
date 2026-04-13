@@ -97,6 +97,8 @@ const PROJECTS = [
       "/assets/base44/a9f9c4025_2.png",
       "/assets/base44/83145c13e_3.png",
     ],
+    link: "https://discover.psu.edu/organization/aviationai",
+    linkLabel: "View on Discover PSU",
     pdfLink: "/assets/base44/66abf0d1c_AviationAIPDF.pdf",
     pdfLabel: "Download AviationAI PDF",
     accent: "from-sky-500/20 to-cyan-500/20",
