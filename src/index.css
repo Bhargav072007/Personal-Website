@@ -15,8 +15,8 @@
     --card-foreground: 220 40% 10%;
     --popover: 0 0% 100%;
     --popover-foreground: 220 40% 10%;
-    --primary: 356 72% 38%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 220 50% 12%;
+    --primary-foreground: 210 20% 98%;
     --secondary: 210 15% 95%;
     --secondary-foreground: 220 40% 10%;
     --muted: 210 15% 95%;
@@ -27,14 +27,18 @@
     --destructive-foreground: 0 0% 98%;
     --border: 220 15% 90%;
     --input: 220 15% 90%;
-    --ring: 356 72% 38%;
-    --chart-1: 356 72% 42%;
-    --chart-2: 42 78% 46%;
-    --chart-3: 176 48% 34%;
-    --chart-4: 218 32% 28%;
-    --chart-5: 12 64% 48%;
-    --frame-accent: 51 100% 50%;
-    --pattern-opacity: 0.32;
+    --ring: 220 50% 12%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --frame-accent: 220 50% 12%;
+    --frame-opacity: 0;
+    --pattern-opacity: 0;
+    --body-glow-1-opacity: 0;
+    --body-glow-2-opacity: 0;
+    --body-grid-opacity: 0;
     --radius: 0.625rem;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -46,34 +50,69 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  :root[data-brand-theme="air-france"] {
-    --background: 210 25% 98%;
-    --foreground: 222 58% 13%;
+  :root[data-brand-theme="heritage"] {
+    --background: 210 20% 98%;
+    --foreground: 220 40% 10%;
     --card: 0 0% 100%;
-    --card-foreground: 222 58% 13%;
+    --card-foreground: 220 40% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 58% 13%;
-    --primary: 222 100% 16%;
+    --popover-foreground: 220 40% 10%;
+    --primary: 356 72% 38%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 18% 95%;
-    --secondary-foreground: 222 58% 13%;
-    --muted: 210 18% 95%;
-    --muted-foreground: 218 15% 43%;
-    --accent: 214 28% 92%;
-    --accent-foreground: 222 58% 13%;
-    --border: 214 20% 88%;
-    --input: 214 20% 88%;
-    --ring: 222 100% 16%;
-    --chart-1: 222 100% 16%;
-    --chart-2: 356 84% 55%;
-    --chart-3: 210 18% 58%;
-    --chart-4: 217 32% 30%;
-    --chart-5: 356 84% 45%;
-    --frame-accent: 356 84% 55%;
-    --pattern-opacity: 0.22;
+    --secondary: 210 15% 95%;
+    --secondary-foreground: 220 40% 10%;
+    --muted: 210 15% 95%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 210 15% 93%;
+    --accent-foreground: 220 40% 10%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 356 72% 38%;
+    --chart-1: 356 72% 42%;
+    --chart-2: 42 78% 46%;
+    --chart-3: 176 48% 34%;
+    --chart-4: 218 32% 28%;
+    --chart-5: 12 64% 48%;
+    --frame-accent: 51 100% 50%;
+    --frame-opacity: 1;
+    --pattern-opacity: 0.32;
+    --body-glow-1-opacity: 0.06;
+    --body-glow-2-opacity: 0.08;
+    --body-grid-opacity: 0.025;
   }
 
-  :root[data-brand-theme="qantas"] {
+  :root[data-brand-theme="clear"] {
+    --background: 205 100% 99%;
+    --foreground: 220 35% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 35% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 35% 12%;
+    --primary: 211 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 205 85% 96%;
+    --secondary-foreground: 220 35% 12%;
+    --muted: 205 70% 95%;
+    --muted-foreground: 216 14% 45%;
+    --accent: 200 100% 94%;
+    --accent-foreground: 220 35% 12%;
+    --border: 205 42% 88%;
+    --input: 205 42% 88%;
+    --ring: 211 100% 50%;
+    --chart-1: 211 100% 50%;
+    --chart-2: 193 92% 72%;
+    --chart-3: 260 85% 72%;
+    --chart-4: 166 78% 56%;
+    --chart-5: 0 0% 100%;
+    --frame-accent: 193 92% 72%;
+    --frame-opacity: 0.7;
+    --pattern-opacity: 0.12;
+    --body-glow-1-opacity: 0.1;
+    --body-glow-2-opacity: 0.16;
+    --body-grid-opacity: 0.014;
+  }
+
+  :root[data-brand-theme="bold"] {
     --background: 0 0% 98%;
     --foreground: 220 12% 12%;
     --card: 0 0% 100%;
@@ -97,7 +136,11 @@
     --chart-4: 220 8% 45%;
     --chart-5: 0 0% 100%;
     --frame-accent: 351 100% 45%;
+    --frame-opacity: 1;
     --pattern-opacity: 0.2;
+    --body-glow-1-opacity: 0.07;
+    --body-glow-2-opacity: 0.04;
+    --body-grid-opacity: 0.018;
   }
 
   .dark {
@@ -125,6 +168,12 @@
     --chart-3: 176 45% 48%;
     --chart-4: 218 25% 72%;
     --chart-5: 12 62% 58%;
+    --frame-accent: 51 100% 50%;
+    --frame-opacity: 1;
+    --pattern-opacity: 0.18;
+    --body-glow-1-opacity: 0.12;
+    --body-glow-2-opacity: 0.08;
+    --body-grid-opacity: 0.02;
     --sidebar-background: 220 35% 8%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -144,10 +193,10 @@
   body {
     @apply bg-background text-foreground font-inter;
     background-image:
-      radial-gradient(circle at 12% 18%, hsl(var(--chart-1) / 0.06), transparent 26rem),
-      radial-gradient(circle at 88% 8%, hsl(var(--chart-2) / 0.08), transparent 24rem),
-      linear-gradient(135deg, hsl(var(--foreground) / 0.025) 25%, transparent 25%),
-      linear-gradient(225deg, hsl(var(--foreground) / 0.025) 25%, transparent 25%);
+      radial-gradient(circle at 12% 18%, hsl(var(--chart-1) / var(--body-glow-1-opacity)), transparent 26rem),
+      radial-gradient(circle at 88% 8%, hsl(var(--chart-2) / var(--body-glow-2-opacity)), transparent 24rem),
+      linear-gradient(135deg, hsl(var(--foreground) / var(--body-grid-opacity)) 25%, transparent 25%),
+      linear-gradient(225deg, hsl(var(--foreground) / var(--body-grid-opacity)) 25%, transparent 25%);
     background-size: auto, auto, 34px 34px, 34px 34px;
   }
 
@@ -198,6 +247,7 @@
     inset: -10px;
     z-index: -1;
     border-radius: 20px;
+    opacity: var(--frame-opacity);
     border: 1px solid hsl(var(--frame-accent) / 0.65);
     background:
       linear-gradient(135deg, hsl(var(--chart-1) / 0.16), transparent 32%),
