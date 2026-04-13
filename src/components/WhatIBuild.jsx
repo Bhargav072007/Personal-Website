@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 
 const GALLERY_IMAGES = [
-  "https://media.base44.com/images/public/69dc0b8cd998dce3e5acde59/ab81c3d30_image.png",
-  "https://media.base44.com/images/public/69dc0b8cd998dce3e5acde59/a670e2ad6_image.png",
-  "https://media.base44.com/images/public/69dc0b8cd998dce3e5acde59/0e48e723b_image.png",
-  "https://media.base44.com/images/public/69dc0b8cd998dce3e5acde59/389aba964_image.png",
+  "/assets/base44/ab81c3d30_image.png",
+  "/assets/base44/a670e2ad6_image.png",
+  "/assets/base44/0e48e723b_image.png",
+  "/assets/base44/389aba964_image.png",
 ];
 // Solo photo used as translucent background
-const SOLO_IMG = "https://media.base44.com/images/public/user_697cffa4861cb0a024474d8c/39ea9ac54_085cc689-7653-4aeb-9c09-e518a1157eba_edited.jpg";
+const SOLO_IMG = "/assets/base44/39ea9ac54_085cc689-7653-4aeb-9c09-e518a1157eba_edited.jpg";
 
 export default function WhatIBuild() {
   return (

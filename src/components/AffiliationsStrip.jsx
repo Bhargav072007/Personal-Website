@@ -1,11 +1,11 @@
 const AFFILIATIONS = [
-  { name: "The Arogí Foundation", logo: "https://media.base44.com/images/public/69dc0b8cd998dce3e5acde59/7a114f6b7_Arogi.png" },
-  { name: "AviationAI", logo: "https://media.base44.com/images/public/69dc0b8cd998dce3e5acde59/5d8e8a4ad_AviationAI.png" },
-  { name: "CloudAngles", logo: "https://media.base44.com/images/public/69dc0b8cd998dce3e5acde59/b434a1150_cloudangles-11.png" },
-  { name: "Learn With Bhargav", logo: "https://media.base44.com/images/public/69dc0b8cd998dce3e5acde59/c292545a0_LearnWithBhargav.png" },
-  { name: "Omega Chi Sigma", logo: "https://media.base44.com/images/public/69dc0b8cd998dce3e5acde59/f15f981d2_OmegaChiSigma.png" },
-  { name: "Penn State", logo: "https://media.base44.com/images/public/69dc0b8cd998dce3e5acde59/b0e3ee36b_Penn-State-University-Logo-2015-present.png" },
-  { name: "SmartEvent", logo: "https://media.base44.com/images/public/69dc0b8cd998dce3e5acde59/fc281c144_SmartEVent.png" },
+  { name: "The Arogí Foundation", logo: "/assets/base44/7a114f6b7_Arogi.png" },
+  { name: "AviationAI", logo: "/assets/base44/5d8e8a4ad_AviationAI.png" },
+  { name: "CloudAngles", logo: "/assets/base44/b434a1150_cloudangles-11.png" },
+  { name: "Learn With Bhargav", logo: "/assets/base44/c292545a0_LearnWithBhargav.png" },
+  { name: "Omega Chi Sigma", logo: "/assets/base44/f15f981d2_OmegaChiSigma.png" },
+  { name: "Penn State", logo: "/assets/base44/b0e3ee36b_Penn-State-University-Logo-2015-present.png" },
+  { name: "SmartEvent", logo: "/assets/base44/fc281c144_SmartEVent.png" },
 ];
 const ALL = [...AFFILIATIONS, ...AFFILIATIONS];
 

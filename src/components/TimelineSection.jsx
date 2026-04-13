@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const AROGI_IMG = "https://media.base44.com/images/public/69dc0b8cd998dce3e5acde59/b57349fbd_F004_AYIMUN-XIV_IMGL02751.jpg";
+const AROGI_IMG = "/assets/base44/b57349fbd_F004_AYIMUN-XIV_IMGL02751.jpg";
 
 const TIMELINE = [
   {

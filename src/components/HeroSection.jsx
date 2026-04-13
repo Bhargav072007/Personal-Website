@@ -3,7 +3,7 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const CURRENTLY_BUILDING = ["SmartEvent", "Quantum-Assisted Assurance", "AI + Career Systems", "AviationAI"];
-const PORTRAIT_URL = "https://media.base44.com/images/public/69dc0b8cd998dce3e5acde59/51fc701c8_1775783839100.png";
+const PORTRAIT_URL = "/assets/base44/51fc701c8_1775783839100.png";
 
 export default function HeroSection() {
   return (

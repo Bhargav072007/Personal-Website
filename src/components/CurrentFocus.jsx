@@ -8,7 +8,7 @@ const THEMES = [
   "Scalable impact",
 ];
 
-const FOCUS_IMAGE = "https://media.base44.com/images/public/user_697cffa4861cb0a024474d8c/39ea9ac54_085cc689-7653-4aeb-9c09-e518a1157eba_edited.jpg";
+const FOCUS_IMAGE = "/assets/base44/39ea9ac54_085cc689-7653-4aeb-9c09-e518a1157eba_edited.jpg";
 
 export default function CurrentFocus() {
   return (
