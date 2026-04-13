@@ -6,7 +6,7 @@ import ProjectModal from "./ProjectModal";
 const PROJECTS = [
   {
     title: "Quantum-Assisted Assurance",
-    tag: "Quantum · Thesis",
+    tag: "Quantum | Thesis",
     description: "A research initiative focused on algorithmic modeling, simulation, and performance analysis of quantum systems for autonomous aviation assurance.",
     bullets: [
       "Quantum computing and systems modeling",
@@ -32,7 +32,7 @@ const PROJECTS = [
   },
   {
     title: "SmartEvent",
-    tag: "Product · Startup",
+    tag: "Product | Startup",
     cardLogo: "/assets/base44/fc281c144_SmartEVent.png",
     description: "A smart venue and event intelligence platform designed to improve crowd movement, event operations, and live attendee experience.",
     bullets: [
@@ -59,8 +59,8 @@ const PROJECTS = [
   },
   {
     title: "The Arogí Foundation",
-    tag: "Nonprofit · Impact",
-    description: "Founded and scaled a nonprofit focused on structured access to opportunity — recognized by the Hon'ble President of India.",
+    tag: "Nonprofit | Impact",
+    description: "Founded and scaled a nonprofit focused on structured access to opportunity, recognized by the Hon'ble President of India.",
     bullets: [
       "Executed 150+ initiatives across education, capacity building, and community support",
       "Led and coordinated 60+ volunteers",
@@ -80,26 +80,8 @@ const PROJECTS = [
     accentBorder: "group-hover:border-emerald-400/40",
   },
   {
-    title: "AI + Career Systems",
-    tag: "AI · Research",
-    description: "Designing a decision-support system for career guidance — not a generic chatbot. Built around intent modeling and structured feedback loops.",
-    bullets: [
-      "Intent modeling based on user input patterns",
-      "Multilingual and varied input handling",
-      "Iterative refinement using feedback loops",
-      "Tested with 150+ students in an ongoing study",
-      "Focused on reducing the access gap in structured career decision-making",
-    ],
-    image: "/assets/base44/f9a33e994_GuideBot.png",
-    gallery: [
-      "/assets/base44/f9a33e994_GuideBot.png",
-    ],
-    accent: "from-violet-500/20 to-purple-500/20",
-    accentBorder: "group-hover:border-violet-400/40",
-  },
-  {
     title: "AviationAI",
-    tag: "AI · Aviation",
+    tag: "AI | Aviation",
     description: "A student-led initiative developing AI and IoT-driven solutions for airport operations, security optimization, and passenger flow intelligence.",
     bullets: [
       "Developing AI and IoT-driven solutions for airport operations",
@@ -119,6 +101,46 @@ const PROJECTS = [
     pdfLabel: "Download AviationAI PDF",
     accent: "from-sky-500/20 to-cyan-500/20",
     accentBorder: "group-hover:border-cyan-400/40",
+  },
+  {
+    title: "Arogí MUN'26",
+    tag: "Diplomacy | Youth Leadership",
+    description: "A youth diplomacy platform built from the energy of Arogí MUN'25, where intense debate, logistical chaos, and a sleep-deprived team turned a Model UN into a real statement about young people leading with courage.",
+    bullets: [
+      "Built from 100+ venue calls, 100+ school outreach conversations, and a team operating through last-minute event challenges",
+      "Created an accessible Model UN space where young delegates debated real issues with urgency, confidence, and imagination",
+      "Led a volunteer team managing awards, placards, chits, rooms, extensions, and live conference operations under pressure",
+      "Turned diplomacy into something students could feel, practice, and own beyond a classroom simulation",
+      "Carrying the momentum forward into Arogí MUN'26 with the same mission: youth voice, leadership, and impact",
+    ],
+    image: "/assets/projects/arogi-mun-hero.jpg",
+    gallery: [
+      "/assets/projects/arogi-mun-hero.jpg",
+      "/assets/projects/arogi-mun-founder-note.jpg",
+      "/assets/projects/arogi-mun-secretary-general.jpg",
+    ],
+    link: "https://www.linkedin.com/posts/bhargav-malluvajhula_arogaedmun25-wemadeit-gratitude-activity-7346055938178498560-bK-W",
+    linkLabel: "Read LinkedIn Post",
+    accent: "from-rose-500/20 to-amber-500/20",
+    accentBorder: "group-hover:border-rose-400/40",
+  },
+  {
+    title: "AI + Career Systems",
+    tag: "AI | Research",
+    description: "Designing a decision-support system for career guidance, not a generic chatbot. Built around intent modeling and structured feedback loops.",
+    bullets: [
+      "Intent modeling based on user input patterns",
+      "Multilingual and varied input handling",
+      "Iterative refinement using feedback loops",
+      "Tested with 150+ students in an ongoing study",
+      "Focused on reducing the access gap in structured career decision-making",
+    ],
+    image: "/assets/base44/f9a33e994_GuideBot.png",
+    gallery: [
+      "/assets/base44/f9a33e994_GuideBot.png",
+    ],
+    accent: "from-violet-500/20 to-purple-500/20",
+    accentBorder: "group-hover:border-violet-400/40",
   },
 ];
 
@@ -154,7 +176,6 @@ export default function ProjectsSection() {
               onClick={() => setSelected(project)}
               className={`group relative bg-card border border-border rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl ${project.accentBorder}`}
             >
-              {/* BG image */}
               <div className="relative h-44 overflow-hidden">
                 {project.cardLogo ? (
                   <div className="w-full h-full bg-white flex items-center justify-center p-6">
