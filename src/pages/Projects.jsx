@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import ProjectsSection from "../components/ProjectsSection";
 import VideosSection from "../components/VideosSection";
+import PublicationsSection from "../components/PublicationsSection";
 import Footer from "../components/Footer";
 
 export default function Projects() {
@@ -10,6 +11,7 @@ export default function Projects() {
       <div className="pt-20">
         <ProjectsSection />
         <VideosSection />
+        <PublicationsSection />
       </div>
       <Footer />
     </div>

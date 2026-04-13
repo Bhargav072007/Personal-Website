@@ -12,7 +12,7 @@ export default function About() {
       <Navbar />
       <div className="pt-20">
         <AboutIntro />
-        <WhatIBuild />
+        <WhatIBuild compact />
         <MetricsSection />
         <FocusAreas />
         <CurrentFocus />

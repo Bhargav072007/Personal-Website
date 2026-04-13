@@ -16,7 +16,7 @@ export default function AboutIntro() {
   }, []);
 
   return (
-    <section className="pt-16 pb-10 lg:pt-20 lg:pb-12">
+    <section className="pt-16 pb-4 lg:pt-20 lg:pb-4">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
           <motion.div
