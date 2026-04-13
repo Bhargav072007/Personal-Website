@@ -23,7 +23,14 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleClose = () => setMobileOpen(false);
+  const handleNavClick = (to, event) => {
+    setMobileOpen(false);
+
+    if (location.pathname === to) {
+      event.preventDefault();
+      window.location.reload();
+    }
+  };
 
   return (
     <motion.nav
@@ -40,6 +47,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link
             to="/"
+            onClick={(event) => handleNavClick("/", event)}
             className="font-serif text-xl font-semibold tracking-tight text-foreground"
           >
             b<span className="text-muted-foreground">M</span>
@@ -50,6 +58,7 @@ export default function Navbar() {
               <Link
                 key={link.to}
                 to={link.to}
+                onClick={(event) => handleNavClick(link.to, event)}
                 className={`text-sm font-medium transition-colors duration-200 ${
                   location.pathname === link.to
                     ? "text-foreground"
@@ -86,7 +95,7 @@ export default function Navbar() {
                 <Link
                   key={link.to}
                   to={link.to}
-                  onClick={handleClose}
+                  onClick={(event) => handleNavClick(link.to, event)}
                   className={`block w-full text-left text-sm font-medium py-2 transition-colors ${
                     location.pathname === link.to
                       ? "text-foreground"
