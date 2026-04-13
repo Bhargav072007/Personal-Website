@@ -2,11 +2,11 @@ import { useState, useEffect, useRef } from "react";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 
 const METRICS = [
-  { raw: 150, prefix: "", suffix: "+", label: "Initiatives Executed" },
+  { raw: 312, prefix: "", suffix: "+", label: "Events Executed Through Arogí" },
   { raw: 60, prefix: "", suffix: "+", label: "Volunteers Led" },
   { raw: 5000, prefix: "$", suffix: "+", label: "Raised" },
-  { raw: 150, prefix: "", suffix: "+", label: "Students Reached" },
-  { raw: 4, prefix: "", suffix: "+", label: "Major Focus Areas" },
+  { raw: 60, prefix: "", suffix: "+", label: "Students Mentored" },
+  { raw: 4, prefix: "", suffix: "+", label: "Impact Initiatives" },
 ];
 
 function CountUp({ raw, prefix, suffix }) {

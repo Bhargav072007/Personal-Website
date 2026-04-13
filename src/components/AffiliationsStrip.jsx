@@ -12,14 +12,14 @@ const ALL = [...LOOP, ...LOOP];
 
 export default function AffiliationsStrip() {
   return (
-    <section className="py-12 overflow-hidden border-y border-border bg-muted">
-      <p className="text-center text-xs font-medium tracking-widest uppercase text-muted-foreground mb-6">
+    <section className="py-12 overflow-hidden border-y border-border bg-muted dark:bg-[#d8dcde]">
+      <p className="text-center text-xs font-medium tracking-widest uppercase text-muted-foreground dark:text-slate-600 mb-6">
         Affiliations & Ventures
       </p>
       <div className="relative">
         {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-10 sm:w-20 z-10 bg-gradient-to-r from-muted to-transparent pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-10 sm:w-20 z-10 bg-gradient-to-l from-muted to-transparent pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-10 sm:w-20 z-10 bg-gradient-to-r from-muted dark:from-[#d8dcde] to-transparent pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-10 sm:w-20 z-10 bg-gradient-to-l from-muted dark:from-[#d8dcde] to-transparent pointer-events-none" />
 
         <div
           className="flex gap-10 sm:gap-16 lg:gap-24 will-change-transform"
