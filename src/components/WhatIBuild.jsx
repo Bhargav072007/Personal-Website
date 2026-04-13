@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const GALLERY_IMAGES = [
   { src: "/assets/base44/ab81c3d30_image.png" },
-  { src: "/assets/base44/a670e2ad6_image.png", className: "object-left" },
+  { src: "/assets/base44/a670e2ad6_image.png", className: "object-[35%_center]" },
   { src: "/assets/base44/0e48e723b_image.png" },
   { src: "/assets/base44/389aba964_image.png" },
 ];
