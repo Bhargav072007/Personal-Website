@@ -58,6 +58,23 @@ export default function HeroSection() {
               </a>
             </div>
 
+            <button
+              onClick={() => navigate("/about")}
+              className="group mb-8 flex w-full max-w-lg items-center justify-between gap-4 rounded-lg border border-border bg-card/70 px-4 py-3 text-left shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-chart-1/40 hover:shadow-lg"
+            >
+              <span>
+                <span className="block text-[11px] font-semibold uppercase tracking-widest text-chart-1">
+                  Start with the story
+                </span>
+                <span className="mt-1 block text-sm text-muted-foreground">
+                  Penn State CS, impact work, AI projects, and the path connecting them.
+                </span>
+              </span>
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-foreground text-background transition-transform duration-300 group-hover:translate-x-1">
+                <ArrowRight className="h-4 w-4" />
+              </span>
+            </button>
+
             <div className="inline-flex items-center gap-2 text-xs text-muted-foreground">
               <div className="w-1.5 h-1.5 rounded-full bg-amber-500" />
               Recognized by the Hon'ble President of India
