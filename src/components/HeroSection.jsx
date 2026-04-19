@@ -63,9 +63,7 @@ export default function HeroSection() {
               className="group mb-8 flex w-full max-w-lg items-center justify-between gap-4 rounded-lg border border-chart-1/20 bg-gradient-to-r from-card/90 via-card/70 to-chart-2/10 px-4 py-3 text-left shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-chart-1/50 hover:shadow-lg"
             >
               <span className="flex items-center gap-3">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-foreground text-background font-serif text-lg italic">
-                  bM
-                </span>
+                <span className="h-10 w-1 shrink-0 rounded-full bg-gradient-to-b from-chart-1 to-chart-2" />
                 <span>
                   <span className="block text-sm font-semibold text-foreground">
                     Meet the person behind the work
