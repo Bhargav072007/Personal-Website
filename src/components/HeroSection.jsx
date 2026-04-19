@@ -60,17 +60,22 @@ export default function HeroSection() {
 
             <button
               onClick={() => navigate("/about")}
-              className="group mb-8 flex w-full max-w-lg items-center justify-between gap-4 rounded-lg border border-border bg-card/70 px-4 py-3 text-left shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-chart-1/40 hover:shadow-lg"
+              className="group mb-8 flex w-full max-w-lg items-center justify-between gap-4 rounded-lg border border-chart-1/20 bg-gradient-to-r from-card/90 via-card/70 to-chart-2/10 px-4 py-3 text-left shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-chart-1/50 hover:shadow-lg"
             >
-              <span>
-                <span className="block text-[11px] font-semibold uppercase tracking-widest text-chart-1">
-                  Start with the story
+              <span className="flex items-center gap-3">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-foreground text-background font-serif text-lg italic">
+                  bM
                 </span>
-                <span className="mt-1 block text-sm text-muted-foreground">
-                  Penn State CS, impact work, AI projects, and the path connecting them.
+                <span>
+                  <span className="block text-sm font-semibold text-foreground">
+                    Meet the person behind the work
+                  </span>
+                  <span className="mt-1 block text-xs text-muted-foreground">
+                    A quieter look at the path, the purpose, and the why.
+                  </span>
                 </span>
               </span>
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-foreground text-background transition-transform duration-300 group-hover:translate-x-1">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-background/80 text-foreground transition-transform duration-300 group-hover:translate-x-1">
                 <ArrowRight className="h-4 w-4" />
               </span>
             </button>
