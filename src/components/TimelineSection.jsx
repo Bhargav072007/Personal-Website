@@ -4,45 +4,51 @@ const AROGI_IMG = "/assets/base44/b57349fbd_F004_AYIMUN-XIV_IMGL02751.jpg";
 
 const TIMELINE = [
   {
-    date: "Feb 2026 – Present",
-    role: "Philanthropy Chair",
+    date: "Apr 2026 - Present",
+    role: "Vice President",
     org: "Omega Chi Sigma PSU",
-    description: "Leading the chapter's philanthropic efforts by building initiatives beyond THON, strengthening local partnerships, and creating measurable community impact.",
+    description:
+      "Serving as Vice President of Omega Chi Sigma at Penn State, helping lead chapter direction, strengthen member initiatives, and support philanthropic and community impact efforts.",
     color: "bg-rose-500",
   },
   {
-    date: "Jan 2026 – Present",
+    date: "Jan 2026 - Present",
     role: "President",
     org: "AviationAI @ Penn State",
-    description: "Leading a student-run AI initiative affiliated with State College Regional Airport, developing AI- and IoT-driven solutions for airport operations and security systems.",
+    description:
+      "Leading a student-run AI initiative affiliated with State College Regional Airport, developing AI- and IoT-driven solutions for airport operations and security systems.",
     color: "bg-sky-500",
   },
   {
-    date: "Jan 2026 – Present",
+    date: "Jan 2026 - Present",
     role: "Research Lead",
     org: "Quantum-Assisted Assurance for Autonomous Aviation Systems",
-    description: "Contributing to an active quantum computing project, working on algorithmic modeling, simulation, and performance analysis of quantum systems. Working on a thesis.",
+    description:
+      "Contributing to an active quantum computing project, working on algorithmic modeling, simulation, and performance analysis of quantum systems. Working on a thesis.",
     color: "bg-violet-500",
   },
   {
-    date: "Apr 2023 – Present",
+    date: "Apr 2023 - Present",
     role: "Founder",
-    org: "The Arogí Foundation",
-    description: "Established and expanded an NGO dedicated to improving the lives of orphans through birthday celebrations, capacity building, and career guidance. Led 60+ volunteers and executed 150+ projects, raising over $5,000. Recognized by the Hon'ble President of India and affiliated with the United Nations SDGs and Football for the Goals initiatives.",
+    org: "The Arogi Foundation",
+    description:
+      "Established and expanded an NGO dedicated to improving the lives of orphans through birthday celebrations, capacity building, and career guidance. Led 60+ volunteers and executed 150+ projects, raising over $5,000. Recognized by the Hon'ble President of India and affiliated with the United Nations SDGs and Football for the Goals initiatives.",
     color: "bg-emerald-500",
   },
   {
-    date: "Apr 2025 – Aug 2025",
+    date: "Apr 2025 - Aug 2025",
     role: "Founder",
-    org: "Arogí MUN '25",
-    description: "Conceptualized and organized a large-scale MUN hosted at BGS IRS, Bengaluru. Oversaw 100+ delegates, 8+ schools, and 50+ volunteers. Raised over $2,000, established partnerships, and curated one of the most distinguished executive boards in Bengaluru's MUN circuit.",
+    org: "Arogi MUN '25",
+    description:
+      "Conceptualized and organized a large-scale MUN hosted at BGS IRS, Bengaluru. Oversaw 100+ delegates, 8+ schools, and 50+ volunteers. Raised over $2,000, established partnerships, and curated one of the most distinguished executive boards in Bengaluru's MUN circuit.",
     color: "bg-amber-500",
   },
   {
-    date: "2025 – Present",
+    date: "2025 - Present",
     role: "Founder / Product Builder",
     org: "SmartEvent",
-    description: "Built a smart venue concept focused on event intelligence, attendee experience, crowd flow, and operational decision support for live events and venues.",
+    description:
+      "Built a smart venue concept focused on event intelligence, attendee experience, crowd flow, and operational decision support for live events and venues.",
     color: "bg-orange-500",
   },
 ];
@@ -50,7 +56,6 @@ const TIMELINE = [
 export default function TimelineSection() {
   return (
     <section id="experience" className="py-20 lg:py-28 relative overflow-hidden border-y border-border">
-      {/* Translucent Arogi background */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-[0.12] pointer-events-none"
         style={{ backgroundImage: `url(${AROGI_IMG})` }}
