@@ -12,6 +12,14 @@ const TIMELINE = [
     color: "bg-rose-500",
   },
   {
+    date: "Feb 2026 - Apr 2026",
+    role: "Philanthropy Chair",
+    org: "Omega Chi Sigma PSU",
+    description:
+      "Led the chapter's philanthropic efforts by building initiatives beyond THON, strengthening local partnerships, and creating measurable community impact.",
+    color: "bg-rose-400",
+  },
+  {
     date: "Jan 2026 - Present",
     role: "President",
     org: "AviationAI @ Penn State",
