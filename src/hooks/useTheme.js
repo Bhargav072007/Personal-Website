@@ -6,6 +6,7 @@ export const BRAND_THEMES = [
   { id: "dark", label: "Dark Mode", colors: ["#07111f", "#f1f5f9", "#dc354c"] },
   { id: "clear", label: "Clear", colors: ["#f8fbff", "#b9e8ff", "#007aff"] },
   { id: "bold", label: "Bold Theme", colors: ["#e4002b", "#ffffff", "#222222"] },
+  { id: "liquid-glass", label: "Liquid Glass", colors: ["#bfe8ff", "#ffffff", "#c4b5fd"] },
 ];
 
 export function useTheme() {
