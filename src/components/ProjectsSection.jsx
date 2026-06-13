@@ -177,7 +177,7 @@ export default function ProjectsSection() {
               transition={{ duration: 0.5, delay: i * 0.08 }}
               whileHover={{ y: -4 }}
               onClick={() => setSelected(project)}
-              className={`group relative bg-card border border-border rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl ${project.accentBorder}`}
+              className={`glass glass-strong glass-interactive group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 ${project.accentBorder}`}
             >
               <div className="relative h-44 overflow-hidden">
                 {project.cardLogo ? (
@@ -198,8 +198,8 @@ export default function ProjectsSection() {
                 {!project.cardLogo && !project.cardLogoText && (
                   <div className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-60`} />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
-                <span className="absolute top-3 right-3 text-xs font-medium tracking-wide bg-background/80 backdrop-blur text-foreground px-2.5 py-1 rounded-full border border-border/60">
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
+                <span className="glass absolute top-3 right-3 text-xs font-medium tracking-wide text-foreground px-2.5 py-1 rounded-full">
                   {project.tag}
                 </span>
               </div>

@@ -12,14 +12,14 @@ const ALL = [...LOOP, ...LOOP];
 
 export default function AffiliationsStrip() {
   return (
-    <section className="py-12 overflow-hidden border-y border-border bg-muted dark:bg-[#d8dcde]">
-      <p className="text-center text-xs font-medium tracking-widest uppercase text-muted-foreground dark:text-slate-600 mb-6">
+    <section className="glass-nav py-12 overflow-hidden">
+      <p className="text-center text-xs font-medium tracking-widest uppercase text-muted-foreground mb-6">
         Affiliations & Ventures
       </p>
       <div className="relative">
         {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-10 sm:w-20 z-10 bg-gradient-to-r from-muted dark:from-[#d8dcde] to-transparent pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-10 sm:w-20 z-10 bg-gradient-to-l from-muted dark:from-[#d8dcde] to-transparent pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-10 sm:w-20 z-10 bg-gradient-to-r from-background/80 to-transparent pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-10 sm:w-20 z-10 bg-gradient-to-l from-background/80 to-transparent pointer-events-none" />
 
         <div
           className="flex gap-10 sm:gap-16 lg:gap-24 will-change-transform"
@@ -31,7 +31,7 @@ export default function AffiliationsStrip() {
           {ALL.map((aff, i) => (
             <div
               key={i}
-              className="flex w-40 sm:w-48 md:w-56 items-center justify-center whitespace-nowrap cursor-default select-none hover:scale-105 transition-transform duration-200"
+              className="logo-glass flex w-40 sm:w-48 md:w-56 items-center justify-center rounded-lg px-4 whitespace-nowrap cursor-default select-none hover:scale-105 transition-transform duration-200"
             >
               <img src={aff.logo} alt={aff.name} className="h-20 sm:h-24 md:h-32 w-full object-contain" />
             </div>

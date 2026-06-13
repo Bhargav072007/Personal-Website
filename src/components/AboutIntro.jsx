@@ -71,11 +71,13 @@ export default function AboutIntro() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="relative"
           >
-            <img
-              src={PORTRAIT_URL}
-              alt="Bhargav Malluvajhula"
-              className="relative aspect-[4/5] w-full max-w-sm mx-auto rounded-xl object-cover shadow-xl"
-            />
+            <div className="glass glass-strong mx-auto max-w-sm rounded-xl p-2">
+              <img
+                src={PORTRAIT_URL}
+                alt="Bhargav Malluvajhula"
+                className="relative aspect-[4/5] w-full rounded-lg object-cover"
+              />
+            </div>
           </motion.div>
         </div>
       </div>

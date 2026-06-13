@@ -343,6 +343,37 @@
   background-color: hsl(var(--glass-bg-strong));
 }
 
+.glass-primary {
+  background-color: hsl(var(--primary) / 0.76);
+  border-color: hsl(0 0% 100% / 0.24);
+  box-shadow:
+    inset 0 1px 0 hsl(0 0% 100% / 0.32),
+    0 12px 28px -16px hsl(var(--primary) / 0.72);
+}
+
+.glass-frame {
+  border: 1px solid hsl(var(--glass-border));
+  box-shadow:
+    0 0 0 7px hsl(var(--glass-bg)),
+    inset 0 1px 0 hsl(var(--glass-highlight)),
+    var(--glass-shadow);
+}
+
+.logo-glass {
+  background-color: hsl(210 8% 88% / 0.72);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  backdrop-filter: blur(14px) saturate(130%);
+  border: 1px solid hsl(0 0% 100% / 0.38);
+  box-shadow:
+    inset 0 1px 0 hsl(0 0% 100% / 0.45),
+    0 12px 28px -20px hsl(220 20% 10% / 0.34);
+}
+
+:root.dark .logo-glass {
+  background-color: hsl(210 6% 78% / 0.78);
+  border-color: hsl(0 0% 100% / 0.22);
+}
+
 /* faint cool -> warm environmental refraction along the edge only */
 :is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass::before {
   content: "";
@@ -413,6 +444,13 @@
     var(--glass-shadow-pressed);
 }
 
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass-interactive:hover {
+  box-shadow:
+    inset 0 1px 0 hsl(var(--glass-highlight)),
+    inset 0 -1px 0 hsl(var(--glass-inner)),
+    0 18px 40px -22px hsl(var(--foreground) / 0.34);
+}
+
 .glass-interactive:focus-visible {
   outline: 2px solid hsl(var(--ring));
   outline-offset: 2px;
@@ -452,4 +490,64 @@
     inset 0 1px 0 hsl(var(--glass-highlight)),
     inset 0 -1px 0 hsl(var(--glass-inner)),
     var(--glass-shadow);
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) :is(
+  .bg-popover,
+  [role="dialog"],
+  [role="menu"],
+  [data-radix-popper-content-wrapper] > div
+) {
+  background-color: hsl(var(--glass-bg-strong));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border-color: hsl(var(--glass-border));
+  box-shadow:
+    inset 0 1px 0 hsl(var(--glass-highlight)),
+    inset 0 -1px 0 hsl(var(--glass-inner)),
+    var(--glass-shadow);
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) :is(
+  input,
+  textarea,
+  select,
+  [role="combobox"]
+) {
+  background-color: hsl(var(--glass-bg));
+  -webkit-backdrop-filter: blur(12px) saturate(var(--glass-saturate));
+  backdrop-filter: blur(12px) saturate(var(--glass-saturate));
+  border-color: hsl(var(--glass-border));
+  box-shadow:
+    inset 0 1px 0 hsl(var(--glass-highlight)),
+    0 8px 20px -18px hsl(var(--foreground) / 0.28);
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) :is(
+  .bg-secondary,
+  .bg-accent,
+  .bg-muted
+) {
+  background-color: hsl(var(--glass-bg));
+  -webkit-backdrop-filter: blur(12px) saturate(var(--glass-saturate));
+  backdrop-filter: blur(12px) saturate(var(--glass-saturate));
+  border-color: hsl(var(--glass-border));
+}
+
+:root.dark .glass-primary {
+  background-color: hsl(var(--primary) / 0.68);
+  border-color: hsl(0 0% 100% / 0.16);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --glass-blur: 12px;
+  }
+
+  .glass-frame {
+    box-shadow:
+      0 0 0 4px hsl(var(--glass-bg)),
+      inset 0 1px 0 hsl(var(--glass-highlight)),
+      var(--glass-shadow);
+  }
 }

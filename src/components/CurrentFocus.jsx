@@ -38,7 +38,7 @@ export default function CurrentFocus() {
               {THEMES.map((theme) => (
                 <span
                   key={theme}
-                  className="text-xs font-medium px-3 py-1.5 rounded-full bg-primary/5 text-foreground border border-border"
+                  className="glass text-xs font-medium px-3 py-1.5 rounded-full text-foreground"
                 >
                   {theme}
                 </span>
@@ -52,11 +52,13 @@ export default function CurrentFocus() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <img
-              src={FOCUS_IMAGE}
-              alt="Bhargav speaking at an event"
-              className="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg"
-            />
+            <div className="glass glass-strong rounded-2xl p-2">
+              <img
+                src={FOCUS_IMAGE}
+                alt="Bhargav speaking at an event"
+                className="w-full aspect-[4/3] object-cover rounded-xl"
+              />
+            </div>
           </motion.div>
         </div>
       </div>

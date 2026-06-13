@@ -51,9 +51,9 @@ export default function FocusAreas() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group bg-card border border-border rounded-xl p-6 lg:p-8 hover:shadow-lg hover:border-foreground/10 transition-all duration-300"
+              className="glass glass-strong group rounded-xl p-6 lg:p-8 transition-all duration-300"
             >
-              <div className="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center mb-5 group-hover:bg-primary/10 transition-colors">
+              <div className="glass w-10 h-10 rounded-lg flex items-center justify-center mb-5 transition-colors">
                 <area.icon className="w-5 h-5 text-foreground" />
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-2">{area.title}</h3>

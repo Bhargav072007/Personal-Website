@@ -69,7 +69,7 @@ export default function HeroSection() {
                   </span>
                 </span>
               </span>
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border bg-background/80 text-foreground transition-transform duration-300 group-hover:translate-x-1">
+              <span className="glass flex h-9 w-9 shrink-0 items-center justify-center rounded-md text-foreground transition-transform duration-300 group-hover:translate-x-1">
                 <ArrowRight className="h-4 w-4" />
               </span>
             </button>
@@ -87,11 +87,11 @@ export default function HeroSection() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="relative"
           >
-            <div className="heritage-frame relative aspect-[4/5] max-w-md mx-auto lg:max-w-none">
+            <div className="heritage-frame glass glass-strong relative aspect-[4/5] max-w-md mx-auto p-2 lg:max-w-none">
               <img
                 src={PORTRAIT_URL}
                 alt="Bhargav Malluvajhula"
-                className="relative w-full h-full object-cover rounded-2xl shadow-2xl"
+                className="relative w-full h-full object-cover rounded-lg"
               />
               {/* Floating badge */}
               <motion.div
@@ -129,7 +129,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.9 + i * 0.1 }}
-                className="text-xs font-medium px-3 py-1.5 rounded-full bg-gradient-to-r from-primary/5 to-chart-1/10 text-foreground border border-border hover:border-chart-1/30 transition-colors cursor-default"
+                className="glass text-xs font-medium px-3 py-1.5 rounded-full text-foreground transition-colors cursor-default"
               >
                 {item}
               </motion.span>

@@ -38,8 +38,8 @@ export default function Navbar() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass-nav" : "bg-transparent"
+      className={`glass-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "shadow-sm" : ""
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -73,7 +73,7 @@ export default function Navbar() {
             <ThemeToggle />
             <button
               onClick={() => setMobileOpen((v) => !v)}
-              className="md:hidden p-2 text-foreground"
+              className="glass glass-interactive md:hidden p-2 rounded-full text-foreground"
           >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>

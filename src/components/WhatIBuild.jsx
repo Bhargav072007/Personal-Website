@@ -51,7 +51,7 @@ export default function WhatIBuild({ compact = false }) {
                   key={i}
                   src={image.src}
                   alt={`Bhargav's work and impact ${i + 1}`}
-                  className={`w-full rounded-xl shadow-lg object-cover aspect-square hover:shadow-xl transition-shadow ${image.className || ""}`}
+                  className={`glass-frame w-full rounded-xl object-cover aspect-square transition-shadow ${image.className || ""}`}
                 />
               ))}
             </div>

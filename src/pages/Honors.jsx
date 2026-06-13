@@ -67,7 +67,7 @@ const HonorCard = ({ item, icon: Icon }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.45 }}
-    className="group rounded-xl border border-border bg-card overflow-hidden shadow-sm hover:shadow-xl transition-shadow"
+    className="glass glass-strong group rounded-xl overflow-hidden transition-shadow"
   >
     <div className="aspect-[4/3] bg-muted overflow-hidden">
       <img
@@ -88,7 +88,7 @@ const HonorCard = ({ item, icon: Icon }) => (
           href={item.pdf}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
+          className="glass glass-interactive mt-5 inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
         >
           Open certificate <ExternalLink className="h-4 w-4" />
         </a>

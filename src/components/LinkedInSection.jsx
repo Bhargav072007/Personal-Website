@@ -67,7 +67,7 @@ export default function LinkedInSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg hover:border-foreground/10 transition-all duration-300"
+              className="glass glass-strong glass-interactive group rounded-xl overflow-hidden transition-all duration-300"
             >
               <div className="aspect-[16/9] overflow-hidden">
                 <img

@@ -43,7 +43,7 @@ export default function MetricsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="text-center"
+              className="glass rounded-lg px-3 py-5 text-center"
             >
               <p className="text-3xl lg:text-4xl font-bold text-foreground tracking-tight">
                 <CountUp raw={metric.raw} prefix={metric.prefix} suffix={metric.suffix} />

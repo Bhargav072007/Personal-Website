@@ -50,7 +50,7 @@ export default function VideosSection() {
               whileHover={{ y: -4 }}
               className="group cursor-pointer"
             >
-              <div className="relative rounded-2xl overflow-hidden bg-card border border-border shadow-md hover:shadow-xl transition-all duration-300">
+              <div className="glass glass-strong glass-interactive relative rounded-2xl overflow-hidden transition-all duration-300">
                 {/* Thumbnail */}
                 <div className="relative h-48 overflow-hidden bg-gradient-to-br from-slate-700 to-slate-900">
                   <img
@@ -60,7 +60,7 @@ export default function VideosSection() {
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="p-3 rounded-full bg-white/90 group-hover:bg-white group-hover:scale-110 transition-all duration-300">
+                    <div className="glass p-3 rounded-full text-slate-900 group-hover:scale-110 transition-all duration-300">
                       <Play className="w-5 h-5 text-slate-900 fill-slate-900" />
                     </div>
                   </div>
