@@ -53,6 +53,11 @@
     --glass-tint-warm: 35 100% 62% / 0.08;
     --glass-sheen: 0 0% 100% / 0.22;
     --glass-bg-strong: 0 0% 100% / 0.46;
+    --glass-text-shadow: 220 35% 12% / 0.08;
+    --glass-icon: 215 62% 38%;
+    --glass-icon-surface: 205 100% 96% / 0.42;
+    --glass-focus: 215 90% 56% / 0.62;
+    --glass-divider: 215 32% 42% / 0.14;
 
     --radius: 0.625rem;
     --sidebar-background: 0 0% 98%;
@@ -205,6 +210,11 @@
     --glass-tint-warm: 30 100% 60% / 0.10;
     --glass-sheen: 0 0% 100% / 0.10;
     --glass-bg-strong: 0 0% 11% / 0.48;
+    --glass-text-shadow: 0 0% 0% / 0.42;
+    --glass-icon: 30 88% 68%;
+    --glass-icon-surface: 0 0% 100% / 0.08;
+    --glass-focus: 30 92% 62% / 0.72;
+    --glass-divider: 0 0% 100% / 0.12;
 
     --sidebar-background: 0 0% 7%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -299,14 +309,30 @@
 
 :root[data-brand-theme="liquid-glass"] body {
   background-color: hsl(210 20% 98%);
-  background-image: linear-gradient(125deg, hsl(215 30% 98%), hsl(190 26% 97%) 52%, hsl(38 28% 98%));
+  background-image:
+    linear-gradient(125deg, hsl(216 42% 97%), hsl(190 34% 97%) 48%, hsl(38 36% 98%)),
+    linear-gradient(25deg, transparent 18%, hsl(205 85% 72% / 0.09) 42%, transparent 66%),
+    linear-gradient(155deg, transparent 32%, hsl(35 90% 72% / 0.08) 58%, transparent 78%);
   background-attachment: fixed;
+  background-size: cover, 180% 180%, 170% 170%;
 }
 
 :root.dark body {
   background-color: hsl(0 0% 5%);
-  background-image: linear-gradient(145deg, hsl(0 0% 4%), hsl(220 8% 7%) 55%, hsl(20 8% 6%));
+  background-image:
+    linear-gradient(145deg, hsl(0 0% 4%), hsl(220 10% 7%) 52%, hsl(20 10% 6%)),
+    linear-gradient(28deg, transparent 20%, hsl(205 72% 42% / 0.08) 44%, transparent 68%),
+    linear-gradient(154deg, transparent 34%, hsl(28 82% 46% / 0.08) 58%, transparent 80%);
   background-attachment: fixed;
+  background-size: cover, 180% 180%, 170% 170%;
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) body {
+  min-height: 100vh;
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) .min-h-screen.bg-background {
+  background-color: transparent;
 }
 
 .glass {
@@ -343,6 +369,12 @@
   background-color: hsl(var(--glass-bg-strong));
 }
 
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass.glass-strong {
+  background-image:
+    linear-gradient(145deg, hsl(0 0% 100% / 0.20), transparent 38%),
+    linear-gradient(320deg, hsl(var(--glass-tint-cool)), transparent 44%);
+}
+
 :is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass.glass-panel {
   background-color: hsl(var(--glass-bg-strong));
   background-image:
@@ -369,6 +401,30 @@
     0 24px 52px -30px hsl(0 0% 0% / 0.82);
 }
 
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass.glass-media {
+  background-color: hsl(var(--glass-bg));
+  background-image:
+    linear-gradient(145deg, hsl(0 0% 100% / 0.34), transparent 34%),
+    linear-gradient(320deg, hsl(var(--glass-tint-cool)), transparent 46%);
+  border-color: hsl(0 0% 100% / 0.66);
+  box-shadow:
+    inset 0 1px 0 hsl(0 0% 100% / 0.92),
+    inset 1px 0 0 hsl(0 0% 100% / 0.30),
+    0 24px 54px -32px hsl(220 35% 14% / 0.42);
+}
+
+:root.dark .glass.glass-media {
+  background-color: hsl(0 0% 10% / 0.38);
+  background-image:
+    linear-gradient(145deg, hsl(0 0% 100% / 0.13), transparent 34%),
+    linear-gradient(320deg, hsl(var(--glass-tint-warm)), transparent 48%);
+  border-color: hsl(0 0% 100% / 0.18);
+  box-shadow:
+    inset 0 1px 0 hsl(0 0% 100% / 0.24),
+    inset 1px 0 0 hsl(0 0% 100% / 0.08),
+    0 26px 58px -34px hsl(0 0% 0% / 0.84);
+}
+
 :is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass.glass-panel.glass-interactive:hover {
   box-shadow:
     inset 0 1px 0 hsl(var(--glass-highlight)),
@@ -377,8 +433,11 @@
     0 26px 54px -30px hsl(var(--foreground) / 0.40);
 }
 
-.glass-primary {
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass.glass-primary {
   background-color: hsl(var(--primary) / 0.76);
+  background-image:
+    linear-gradient(135deg, hsl(0 0% 100% / 0.22), transparent 42%),
+    linear-gradient(110deg, hsl(var(--primary) / 0.90), hsl(var(--chart-2) / 0.76));
   border-color: hsl(0 0% 100% / 0.24);
   box-shadow:
     inset 0 1px 0 hsl(0 0% 100% / 0.32),
@@ -428,6 +487,19 @@
   pointer-events: none;
 }
 
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass-panel::before,
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass-media::before {
+  padding: 1.5px;
+  background: linear-gradient(
+    128deg,
+    hsl(0 0% 100% / 0.74),
+    hsl(var(--glass-tint-cool)) 26%,
+    transparent 48%,
+    hsl(var(--glass-tint-warm)) 74%,
+    hsl(0 0% 100% / 0.28)
+  );
+}
+
 :root:not([data-brand-theme="liquid-glass"]):not(.dark) .glass-nav {
   background-color: hsl(var(--background) / 0.94);
   border-bottom: 1px solid hsl(var(--border));
@@ -454,7 +526,11 @@
 
 /* pointer-following specular sweep (--mx/--my set by useGlassPointer) */
 :is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass-interactive {
-  transition: transform 150ms cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 150ms ease;
+  transition:
+    transform 180ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease;
 }
 
 :is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass-interactive::after {
@@ -474,7 +550,7 @@
 }
 
 :is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass-interactive:active {
-  transform: scale(0.98);
+  transform: scale(0.975);
   box-shadow:
     inset 0 1px 0 hsl(var(--glass-highlight)),
     var(--glass-shadow-pressed);
@@ -488,8 +564,8 @@
 }
 
 .glass-interactive:focus-visible {
-  outline: 2px solid hsl(var(--ring));
-  outline-offset: 2px;
+  outline: 2px solid hsl(var(--glass-focus));
+  outline-offset: 3px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -529,6 +605,50 @@
 }
 
 :is(:root[data-brand-theme="liquid-glass"], :root.dark) :is(
+  section,
+  footer
+) {
+  border-color: hsl(var(--glass-divider));
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) :is(
+  h1,
+  h2,
+  h3,
+  h4
+) {
+  text-shadow: 0 1px 1px hsl(var(--glass-text-shadow));
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) :is(
+  .glass,
+  .glass-nav,
+  button,
+  a
+) svg {
+  filter: drop-shadow(0 1px 1px hsl(var(--glass-text-shadow)));
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass > svg:first-child {
+  color: hsl(var(--glass-icon));
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) :is(
+  [role="tooltip"],
+  [data-sonner-toast],
+  [data-radix-toast-viewport] > *
+) {
+  background-color: hsl(var(--glass-bg-strong));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border: 1px solid hsl(var(--glass-border));
+  color: hsl(var(--foreground));
+  box-shadow:
+    inset 0 1px 0 hsl(var(--glass-highlight)),
+    var(--glass-shadow);
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) :is(
   .bg-popover,
   [role="dialog"],
   [role="menu"],
@@ -560,6 +680,18 @@
 }
 
 :is(:root[data-brand-theme="liquid-glass"], :root.dark) :is(
+  input,
+  textarea,
+  select,
+  [role="combobox"]
+):focus-visible {
+  border-color: hsl(var(--glass-focus));
+  box-shadow:
+    inset 0 1px 0 hsl(var(--glass-highlight)),
+    0 0 0 3px hsl(var(--ring) / 0.18);
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) :is(
   .bg-secondary,
   .bg-accent,
   .bg-muted
@@ -570,9 +702,44 @@
   border-color: hsl(var(--glass-border));
 }
 
-:root.dark .glass-primary {
+:root.dark .glass.glass-primary {
   background-color: hsl(var(--primary) / 0.68);
+  background-image:
+    linear-gradient(135deg, hsl(0 0% 100% / 0.16), transparent 42%),
+    linear-gradient(110deg, hsl(var(--primary) / 0.82), hsl(var(--chart-2) / 0.60));
   border-color: hsl(0 0% 100% / 0.16);
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) ::selection {
+  background: hsl(var(--chart-1) / 0.24);
+  color: hsl(var(--foreground));
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) {
+  scrollbar-color: hsl(var(--foreground) / 0.22) transparent;
+  scrollbar-width: thin;
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) ::-webkit-scrollbar-thumb {
+  background: hsl(var(--foreground) / 0.18);
+  border: 3px solid transparent;
+  border-radius: 8px;
+  background-clip: padding-box;
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) ::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--foreground) / 0.30);
+  border: 3px solid transparent;
+  background-clip: padding-box;
 }
 
 @media (max-width: 767px) {

@@ -50,7 +50,7 @@ export default function VideosSection() {
               whileHover={{ y: -4 }}
               className="group cursor-pointer"
             >
-              <div className="glass glass-strong glass-interactive relative rounded-2xl overflow-hidden transition-all duration-300">
+              <div className="glass glass-panel glass-interactive relative rounded-2xl overflow-hidden transition-all duration-300">
                 {/* Thumbnail */}
                 <div className="relative h-48 overflow-hidden bg-gradient-to-br from-slate-700 to-slate-900">
                   <img

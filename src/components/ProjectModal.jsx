@@ -30,7 +30,7 @@ export default function ProjectModal({ project, onClose }) {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 60, scale: 0.97 }}
           transition={{ type: "spring", damping: 30, stiffness: 300 }}
-          className="glass glass-strong relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-t-2xl sm:rounded-2xl"
+          className="glass glass-panel relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-t-2xl sm:rounded-2xl"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Gallery */}
@@ -51,10 +51,10 @@ export default function ProjectModal({ project, onClose }) {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               {hasManyImages && (
                 <>
-                  <button onClick={prev} className="glass-interactive absolute left-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-black/40 hover:bg-black/60 text-white backdrop-blur transition-colors">
+                  <button onClick={prev} className="glass glass-interactive absolute left-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full text-white transition-colors">
                     <ChevronLeft className="w-4 h-4" />
                   </button>
-                  <button onClick={next} className="glass-interactive absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-black/40 hover:bg-black/60 text-white backdrop-blur transition-colors">
+                  <button onClick={next} className="glass glass-interactive absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full text-white transition-colors">
                     <ChevronRight className="w-4 h-4" />
                   </button>
                   <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5">
@@ -68,7 +68,7 @@ export default function ProjectModal({ project, onClose }) {
               )}
               <div className="absolute bottom-4 left-6">
                 {project.tag && (
-                  <span className="text-xs font-medium tracking-widest uppercase bg-foreground/10 backdrop-blur text-foreground/80 px-3 py-1 rounded-full border border-white/10">
+                  <span className="glass text-xs font-medium tracking-widest uppercase text-foreground/80 px-3 py-1 rounded-full">
                     {project.tag}
                   </span>
                 )}
@@ -78,7 +78,7 @@ export default function ProjectModal({ project, onClose }) {
 
           <button
             onClick={onClose}
-            className="glass-interactive absolute top-4 right-4 p-2 rounded-full bg-foreground/10 hover:bg-foreground/20 text-foreground transition-colors backdrop-blur"
+            className="glass glass-interactive absolute top-4 right-4 p-2 rounded-full text-foreground transition-colors"
           >
             <X className="w-4 h-4" />
           </button>

@@ -51,7 +51,7 @@ export default function FocusAreas() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="glass glass-strong group rounded-xl p-6 lg:p-8 transition-all duration-300"
+              className="glass glass-panel group rounded-xl p-6 lg:p-8 transition-all duration-300"
             >
               <div className="glass w-10 h-10 rounded-lg flex items-center justify-center mb-5 transition-colors">
                 <area.icon className="w-5 h-5 text-foreground" />

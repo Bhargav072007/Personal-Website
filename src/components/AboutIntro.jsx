@@ -71,7 +71,7 @@ export default function AboutIntro() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="relative"
           >
-            <div className="glass glass-strong mx-auto max-w-sm rounded-xl p-2">
+            <div className="glass glass-media mx-auto max-w-sm rounded-xl p-2">
               <img
                 src={PORTRAIT_URL}
                 alt="Bhargav Malluvajhula"

@@ -177,15 +177,15 @@ export default function ProjectsSection() {
               transition={{ duration: 0.5, delay: i * 0.08 }}
               whileHover={{ y: -4 }}
               onClick={() => setSelected(project)}
-              className={`glass glass-strong glass-interactive group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 ${project.accentBorder}`}
+              className={`glass glass-panel glass-interactive group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 ${project.accentBorder}`}
             >
               <div className="relative h-44 overflow-hidden">
                 {project.cardLogo ? (
-                  <div className="w-full h-full bg-white flex items-center justify-center p-6">
+                  <div className="glass glass-media w-full h-full flex items-center justify-center p-6">
                     <img src={project.cardLogo} alt={project.title} className="max-h-36 w-auto object-contain" />
                   </div>
                 ) : project.cardLogoText ? (
-                  <div className="w-full h-full bg-gray-950 flex items-center justify-center">
+                  <div className="glass glass-media w-full h-full flex items-center justify-center">
                     <span className="text-6xl font-bold text-blue-400 tracking-tight">{project.cardLogoText}</span>
                   </div>
                 ) : (

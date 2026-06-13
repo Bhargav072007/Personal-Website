@@ -30,7 +30,7 @@ export default function ThemeToggle() {
       </button>
 
       {open && (
-        <div className="glass absolute right-0 top-full z-50 mt-3 w-56 rounded-md p-2 text-popover-foreground">
+        <div className="glass glass-panel absolute right-0 top-full z-50 mt-3 w-56 rounded-md p-2 text-popover-foreground">
           <p className="px-3 py-2 text-xs font-medium tracking-widest uppercase text-muted-foreground">
             Theme
           </p>

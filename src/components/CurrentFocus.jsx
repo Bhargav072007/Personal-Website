@@ -52,7 +52,7 @@ export default function CurrentFocus() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="glass glass-strong rounded-2xl p-2">
+            <div className="glass glass-media rounded-2xl p-2">
               <img
                 src={FOCUS_IMAGE}
                 alt="Bhargav speaking at an event"

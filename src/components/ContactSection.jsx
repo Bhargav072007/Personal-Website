@@ -11,7 +11,7 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="glass glass-strong rounded-lg px-6 py-12 lg:px-12"
+          className="glass glass-panel rounded-lg px-6 py-12 lg:px-12"
         >
           <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-4">
             Get in touch

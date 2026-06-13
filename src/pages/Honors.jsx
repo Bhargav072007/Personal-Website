@@ -67,7 +67,7 @@ const HonorCard = ({ item, icon: Icon }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.45 }}
-    className="glass glass-strong group rounded-xl overflow-hidden transition-shadow"
+    className="glass glass-panel group rounded-xl overflow-hidden transition-shadow"
   >
     <div className="aspect-[4/3] bg-muted overflow-hidden">
       <img

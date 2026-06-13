@@ -45,7 +45,7 @@ export default function PublicationsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
               whileHover={{ y: -4 }}
-              className="glass glass-strong glass-interactive group rounded-xl p-6 transition-shadow"
+              className="glass glass-panel glass-interactive group rounded-xl p-6 transition-shadow"
             >
               <div className="flex items-center justify-between gap-4 mb-5">
                 <div className="inline-flex items-center gap-2 text-xs font-medium tracking-widest uppercase text-muted-foreground">

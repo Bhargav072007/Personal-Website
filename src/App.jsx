@@ -13,7 +13,7 @@ import { useGlassPointer } from './hooks/useGlassPointer';
 
 const NotFound = () => (
   <div className="min-h-screen bg-background text-foreground flex items-center justify-center px-6">
-    <div className="max-w-md text-center">
+    <div className="glass glass-panel max-w-md rounded-lg px-8 py-10 text-center">
       <p className="text-sm font-medium text-muted-foreground mb-3">404</p>
       <h1 className="font-serif text-4xl font-semibold mb-4">Page not found</h1>
       <p className="text-muted-foreground mb-8">
@@ -21,7 +21,7 @@ const NotFound = () => (
       </p>
       <Link
         to="/"
-        className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+        className="glass glass-primary glass-interactive inline-flex h-11 items-center justify-center rounded-md px-6 text-sm font-medium text-primary-foreground"
       >
         Back to home
       </Link>

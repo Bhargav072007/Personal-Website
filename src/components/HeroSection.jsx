@@ -39,7 +39,7 @@ export default function HeroSection() {
             <div className="flex flex-wrap gap-3 mb-10">
               <Button
                 size="lg"
-                className="gap-2 font-medium bg-gradient-to-r from-chart-1 to-chart-2 border-0 hover:opacity-90 text-white"
+                className="gap-2 font-medium"
                 onClick={() => navigate("/creations")}
               >
                 Explore my work <ArrowRight className="w-4 h-4" />
@@ -87,7 +87,7 @@ export default function HeroSection() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="relative"
           >
-            <div className="heritage-frame glass glass-strong relative aspect-[4/5] max-w-md mx-auto p-2 lg:max-w-none">
+            <div className="heritage-frame glass glass-media relative aspect-[4/5] max-w-md mx-auto p-2 lg:max-w-none">
               <img
                 src={PORTRAIT_URL}
                 alt="Bhargav Malluvajhula"
