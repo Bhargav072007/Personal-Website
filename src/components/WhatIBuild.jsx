@@ -28,7 +28,7 @@ export default function WhatIBuild({ compact = false }) {
           >
             <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-4">Philosophy</p>
             <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-foreground mb-6">
-              What I <span className="font-serif italic font-medium bg-gradient-to-r from-chart-1 to-chart-2 bg-clip-text text-transparent">build</span>
+              What I <span className="text-gradient-theme font-serif italic font-medium">build</span>
             </h2>
             <p className="text-base lg:text-lg text-muted-foreground leading-relaxed">
               I build systems that solve practical problems. Some are technical — like AI-assisted career

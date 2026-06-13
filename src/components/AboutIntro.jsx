@@ -54,7 +54,7 @@ export default function AboutIntro() {
                 </motion.span>
               </span>
               <span className="block mt-2">
-                I am <span className="font-serif italic font-medium bg-gradient-to-r from-chart-1 to-chart-2 bg-clip-text text-transparent">Bhargav</span>.
+                I am <span className="text-gradient-theme font-serif italic font-medium">Bhargav</span>.
               </span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mb-5">

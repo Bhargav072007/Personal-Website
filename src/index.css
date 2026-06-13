@@ -265,6 +265,11 @@
     mask-image: linear-gradient(to bottom, black, transparent 68%);
   }
 
+  .heritage-surface > * {
+    position: relative;
+    z-index: 1;
+  }
+
   .heritage-band {
     position: relative;
   }
@@ -294,6 +299,61 @@
     background:
       linear-gradient(135deg, hsl(var(--chart-1) / 0.16), transparent 32%),
       linear-gradient(315deg, hsl(var(--frame-accent) / 0.22), transparent 34%);
+  }
+}
+
+.text-gradient-theme {
+  color: transparent;
+  background-image: linear-gradient(to right, hsl(var(--chart-1)), hsl(var(--chart-2)));
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+:root[data-brand-theme="heritage"] .text-gradient-theme {
+  color: hsl(356 72% 34%);
+  background-image: none;
+}
+
+:root[data-brand-theme="bold"] .text-gradient-theme {
+  color: hsl(351 100% 40%);
+  background-image: none;
+}
+
+:root[data-brand-theme="heritage"] body {
+  background-color: hsl(42 36% 97%);
+}
+
+:root[data-brand-theme="bold"] body {
+  background-color: hsl(0 0% 98%);
+}
+
+:is(:root[data-brand-theme="heritage"], :root[data-brand-theme="bold"]) .glass-nav {
+  background-color: hsl(var(--background) / 0.96);
+  border-bottom: 1px solid hsl(var(--border));
+  box-shadow: 0 12px 30px -26px hsl(var(--foreground) / 0.34);
+}
+
+:is(:root[data-brand-theme="heritage"], :root[data-brand-theme="bold"]) .glass.glass-primary {
+  color: hsl(var(--primary-foreground));
+  background-color: hsl(var(--primary));
+  border-color: hsl(var(--primary));
+  box-shadow: 0 12px 28px -18px hsl(var(--primary) / 0.7);
+}
+
+:is(:root[data-brand-theme="heritage"], :root[data-brand-theme="bold"]) .glass.glass-panel {
+  color: hsl(var(--card-foreground));
+  background-color: hsl(var(--card));
+  border-color: hsl(var(--border));
+  box-shadow: 0 18px 42px -32px hsl(var(--foreground) / 0.36);
+}
+
+@media (max-width: 374px) {
+  #home h1 {
+    font-size: 2.15rem;
+  }
+
+  #home .glass-interactive {
+    min-width: 0;
   }
 }
 
@@ -753,4 +813,12 @@
       inset 0 1px 0 hsl(var(--glass-highlight)),
       var(--glass-shadow);
   }
+}
+
+/* Non-glass themes keep opaque, high-contrast primary actions. */
+:is(:root[data-brand-theme="heritage"], :root[data-brand-theme="bold"]) .glass.glass-primary {
+  color: hsl(var(--primary-foreground));
+  background: hsl(var(--primary));
+  border-color: hsl(var(--primary));
+  box-shadow: 0 12px 28px -18px hsl(var(--primary) / 0.7);
 }

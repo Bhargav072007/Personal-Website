@@ -10,61 +10,78 @@ export default function HeroSection() {
   const navigate = useNavigate();
 
   return (
-    <section id="home" className="heritage-surface relative min-h-screen flex items-center overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-20 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left */}
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+    <section id="home" className="heritage-surface relative flex min-h-0 items-center overflow-hidden lg:min-h-screen">
+      <div className="mx-auto w-full max-w-7xl px-5 pb-12 pt-28 sm:px-6 sm:pb-16 lg:px-8 lg:py-24">
+        <div className="grid items-center gap-9 lg:grid-cols-2 lg:gap-16">
+          <motion.div
+            className="min-w-0"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="glass inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6"
+              className="glass mb-5 inline-flex items-center gap-2 rounded-full px-3 py-1.5 sm:mb-6"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-chart-1 animate-pulse" />
+              <span className="h-1.5 w-1.5 rounded-full bg-chart-1 animate-pulse" />
               <span className="text-xs font-medium text-chart-1">Available for collaborations</span>
             </motion.div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.05] mb-6">
-              Bhargav{" "}
-              <span className="font-serif italic font-normal bg-gradient-to-r from-chart-1 to-chart-2 bg-clip-text text-transparent">
+            <h1 className="mb-5 min-w-0 text-4xl font-bold leading-[1.02] tracking-tight text-foreground sm:mb-6 sm:text-6xl lg:text-7xl">
+              <span className="block">Bhargav</span>
+              <span className="text-gradient-theme block max-w-full break-words font-serif text-[0.94em] font-normal italic sm:text-[1em]">
                 Malluvajhula
               </span>
             </h1>
 
-            <p className="text-lg text-muted-foreground font-light leading-relaxed mb-8 max-w-lg">
-              Founder · Researcher · Builder — working at the intersection of <strong className="text-foreground font-medium">AI</strong>, <strong className="text-foreground font-medium">community impact</strong>, and <strong className="text-foreground font-medium">emerging tech</strong>.
+            <p className="mb-7 max-w-lg text-base font-light leading-relaxed text-muted-foreground sm:mb-8 sm:text-lg">
+              Founder · Researcher · Builder — working at the intersection of{" "}
+              <strong className="font-medium text-foreground">AI</strong>,{" "}
+              <strong className="font-medium text-foreground">community impact</strong>, and{" "}
+              <strong className="font-medium text-foreground">emerging tech</strong>.
             </p>
 
-            <div className="flex flex-wrap gap-3 mb-10">
+            <div className="mb-8 grid grid-cols-2 gap-3 sm:mb-10 sm:flex sm:flex-wrap">
               <Button
                 size="lg"
-                className="gap-2 font-medium"
+                className="col-span-2 w-full gap-2 px-5 font-medium sm:col-auto sm:w-auto sm:px-8"
                 onClick={() => navigate("/creations")}
               >
-                Explore my work <ArrowRight className="w-4 h-4" />
+                Explore my work <ArrowRight className="h-4 w-4" />
               </Button>
-              <Button size="lg" variant="outline" className="gap-2 font-medium" onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}>
-                Let's connect
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full gap-2 px-4 font-medium sm:w-auto sm:px-8"
+                onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
+              >
+                Let&apos;s connect
               </Button>
-              <a href="https://www.linkedin.com/in/bhargav-malluvajhula/" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" variant="ghost" className="gap-2 font-medium text-muted-foreground">
-                  LinkedIn <ExternalLink className="w-3.5 h-3.5" />
+              <a
+                className="min-w-0"
+                href="https://www.linkedin.com/in/bhargav-malluvajhula/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button size="lg" variant="ghost" className="w-full gap-2 px-4 font-medium text-muted-foreground sm:w-auto sm:px-8">
+                  LinkedIn <ExternalLink className="h-3.5 w-3.5" />
                 </Button>
               </a>
             </div>
 
             <button
               onClick={() => navigate("/about")}
-              className="glass glass-interactive group mb-8 flex w-full max-w-lg items-center justify-between gap-4 rounded-lg px-4 py-3 text-left"
+              className="glass glass-interactive group mb-7 flex w-full max-w-lg items-center justify-between gap-3 rounded-lg px-3 py-3 text-left sm:mb-8 sm:gap-4 sm:px-4"
             >
-              <span className="flex items-center gap-3">
+              <span className="flex min-w-0 items-center gap-3">
                 <span className="h-10 w-1 shrink-0 rounded-full bg-gradient-to-b from-chart-1 to-chart-2" />
-                <span>
+                <span className="min-w-0">
                   <span className="block text-sm font-semibold text-foreground">
                     Meet the person behind the work
                   </span>
-                  <span className="mt-1 block text-xs text-muted-foreground">
+                  <span className="mt-1 block text-xs leading-relaxed text-muted-foreground">
                     A quieter look at the path, the purpose, and the why.
                   </span>
                 </span>
@@ -74,62 +91,61 @@ export default function HeroSection() {
               </span>
             </button>
 
-            <div className="inline-flex items-center gap-2 text-xs text-muted-foreground">
-              <div className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-              Recognized by the Hon'ble President of India
+            <div className="inline-flex items-start gap-2 text-xs leading-relaxed text-muted-foreground">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
+              <span>Recognized by the Hon&apos;ble President of India</span>
             </div>
           </motion.div>
 
-          {/* Right — portrait with glow */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative"
+            className="relative mx-auto w-full max-w-md lg:max-w-none"
           >
-            <div className="heritage-frame glass glass-media relative aspect-[4/5] max-w-md mx-auto p-2 lg:max-w-none">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
               <img
                 src={PORTRAIT_URL}
                 alt="Bhargav Malluvajhula"
-                className="relative w-full h-full object-cover rounded-lg"
+                className="h-full w-full object-cover"
               />
-              {/* Floating badge */}
               <motion.div
-                animate={{ y: [0, -8, 0] }}
+                animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="glass absolute -bottom-4 -left-4 rounded-lg px-4 py-3"
+                className="glass absolute bottom-3 left-3 rounded-lg px-3 py-2.5 sm:px-4 sm:py-3"
               >
-                <p className="text-xs font-medium text-muted-foreground mb-0.5">Penn State University</p>
-                <p className="text-sm font-bold text-foreground">Research & AI</p>
+                <p className="mb-0.5 text-[10px] font-medium text-muted-foreground sm:text-xs">Penn State University</p>
+                <p className="text-xs font-bold text-foreground sm:text-sm">Research & AI</p>
               </motion.div>
               <motion.div
-                animate={{ y: [0, 6, 0] }}
+                animate={{ y: [0, 5, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="glass absolute top-4 right-4 rounded-lg px-4 py-3"
+                className="glass absolute right-3 top-3 rounded-lg px-3 py-2.5 sm:right-4 sm:top-4 sm:px-4 sm:py-3"
               >
-                <p className="text-xs font-medium text-muted-foreground mb-0.5">Impact</p>
-                <p className="text-sm font-bold text-foreground">4+ Initiatives</p>
+                <p className="mb-0.5 text-[10px] font-medium text-muted-foreground sm:text-xs">Impact</p>
+                <p className="text-xs font-bold text-foreground sm:text-sm">4+ Initiatives</p>
               </motion.div>
             </div>
           </motion.div>
         </div>
 
-        {/* Currently building strip */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="mt-12 border-t border-border pt-6"
+          className="mt-9 border-t border-border pt-5 sm:mt-12 sm:pt-6"
         >
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="text-xs font-medium tracking-widest uppercase text-muted-foreground mr-2">Currently building</span>
+          <div className="flex min-w-0 flex-wrap items-center gap-2.5 sm:gap-3">
+            <span className="mr-1 w-full text-xs font-medium uppercase tracking-widest text-muted-foreground sm:mr-2 sm:w-auto">
+              Currently building
+            </span>
             {CURRENTLY_BUILDING.map((item, i) => (
               <motion.span
                 key={item}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.9 + i * 0.1 }}
-                className="glass text-xs font-medium px-3 py-1.5 rounded-full text-foreground transition-colors cursor-default"
+                className="glass max-w-full rounded-full px-3 py-1.5 text-xs font-medium text-foreground transition-colors cursor-default"
               >
                 {item}
               </motion.span>

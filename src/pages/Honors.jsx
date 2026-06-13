@@ -135,7 +135,7 @@ export default function Honors() {
                 Recognition
               </p>
               <h1 className="text-4xl lg:text-6xl font-bold tracking-tight text-foreground mb-6">
-                Honors, certifications, and <span className="font-serif italic font-medium bg-gradient-to-r from-chart-1 to-chart-2 bg-clip-text text-transparent">awards</span>
+                Honors, certifications, and <span className="text-gradient-theme font-serif italic font-medium">awards</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 A selection of academic, leadership, and impact-focused recognitions.
