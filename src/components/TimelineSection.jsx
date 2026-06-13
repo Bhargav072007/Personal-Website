@@ -94,7 +94,7 @@ export default function TimelineSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="glass glass-strong relative ml-10 rounded-lg p-5 pl-6 lg:ml-16 lg:p-6 group"
+                className="glass glass-panel relative ml-10 rounded-lg p-5 pl-6 lg:ml-16 lg:p-6 group"
               >
                 <div className="absolute -left-[34px] lg:-left-[43px] top-7 w-3 h-3 rounded-full bg-red-500 shadow-lg ring-2 ring-background group-hover:scale-125 transition-transform" />
                 <p className="text-xs font-medium text-muted-foreground tracking-wide mb-1">{entry.date}</p>

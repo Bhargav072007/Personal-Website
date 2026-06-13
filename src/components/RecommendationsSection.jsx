@@ -46,7 +46,7 @@ export default function RecommendationsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="glass glass-strong rounded-xl p-6 lg:p-8 flex flex-col"
+              className="glass glass-panel rounded-xl p-6 lg:p-8 flex flex-col"
             >
               <Quote className="w-8 h-8 text-foreground/10 mb-4" />
               <p className="text-sm text-muted-foreground leading-relaxed flex-1 mb-6">
