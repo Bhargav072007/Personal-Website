@@ -39,6 +39,21 @@
     --body-glow-1-opacity: 0;
     --body-glow-2-opacity: 0;
     --body-grid-opacity: 0;
+
+    /* Liquid Glass material tokens — light (clear optical glass) */
+    --glass-bg: 0 0% 100% / 0.28;
+    --glass-blur: 16px;
+    --glass-saturate: 155%;
+    --glass-border: 0 0% 100% / 0.58;
+    --glass-highlight: 0 0% 100% / 0.85;
+    --glass-inner: 220 40% 10% / 0.05;
+    --glass-shadow: 0 14px 36px -20px hsl(220 30% 18% / 0.32);
+    --glass-shadow-pressed: 0 6px 16px -12px hsl(220 30% 18% / 0.30);
+    --glass-tint-cool: 205 100% 60% / 0.10;
+    --glass-tint-warm: 35 100% 62% / 0.08;
+    --glass-sheen: 0 0% 100% / 0.22;
+    --glass-bg-strong: 0 0% 100% / 0.70;
+
     --radius: 0.625rem;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -146,43 +161,58 @@
   }
 
   .dark {
-    --background: 220 40% 6%;
-    --foreground: 210 20% 95%;
-    --card: 220 35% 10%;
-    --card-foreground: 210 20% 95%;
-    --popover: 220 35% 10%;
-    --popover-foreground: 210 20% 95%;
-    --primary: 356 68% 48%;
+    --background: 0 0% 5%;
+    --foreground: 0 0% 96%;
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 96%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 356 68% 50%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 220 30% 14%;
-    --secondary-foreground: 210 20% 95%;
-    --muted: 220 30% 14%;
-    --muted-foreground: 220 10% 60%;
-    --accent: 220 30% 14%;
-    --accent-foreground: 210 20% 95%;
-    --destructive: 0 62.8% 30.6%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 0 0% 16%;
+    --accent-foreground: 0 0% 96%;
+    --destructive: 0 62.8% 42%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 25% 18%;
-    --input: 220 25% 18%;
-    --ring: 356 68% 48%;
-    --chart-1: 356 68% 54%;
-    --chart-2: 42 70% 55%;
-    --chart-3: 176 45% 48%;
-    --chart-4: 218 25% 72%;
-    --chart-5: 12 62% 58%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 356 68% 52%;
+    --chart-1: 356 68% 56%;
+    --chart-2: 42 70% 58%;
+    --chart-3: 176 45% 52%;
+    --chart-4: 218 25% 74%;
+    --chart-5: 12 62% 60%;
     --frame-accent: 51 100% 50%;
-    --frame-opacity: 1;
-    --pattern-opacity: 0.18;
-    --body-glow-1-opacity: 0.12;
-    --body-glow-2-opacity: 0.08;
-    --body-grid-opacity: 0.02;
-    --sidebar-background: 220 35% 8%;
+    --frame-opacity: 0;
+    --pattern-opacity: 0;
+    --body-glow-1-opacity: 0;
+    --body-glow-2-opacity: 0;
+    --body-grid-opacity: 0;
+
+    /* Liquid Glass material tokens — dark (smoked optical glass) */
+    --glass-bg: 0 0% 11% / 0.42;
+    --glass-blur: 18px;
+    --glass-saturate: 140%;
+    --glass-border: 0 0% 100% / 0.16;
+    --glass-highlight: 0 0% 100% / 0.20;
+    --glass-inner: 0 0% 0% / 0.38;
+    --glass-shadow: 0 18px 44px -22px hsl(0 0% 0% / 0.72);
+    --glass-shadow-pressed: 0 8px 20px -14px hsl(0 0% 0% / 0.72);
+    --glass-tint-cool: 205 100% 65% / 0.12;
+    --glass-tint-warm: 30 100% 60% / 0.10;
+    --glass-sheen: 0 0% 100% / 0.10;
+    --glass-bg-strong: 0 0% 11% / 0.72;
+
+    --sidebar-background: 0 0% 7%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 30% 14%;
+    --sidebar-accent: 0 0% 14%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 220 25% 18%;
+    --sidebar-border: 0 0% 18%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
@@ -258,215 +288,168 @@
 }
 
 /* ================================================================
-   Liquid Glass — surface treatment + luminous environment
-   All rules outside @layer to win over Tailwind utilities.
-   Liquid Glass (light) scoped to [data-brand-theme="liquid-glass"].
-   Dark Mode glass scoped to .dark (applied to all dark sessions).
+   Liquid Glass — centralized material model
+     .glass             optical glass surface (panels, badges, menus)
+     .glass-nav         edge-to-edge glass bar (navbar)
+     .glass-interactive tactile press + pointer-following specular
+   Tokens (--glass-*) are themed in :root (light) and .dark (dark),
+   so every surface adapts automatically; other brand themes inherit
+   the light tokens. Rules sit outside @layer to win over utilities.
    ================================================================ */
 
-/* -- Light: colorful orb environment -- */
-[data-brand-theme="liquid-glass"] body {
+:root[data-brand-theme="liquid-glass"] body {
   background-color: hsl(210 20% 98%);
-  background-image:
-    radial-gradient(54rem at 7% 12%, hsl(220 70% 50% / 0.20), transparent 58%),
-    radial-gradient(44rem at 91% 7%, hsl(173 58% 39% / 0.17), transparent 58%),
-    radial-gradient(40rem at 83% 87%, hsl(220 70% 58% / 0.13), transparent 56%),
-    radial-gradient(46rem at 13% 91%, hsl(173 58% 52% / 0.12), transparent 58%),
-    radial-gradient(32rem at 52% 50%, hsl(43 74% 66% / 0.10), transparent 55%);
+  background-image: linear-gradient(125deg, hsl(215 30% 98%), hsl(190 26% 97%) 52%, hsl(38 28% 98%));
   background-attachment: fixed;
-  background-repeat: no-repeat;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  [data-brand-theme="liquid-glass"] body {
-    animation: lg-drift 28s ease-in-out infinite alternate;
+:root.dark body {
+  background-color: hsl(0 0% 5%);
+  background-image: linear-gradient(145deg, hsl(0 0% 4%), hsl(220 8% 7%) 55%, hsl(20 8% 6%));
+  background-attachment: fixed;
+}
+
+.glass {
+  position: relative;
+}
+
+.glass.absolute {
+  position: absolute;
+}
+
+.glass.fixed {
+  position: fixed;
+}
+
+:root:not([data-brand-theme="liquid-glass"]):not(.dark) .glass {
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  box-shadow: 0 8px 24px -18px hsl(var(--foreground) / 0.28);
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass {
+  background-color: hsl(var(--glass-bg));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border: 1px solid hsl(var(--glass-border));
+  box-shadow:
+    inset 0 1px 0 hsl(var(--glass-highlight)),
+    inset 0 -1px 0 hsl(var(--glass-inner)),
+    var(--glass-shadow);
+}
+
+/* denser fill for reading surfaces (modal) — keeps text contrast strong */
+.glass-strong {
+  background-color: hsl(var(--glass-bg-strong));
+}
+
+/* faint cool -> warm environmental refraction along the edge only */
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg,
+    hsl(var(--glass-tint-cool)),
+    transparent 42%, transparent 58%,
+    hsl(var(--glass-tint-warm)));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+:root:not([data-brand-theme="liquid-glass"]):not(.dark) .glass-nav {
+  background-color: hsl(var(--background) / 0.94);
+  border-bottom: 1px solid hsl(var(--border));
+  box-shadow: 0 8px 30px -24px hsl(var(--foreground) / 0.3);
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass-nav {
+  background-color: hsl(var(--glass-bg));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border-bottom: 1px solid hsl(var(--glass-border));
+  box-shadow:
+    inset 0 1px 0 hsl(var(--glass-highlight)),
+    var(--glass-shadow);
+}
+
+.glass-interactive {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* pointer-following specular sweep (--mx/--my set by useGlassPointer) */
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass-interactive {
+  transition: transform 150ms cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 150ms ease;
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass-interactive::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(140px circle at var(--mx, 50%) var(--my, 0%),
+    hsl(var(--glass-sheen)), transparent 60%);
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass-interactive:hover::after {
+  opacity: 1;
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass-interactive:active {
+  transform: scale(0.98);
+  box-shadow:
+    inset 0 1px 0 hsl(var(--glass-highlight)),
+    var(--glass-shadow-pressed);
+}
+
+.glass-interactive:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass-interactive {
+    transition: box-shadow 150ms ease;
+  }
+
+  :is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass-interactive:active {
+    transform: none;
+  }
+
+  :is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass-interactive::after {
+    display: none;
   }
 }
 
-@keyframes lg-drift {
-  from { background-position: 0% 0%, 100% 0%, 83% 87%, 13% 91%, 52% 50%; }
-  to   { background-position: 6% 5%, 94% 8%, 76% 93%, 21% 85%, 56% 44%; }
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  :is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass,
+  :is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass-nav {
+    background-color: hsl(var(--glass-bg-strong));
+  }
 }
 
-/* -- Light: frosted glass panels (cards, popovers, modals) -- */
+/* Most content cards render as liquid glass in the glass themes.
+   Uses the denser fill so card text keeps strong contrast. Other
+   brand themes (heritage/bold/default) keep their solid cards. */
 [data-brand-theme="liquid-glass"] .bg-card,
-[data-brand-theme="liquid-glass"] .bg-popover {
-  background-color: hsl(0 0% 100% / 0.62);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  backdrop-filter: blur(20px) saturate(180%);
-  border-color: hsl(0 0% 100% / 0.65);
+.dark .bg-card {
+  background-color: hsl(var(--glass-bg-strong));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border-color: hsl(var(--glass-border));
   box-shadow:
-    inset 0 1.5px 0 hsl(0 0% 100% / 0.88),
-    inset 0 -1px 0 hsl(220 40% 10% / 0.05),
-    0 24px 50px -22px hsl(220 50% 12% / 0.26);
-}
-
-[data-brand-theme="liquid-glass"] .bg-card:hover {
-  background-color: hsl(0 0% 100% / 0.72);
-  box-shadow:
-    inset 0 1.5px 0 hsl(0 0% 100% / 0.95),
-    inset 0 -1px 0 hsl(220 40% 10% / 0.07),
-    0 30px 60px -22px hsl(220 50% 12% / 0.32);
-}
-
-/* -- Light: persistent glass navbar -- */
-[data-brand-theme="liquid-glass"] nav.fixed {
-  background-color: hsl(0 0% 100% / 0.52);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  backdrop-filter: blur(24px) saturate(180%);
-  border-bottom: 1px solid hsl(0 0% 100% / 0.62);
-  box-shadow:
-    inset 0 1px 0 hsl(0 0% 100% / 0.78),
-    0 16px 40px -24px hsl(220 50% 12% / 0.16);
-}
-
-/* -- Light: mobile nav menu -- */
-[data-brand-theme="liquid-glass"] nav [class*="backdrop-blur"] {
-  background-color: hsl(0 0% 100% / 0.80) !important;
-}
-
-/* -- Light: primary buttons — glossy sheen -- */
-[data-brand-theme="liquid-glass"] .bg-primary {
-  background-image: linear-gradient(180deg, hsl(0 0% 100% / 0.22) 0%, transparent 52%);
-  box-shadow:
-    inset 0 1.5px 0 hsl(0 0% 100% / 0.42),
-    0 8px 22px -8px hsl(var(--primary) / 0.52);
-}
-
-/* -- Light: secondary / accent surfaces -- */
-[data-brand-theme="liquid-glass"] .bg-secondary,
-[data-brand-theme="liquid-glass"] .bg-accent {
-  background-color: hsl(0 0% 100% / 0.52);
-  -webkit-backdrop-filter: blur(12px) saturate(160%);
-  backdrop-filter: blur(12px) saturate(160%);
-  border-color: hsl(0 0% 100% / 0.65);
-  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.76);
-}
-
-/* -- Light: form inputs -- */
-[data-brand-theme="liquid-glass"] input,
-[data-brand-theme="liquid-glass"] textarea,
-[data-brand-theme="liquid-glass"] select {
-  background-color: hsl(0 0% 100% / 0.55);
-  -webkit-backdrop-filter: blur(10px) saturate(160%);
-  backdrop-filter: blur(10px) saturate(160%);
-  border-color: hsl(0 0% 100% / 0.65);
-  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.62);
-}
-
-/* -- Light: all backdrop-blur elements get glass specular + border -- */
-[data-brand-theme="liquid-glass"] [class*="backdrop-blur"] {
-  border-color: hsl(0 0% 100% / 0.52);
-  box-shadow: inset 0 1px 0 hsl(0 0% 100% / 0.68);
-}
-
-/* -- Light: pills and rounded-full elements — frosted -- */
-[data-brand-theme="liquid-glass"] .rounded-full {
-  -webkit-backdrop-filter: blur(10px) saturate(150%);
-  backdrop-filter: blur(10px) saturate(150%);
-}
-
-/* ================================================================
-   Dark Mode — Liquid Glass Dark
-   Applied whenever .dark is active (the Dark Mode theme).
-   ================================================================ */
-
-/* -- Dark: glowing deep-field environment -- */
-.dark body {
-  background-image:
-    radial-gradient(54rem at 7% 12%, hsl(356 68% 48% / 0.22), transparent 58%),
-    radial-gradient(44rem at 91% 7%, hsl(42 70% 55% / 0.16), transparent 58%),
-    radial-gradient(40rem at 83% 87%, hsl(356 68% 38% / 0.14), transparent 56%),
-    radial-gradient(46rem at 13% 91%, hsl(176 45% 48% / 0.13), transparent 58%),
-    radial-gradient(32rem at 52% 50%, hsl(218 70% 28% / 0.20), transparent 55%);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .dark body {
-    animation: lg-drift-dark 30s ease-in-out infinite alternate;
-  }
-}
-
-@keyframes lg-drift-dark {
-  from { background-position: 0% 0%, 100% 0%, 83% 87%, 13% 91%, 52% 50%; }
-  to   { background-position: 8% 6%, 92% 9%, 77% 93%, 23% 84%, 57% 44%; }
-}
-
-/* -- Dark: smoked glass panels -- */
-.dark .bg-card,
-.dark .bg-popover {
-  background-color: hsl(220 35% 10% / 0.65);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  backdrop-filter: blur(20px) saturate(160%);
-  border-color: hsl(220 40% 28% / 0.50);
-  box-shadow:
-    inset 0 1.5px 0 hsl(220 40% 36% / 0.48),
-    inset 0 -1px 0 hsl(0 0% 0% / 0.22),
-    0 24px 50px -22px hsl(220 40% 3% / 0.65);
-}
-
-.dark .bg-card:hover {
-  background-color: hsl(220 35% 10% / 0.78);
-  box-shadow:
-    inset 0 1.5px 0 hsl(220 40% 36% / 0.58),
-    inset 0 -1px 0 hsl(0 0% 0% / 0.28),
-    0 30px 60px -22px hsl(220 40% 3% / 0.75);
-}
-
-/* -- Dark: glass navbar -- */
-.dark nav.fixed {
-  background-color: hsl(220 40% 6% / 0.62);
-  -webkit-backdrop-filter: blur(24px) saturate(160%);
-  backdrop-filter: blur(24px) saturate(160%);
-  border-bottom: 1px solid hsl(220 40% 26% / 0.46);
-  box-shadow:
-    inset 0 -1px 0 hsl(220 40% 22% / 0.30),
-    0 16px 40px -20px hsl(220 40% 2% / 0.60);
-}
-
-/* -- Dark: mobile nav menu -- */
-.dark nav [class*="backdrop-blur"] {
-  background-color: hsl(220 40% 6% / 0.84) !important;
-}
-
-/* -- Dark: secondary / accent surfaces -- */
-.dark .bg-secondary,
-.dark .bg-accent {
-  background-color: hsl(220 35% 12% / 0.70);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  border-color: hsl(220 40% 26% / 0.50);
-  box-shadow: inset 0 1px 0 hsl(220 40% 32% / 0.36);
-}
-
-/* -- Dark: form inputs -- */
-.dark input,
-.dark textarea,
-.dark select {
-  background-color: hsl(220 35% 10% / 0.62);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  border-color: hsl(220 40% 26% / 0.60);
-}
-
-/* -- Dark: backdrop-blur elements — glass specular -- */
-.dark [class*="backdrop-blur"] {
-  border-color: hsl(220 40% 30% / 0.46);
-  box-shadow: inset 0 1px 0 hsl(220 40% 34% / 0.38);
-}
-
-/* -- Dark: primary buttons — glossy -- */
-.dark .bg-primary {
-  background-image: linear-gradient(180deg, hsl(0 0% 100% / 0.14) 0%, transparent 52%);
-  box-shadow:
-    inset 0 1.5px 0 hsl(0 0% 100% / 0.24),
-    0 8px 22px -8px hsl(var(--primary) / 0.52);
-}
-
-/* -- Dark: pills -- */
-.dark .rounded-full {
-  -webkit-backdrop-filter: blur(10px) saturate(140%);
-  backdrop-filter: blur(10px) saturate(140%);
+    inset 0 1px 0 hsl(var(--glass-highlight)),
+    inset 0 -1px 0 hsl(var(--glass-inner)),
+    var(--glass-shadow);
 }

@@ -151,14 +151,14 @@ export default function ProjectsSection() {
   const [selected, setSelected] = useState(null);
 
   return (
-    <section id="projects" className="py-20 lg:py-28">
+    <section id="projects" className="py-14 lg:py-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-14"
+          className="mb-10"
         >
           <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-3">Portfolio</p>
           <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-foreground">

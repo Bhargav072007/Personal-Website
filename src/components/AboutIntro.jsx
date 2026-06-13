@@ -29,7 +29,7 @@ export default function AboutIntro() {
   }, []);
 
   return (
-    <section className="pt-16 pb-4 lg:pt-20 lg:pb-4">
+    <section className="pt-10 pb-4 lg:pt-14 lg:pb-4">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
           <motion.div
@@ -71,7 +71,6 @@ export default function AboutIntro() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="relative"
           >
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-chart-1/20 to-chart-2/20 rotate-2" />
             <img
               src={PORTRAIT_URL}
               alt="Bhargav Malluvajhula"

@@ -11,11 +11,7 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="heritage-surface relative min-h-screen flex items-center overflow-hidden">
-      {/* Gradient orbs */}
-      <div className="absolute top-1/4 -left-40 w-96 h-96 bg-chart-1/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-40 w-96 h-96 bg-chart-2/10 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-28 lg:py-32">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-20 lg:py-24">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left */}
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
@@ -23,7 +19,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-chart-1/10 border border-chart-1/20 mb-6"
+              className="glass inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-chart-1 animate-pulse" />
               <span className="text-xs font-medium text-chart-1">Available for collaborations</span>
@@ -60,7 +56,7 @@ export default function HeroSection() {
 
             <button
               onClick={() => navigate("/about")}
-              className="group mb-8 flex w-full max-w-lg items-center justify-between gap-4 rounded-lg border border-chart-1/20 bg-gradient-to-r from-card/90 via-card/70 to-chart-2/10 px-4 py-3 text-left shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-chart-1/50 hover:shadow-lg"
+              className="glass glass-interactive group mb-8 flex w-full max-w-lg items-center justify-between gap-4 rounded-lg px-4 py-3 text-left"
             >
               <span className="flex items-center gap-3">
                 <span className="h-10 w-1 shrink-0 rounded-full bg-gradient-to-b from-chart-1 to-chart-2" />
@@ -92,8 +88,6 @@ export default function HeroSection() {
             className="relative"
           >
             <div className="heritage-frame relative aspect-[4/5] max-w-md mx-auto lg:max-w-none">
-              {/* Glow ring */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-chart-1/30 via-transparent to-chart-2/20 -rotate-3 scale-[1.04] blur-sm" />
               <img
                 src={PORTRAIT_URL}
                 alt="Bhargav Malluvajhula"
@@ -103,7 +97,7 @@ export default function HeroSection() {
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-4 -left-4 bg-card border border-border rounded-xl px-4 py-3 shadow-xl backdrop-blur"
+                className="glass absolute -bottom-4 -left-4 rounded-lg px-4 py-3"
               >
                 <p className="text-xs font-medium text-muted-foreground mb-0.5">Penn State University</p>
                 <p className="text-sm font-bold text-foreground">Research & AI</p>
@@ -111,7 +105,7 @@ export default function HeroSection() {
               <motion.div
                 animate={{ y: [0, 6, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -top-4 -right-4 bg-card border border-border rounded-xl px-4 py-3 shadow-xl"
+                className="glass absolute top-4 right-4 rounded-lg px-4 py-3"
               >
                 <p className="text-xs font-medium text-muted-foreground mb-0.5">Impact</p>
                 <p className="text-sm font-bold text-foreground">4+ Initiatives</p>
@@ -125,7 +119,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="mt-20 border-t border-border pt-6"
+          className="mt-12 border-t border-border pt-6"
         >
           <div className="flex flex-wrap items-center gap-3">
             <span className="text-xs font-medium tracking-widest uppercase text-muted-foreground mr-2">Currently building</span>

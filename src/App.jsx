@@ -8,6 +8,7 @@ import Honors from './pages/Honors';
 import Experience from './pages/Experience';
 import Contact from './pages/Contact';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import { useGlassPointer } from './hooks/useGlassPointer';
 // Add page imports here
 
 const NotFound = () => (
@@ -53,6 +54,7 @@ const ScrollToTopOnRouteChange = () => {
 };
 
 function App() {
+  useGlassPointer();
 
   return (
     <Router>

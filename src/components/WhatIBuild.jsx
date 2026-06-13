@@ -11,7 +11,7 @@ const SOLO_IMG = "/assets/base44/39ea9ac54_085cc689-7653-4aeb-9c09-e518a1157eba_
 
 export default function WhatIBuild({ compact = false }) {
   return (
-    <section className={`${compact ? "pt-6 pb-14 lg:pt-8 lg:pb-20" : "py-14 lg:py-20"} relative overflow-hidden`}>
+    <section className={`${compact ? "pt-4 pb-10 lg:pt-6 lg:pb-14" : "py-10 lg:py-14"} relative overflow-hidden`}>
       {/* Translucent solo portrait in background */}
       <div
         className="absolute right-0 top-0 bottom-0 w-1/2 bg-cover bg-center opacity-[0.06] pointer-events-none"

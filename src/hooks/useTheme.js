@@ -4,7 +4,7 @@ export const BRAND_THEMES = [
   { id: "liquid-glass", label: "Liquid Glass", colors: ["#112244", "#ffffff", "#2563d8"] },
   { id: "default", label: "Default", colors: ["#111827", "#ffffff", "#2aa198"] },
   { id: "heritage", label: "Heritage Gold", colors: ["#a71930", "#d4af37", "#1f7a73"] },
-  { id: "dark", label: "Dark Mode", colors: ["#07111f", "#f1f5f9", "#dc354c"] },
+  { id: "dark", label: "Dark Mode", colors: ["#0d0d0d", "#f5f5f5", "#dc354c"] },
   { id: "bold", label: "Bold Theme", colors: ["#e4002b", "#ffffff", "#222222"] },
 ];
 

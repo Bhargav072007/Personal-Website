@@ -24,13 +24,13 @@ export default function ThemeToggle() {
         onClick={() => setOpen((value) => !value)}
         aria-label="Change visual theme"
         aria-expanded={open}
-        className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-accent transition-colors duration-200"
+        className="glass-interactive p-2 rounded-full text-muted-foreground hover:text-foreground transition-colors duration-200"
       >
         <Palette className="w-4 h-4" />
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full z-50 mt-3 w-56 rounded-md border border-border bg-popover p-2 text-popover-foreground shadow-xl">
+        <div className="glass absolute right-0 top-full z-50 mt-3 w-56 rounded-md p-2 text-popover-foreground">
           <p className="px-3 py-2 text-xs font-medium tracking-widest uppercase text-muted-foreground">
             Theme
           </p>

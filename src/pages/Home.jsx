@@ -5,7 +5,6 @@ import AffiliationsStrip from "../components/AffiliationsStrip";
 import WhatIBuild from "../components/WhatIBuild";
 import LinkedInSection from "../components/LinkedInSection";
 import RecommendationsSection from "../components/RecommendationsSection";
-import CurrentFocus from "../components/CurrentFocus";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
 
