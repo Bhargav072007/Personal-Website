@@ -41,7 +41,7 @@
     --body-grid-opacity: 0;
 
     /* Liquid Glass material tokens — light (clear optical glass) */
-    --glass-bg: 0 0% 100% / 0.28;
+    --glass-bg: 0 0% 100% / 0.18;
     --glass-blur: 16px;
     --glass-saturate: 155%;
     --glass-border: 0 0% 100% / 0.58;
@@ -52,7 +52,7 @@
     --glass-tint-cool: 205 100% 60% / 0.10;
     --glass-tint-warm: 35 100% 62% / 0.08;
     --glass-sheen: 0 0% 100% / 0.22;
-    --glass-bg-strong: 0 0% 100% / 0.46;
+    --glass-bg-strong: 0 0% 100% / 0.34;
     --glass-text-shadow: 220 35% 12% / 0.08;
     --glass-icon: 215 62% 38%;
     --glass-icon-surface: 205 100% 96% / 0.42;
@@ -198,7 +198,7 @@
     --body-grid-opacity: 0;
 
     /* Liquid Glass material tokens — dark (smoked optical glass) */
-    --glass-bg: 0 0% 11% / 0.42;
+    --glass-bg: 0 0% 11% / 0.30;
     --glass-blur: 18px;
     --glass-saturate: 140%;
     --glass-border: 0 0% 100% / 0.16;
@@ -209,7 +209,7 @@
     --glass-tint-cool: 205 100% 65% / 0.12;
     --glass-tint-warm: 30 100% 60% / 0.10;
     --glass-sheen: 0 0% 100% / 0.10;
-    --glass-bg-strong: 0 0% 11% / 0.48;
+    --glass-bg-strong: 0 0% 11% / 0.40;
     --glass-text-shadow: 0 0% 0% / 0.42;
     --glass-icon: 30 88% 68%;
     --glass-icon-surface: 0 0% 100% / 0.08;
@@ -368,13 +368,15 @@
    ================================================================ */
 
 :root[data-brand-theme="liquid-glass"] body {
-  background-color: hsl(210 20% 98%);
+  background-color: hsl(210 28% 97%);
   background-image:
-    linear-gradient(125deg, hsl(216 42% 97%), hsl(190 34% 97%) 48%, hsl(38 36% 98%)),
-    linear-gradient(25deg, transparent 18%, hsl(205 85% 72% / 0.09) 42%, transparent 66%),
-    linear-gradient(155deg, transparent 32%, hsl(35 90% 72% / 0.08) 58%, transparent 78%);
+    linear-gradient(125deg, hsl(216 48% 96%), hsl(190 40% 96%) 48%, hsl(38 42% 97%)),
+    linear-gradient(24deg, transparent 12%, hsl(205 88% 68% / 0.18) 34%, transparent 56%),
+    linear-gradient(154deg, transparent 26%, hsl(35 92% 68% / 0.15) 52%, transparent 74%),
+    linear-gradient(92deg, transparent 5%, hsl(173 58% 64% / 0.10) 27%, transparent 48%),
+    repeating-linear-gradient(118deg, transparent 0 76px, hsl(220 40% 35% / 0.022) 77px 78px);
   background-attachment: fixed;
-  background-size: cover, 180% 180%, 170% 170%;
+  background-size: cover, 150% 150%, 145% 145%, 165% 165%, auto;
 }
 
 :root.dark body {
@@ -399,6 +401,14 @@
   position: relative;
 }
 
+.liquid-glass-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
 .glass.absolute {
   position: absolute;
 }
@@ -411,6 +421,21 @@
   background-color: hsl(var(--card));
   border: 1px solid hsl(var(--border));
   box-shadow: 0 8px 24px -18px hsl(var(--foreground) / 0.28);
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) :is(
+  .glass,
+  .glass-nav,
+  .affiliations-strip
+) {
+  isolation: isolate;
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) :is(
+  .glass,
+  .affiliations-strip
+) {
+  overflow: hidden;
 }
 
 :is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass {
@@ -436,20 +461,21 @@
 }
 
 :is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass.glass-panel {
-  background-color: hsl(var(--glass-bg-strong));
+  background-color: hsl(0 0% 100% / 0.18);
   background-image:
-    linear-gradient(135deg, hsl(0 0% 100% / 0.30), transparent 34%),
-    linear-gradient(315deg, hsl(var(--glass-tint-cool)), transparent 42%);
-  border-color: hsl(0 0% 100% / 0.72);
+    linear-gradient(135deg, hsl(0 0% 100% / 0.20), transparent 34%),
+    linear-gradient(315deg, hsl(var(--glass-tint-cool)), transparent 46%);
+  border-color: hsl(0 0% 100% / 0.82);
   box-shadow:
     inset 0 1px 0 hsl(0 0% 100% / 0.92),
     inset 1px 0 0 hsl(0 0% 100% / 0.38),
     inset 0 -1px 0 hsl(var(--glass-inner)),
-    0 22px 48px -30px hsl(220 30% 18% / 0.42);
+    0 24px 50px -28px hsl(220 38% 18% / 0.48),
+    0 1px 0 hsl(220 30% 38% / 0.10);
 }
 
 :root.dark .glass.glass-panel {
-  background-color: hsl(0 0% 10% / 0.42);
+  background-color: hsl(0 0% 10% / 0.32);
   background-image:
     linear-gradient(135deg, hsl(0 0% 100% / 0.12), transparent 32%),
     linear-gradient(315deg, hsl(var(--glass-tint-warm)), transparent 45%);
@@ -462,7 +488,7 @@
 }
 
 :is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass.glass-media {
-  background-color: hsl(var(--glass-bg));
+  background-color: hsl(0 0% 100% / 0.16);
   background-image:
     linear-gradient(145deg, hsl(0 0% 100% / 0.34), transparent 34%),
     linear-gradient(320deg, hsl(var(--glass-tint-cool)), transparent 46%);
@@ -474,7 +500,7 @@
 }
 
 :root.dark .glass.glass-media {
-  background-color: hsl(0 0% 10% / 0.38);
+  background-color: hsl(0 0% 10% / 0.28);
   background-image:
     linear-gradient(145deg, hsl(0 0% 100% / 0.13), transparent 34%),
     linear-gradient(320deg, hsl(var(--glass-tint-warm)), transparent 48%);
@@ -512,7 +538,17 @@
     var(--glass-shadow);
 }
 
-.affiliations-strip {
+/* Affiliations strip — ONE continuous glass surface, never per-logo boxes.
+   Heritage/Bold use a solid surface; the glass themes use real glass and the
+   controller adds refraction (variant "media"). In dark mode the logos are
+   normalised to a light tone so each stays visible over smoked glass without
+   boxing them or dropping a flat grey rectangle behind the row. */
+:root:not([data-brand-theme="liquid-glass"]):not(.dark) .affiliations-strip {
+  background-color: hsl(var(--card));
+  border-color: hsl(var(--border));
+}
+
+:root[data-brand-theme="liquid-glass"] .affiliations-strip {
   background-color: hsl(var(--glass-bg));
   -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
   backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
@@ -522,42 +558,92 @@
 }
 
 :root.dark .affiliations-strip {
-  background-color: hsl(210 6% 78% / 0.82);
+  background-color: hsl(0 0% 100% / 0.05);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  box-shadow:
+    inset 0 1px 0 hsl(0 0% 100% / 0.18),
+    inset 0 -1px 0 hsl(0 0% 0% / 0.4);
 }
 
-:root.dark .affiliations-strip .text-muted-foreground {
-  color: hsl(215 18% 28%);
+:root.dark .affiliations-strip img {
+  filter: brightness(0) invert(1) opacity(0.82);
 }
 
-/* faint cool -> warm environmental refraction along the edge only */
-:is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass::before {
+/* Hero photo badges — image-aware glass with local contrast protection so the
+   label + value stay legible over any region of the portrait, in every theme. */
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) .hero-badge {
+  background-color: hsl(0 0% 100% / 0.6);
+  border-color: hsl(0 0% 100% / 0.7);
+}
+
+:root.dark .hero-badge {
+  background-color: hsl(0 0% 8% / 0.58);
+  border-color: hsl(0 0% 100% / 0.2);
+}
+
+:root.dark .hero-badge p:first-child {
+  color: hsl(0 0% 100% / 0.82);
+}
+
+/*
+ * Real Liquid Glass effect layer.
+ * The pseudo-element is the demo's liquidGlass-effect plane: it samples the
+ * backdrop, blurs it, then the supplied SVG filter displaces and lights it.
+ * The element's translucent background is the tint plane; ::after is shine.
+ */
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) :is(
+  .glass,
+  .glass-nav,
+  .affiliations-strip
+)::before {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: -2;
   border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg,
-    hsl(var(--glass-tint-cool)),
-    transparent 42%, transparent 58%,
-    hsl(var(--glass-tint-warm)));
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-          mask-composite: exclude;
+  background: hsl(0 0% 100% / 0.025);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  filter: url("#glass-distortion-light");
+  opacity: 0.88;
   pointer-events: none;
 }
 
-:is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass-panel::before,
-:is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass-media::before {
-  padding: 1.5px;
-  background: linear-gradient(
-    128deg,
-    hsl(0 0% 100% / 0.74),
-    hsl(var(--glass-tint-cool)) 26%,
-    transparent 48%,
-    hsl(var(--glass-tint-warm)) 74%,
-    hsl(0 0% 100% / 0.28)
-  );
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass.glass-panel::before {
+  opacity: 1;
+}
+
+:root.dark :is(.glass, .glass-nav, .affiliations-strip)::before {
+  filter: url("#glass-distortion-dark");
+}
+
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) :is(
+  .glass,
+  .glass-nav,
+  .affiliations-strip
+)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  box-shadow:
+    inset 2px 2px 1px hsl(0 0% 100% / 0.72),
+    inset -1px -1px 1px hsl(215 45% 32% / 0.16);
+  background:
+    linear-gradient(135deg, hsl(0 0% 100% / 0.24), transparent 30%),
+    linear-gradient(315deg, hsl(var(--glass-tint-cool)), transparent 44%);
+  pointer-events: none;
+}
+
+:root.dark :is(.glass, .glass-nav, .affiliations-strip)::after {
+  box-shadow:
+    inset 1.5px 1.5px 1px hsl(0 0% 100% / 0.20),
+    inset -1px -1px 1px hsl(0 0% 0% / 0.34);
+  background:
+    linear-gradient(135deg, hsl(0 0% 100% / 0.08), transparent 34%),
+    linear-gradient(315deg, hsl(var(--glass-tint-warm)), transparent 46%);
 }
 
 :root:not([data-brand-theme="liquid-glass"]):not(.dark) .glass-nav {
@@ -599,9 +685,15 @@
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
-  background: radial-gradient(140px circle at var(--mx, 50%) var(--my, 0%),
-    hsl(var(--glass-sheen)), transparent 60%);
-  opacity: 0;
+  z-index: -1;
+  box-shadow:
+    inset 1.5px 1.5px 1px hsl(0 0% 100% / 0.48),
+    inset -1px -1px 1px hsl(0 0% 100% / 0.16);
+  background:
+    radial-gradient(140px circle at var(--mx, 50%) var(--my, 0%),
+      hsl(var(--glass-sheen)), transparent 60%),
+    linear-gradient(135deg, hsl(0 0% 100% / 0.12), transparent 36%);
+  opacity: 0.52;
   transition: opacity 250ms ease;
 }
 

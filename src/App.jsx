@@ -8,6 +8,7 @@ import Honors from './pages/Honors';
 import Experience from './pages/Experience';
 import Contact from './pages/Contact';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import LiquidGlassProvider from './components/LiquidGlassProvider';
 import { useGlassPointer } from './hooks/useGlassPointer';
 // Add page imports here
 
@@ -58,6 +59,7 @@ function App() {
 
   return (
     <Router>
+      <LiquidGlassProvider />
       <ScrollToTopOnRouteChange />
       <PortfolioRoutes />
       <ScrollToTopButton />
