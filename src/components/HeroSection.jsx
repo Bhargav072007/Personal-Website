@@ -63,22 +63,17 @@ export default function HeroSection() {
                 alt="Bhargav Malluvajhula"
                 className="h-full w-full object-cover object-top"
               />
-              <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="glass glass-strong hero-badge absolute bottom-3 left-3 max-w-[60%] rounded-xl px-3 py-2 sm:px-4 sm:py-2.5"
-              >
+              {/* Static (no infinite float): an animated backdrop-filter element
+                  forces the glass blur to recompute every frame — a major
+                  source of jank — for purely decorative motion. */}
+              <div className="glass glass-strong hero-badge absolute bottom-3 left-3 max-w-[60%] rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
                 <p className="mb-0.5 truncate text-[10px] font-medium text-foreground/80 sm:text-xs">Penn State University</p>
                 <p className="truncate text-xs font-bold text-foreground sm:text-sm">Research &amp; AI</p>
-              </motion.div>
-              <motion.div
-                animate={{ y: [0, 5, 0] }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="glass glass-strong hero-badge absolute right-3 top-3 max-w-[55%] rounded-xl px-3 py-2 sm:px-4 sm:py-2.5"
-              >
+              </div>
+              <div className="glass glass-strong hero-badge absolute right-3 top-3 max-w-[55%] rounded-xl px-3 py-2 sm:px-4 sm:py-2.5">
                 <p className="mb-0.5 truncate text-[10px] font-medium text-foreground/80 sm:text-xs">Impact</p>
                 <p className="truncate text-xs font-bold text-foreground sm:text-sm">4+ Initiatives</p>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
 

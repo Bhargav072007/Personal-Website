@@ -42,8 +42,8 @@
 
     /* Liquid Glass material tokens — light (clear optical glass) */
     --glass-bg: 0 0% 100% / 0.10;
-    --glass-blur: 16px;
-    --glass-saturate: 155%;
+    --glass-blur: 10px;
+    --glass-saturate: 150%;
     --glass-border: 0 0% 100% / 0.58;
     --glass-highlight: 0 0% 100% / 0.85;
     --glass-inner: 220 40% 10% / 0.05;
@@ -210,8 +210,8 @@
 
     /* Liquid Glass material tokens — dark (smoked optical glass) */
     --glass-bg: 0 0% 11% / 0.10;
-    --glass-blur: 18px;
-    --glass-saturate: 140%;
+    --glass-blur: 11px;
+    --glass-saturate: 135%;
     --glass-border: 0 0% 100% / 0.16;
     --glass-highlight: 0 0% 100% / 0.20;
     --glass-inner: 0 0% 0% / 0.38;
@@ -850,8 +850,8 @@
   [role="combobox"]
 ) {
   background-color: hsl(var(--glass-bg));
-  -webkit-backdrop-filter: blur(12px) saturate(var(--glass-saturate));
-  backdrop-filter: blur(12px) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(8px) saturate(var(--glass-saturate));
+  backdrop-filter: blur(8px) saturate(var(--glass-saturate));
   border-color: hsl(var(--glass-border));
   box-shadow:
     inset 0 1px 0 hsl(var(--glass-highlight)),
@@ -876,8 +876,8 @@
   .bg-muted
 ) {
   background-color: hsl(var(--glass-bg));
-  -webkit-backdrop-filter: blur(12px) saturate(var(--glass-saturate));
-  backdrop-filter: blur(12px) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(8px) saturate(var(--glass-saturate));
+  backdrop-filter: blur(8px) saturate(var(--glass-saturate));
   border-color: hsl(var(--glass-border));
 }
 
@@ -923,7 +923,7 @@
 
 @media (max-width: 767px) {
   :root {
-    --glass-blur: 12px;
+    --glass-blur: 7px;
   }
 
   .glass-frame {
