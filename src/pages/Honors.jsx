@@ -58,6 +58,7 @@ const AWARDS = [
     issuer: "Penn State University",
     description: "Named to the Dean's List for academic achievement at Penn State.",
     image: "/assets/base44/b0e3ee36b_Penn-State-University-Logo-2015-present.png",
+    imageDark: "/assets/base44/PennState-DarkMode.png",
   },
 ];
 
@@ -73,8 +74,15 @@ const HonorCard = ({ item, icon: Icon }) => (
       <img
         src={item.image}
         alt={item.title}
-        className={`h-full w-full object-contain p-3 transition-transform duration-300 ${item.imageClass || "group-hover:scale-[1.02]"}`}
+        className={`h-full w-full object-contain p-3 transition-transform duration-300 ${item.imageDark ? "dark:hidden" : ""} ${item.imageClass || "group-hover:scale-[1.02]"}`}
       />
+      {item.imageDark && (
+        <img
+          src={item.imageDark}
+          alt={item.title}
+          className={`hidden h-full w-full object-contain p-3 transition-transform duration-300 dark:block ${item.imageClass || "group-hover:scale-[1.02]"}`}
+        />
+      )}
     </div>
     <div className="p-6">
       <div className="flex items-center gap-2 text-xs font-medium tracking-widest uppercase text-muted-foreground mb-3">

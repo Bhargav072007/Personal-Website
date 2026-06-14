@@ -3,8 +3,8 @@ const AFFILIATIONS = [
   { name: "AviationAI", logo: "/assets/base44/5d8e8a4ad_AviationAI.png" },
   { name: "CloudAngles", logo: "/assets/base44/b434a1150_cloudangles-11.png" },
   { name: "Learn With Bhargav", logo: "/assets/base44/c292545a0_LearnWithBhargav.png" },
-  { name: "Omega Chi Sigma", logo: "/assets/base44/f15f981d2_OmegaChiSigma.png" },
-  { name: "Penn State", logo: "/assets/base44/b0e3ee36b_Penn-State-University-Logo-2015-present.png" },
+  { name: "Omega Chi Sigma", logo: "/assets/base44/f15f981d2_OmegaChiSigma.png", logoDark: "/assets/base44/OmegaChiSigma-DarkMode.png" },
+  { name: "Penn State", logo: "/assets/base44/b0e3ee36b_Penn-State-University-Logo-2015-present.png", logoDark: "/assets/base44/PennState-DarkMode.png" },
   { name: "SmartEvent", logo: "/assets/base44/fc281c144_SmartEVent.png" },
 ];
 const LOOP = [...AFFILIATIONS, ...AFFILIATIONS];
@@ -29,7 +29,22 @@ export default function AffiliationsStrip() {
               key={i}
               className="flex w-40 sm:w-48 md:w-56 items-center justify-center whitespace-nowrap cursor-default select-none hover:scale-105 transition-transform duration-200"
             >
-              <img src={aff.logo} alt={aff.name} className="h-20 sm:h-24 md:h-32 w-full object-contain" />
+              {aff.logoDark ? (
+                <>
+                  <img
+                    src={aff.logo}
+                    alt={aff.name}
+                    className="h-20 sm:h-24 md:h-32 w-full object-contain dark:hidden"
+                  />
+                  <img
+                    src={aff.logoDark}
+                    alt={aff.name}
+                    className="hidden h-20 sm:h-24 md:h-32 w-full object-contain dark:block"
+                  />
+                </>
+              ) : (
+                <img src={aff.logo} alt={aff.name} className="h-20 sm:h-24 md:h-32 w-full object-contain" />
+              )}
             </div>
           ))}
         </div>
