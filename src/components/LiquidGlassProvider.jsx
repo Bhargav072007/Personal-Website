@@ -1,5 +1,23 @@
+import { useEffect } from "react";
+import { LiquidGlassController } from "../lib/liquidGlass";
+
+/**
+ * Liquid Glass provider.
+ *
+ * Renders the fallback SVG defs (a generic turbulence-based distortion shown
+ * before the runtime kicks in, and as a graceful default where canvas/SVG
+ * displacement is unavailable) and boots the physically-based controller, which
+ * generates per-element refraction + specular maps and wires them to each glass
+ * surface through the `--lg-filter` custom property.
+ */
 export default function LiquidGlassProvider() {
-  const renderFilter = (id, scale, surfaceScale, specularConstant) => (
+  useEffect(() => {
+    const controller = new LiquidGlassController();
+    if (!controller.supported) return undefined;
+    return controller.start();
+  }, []);
+
+  const renderFallback = (id, scale, surfaceScale, specularConstant) => (
     <filter
       id={id}
       x="-12%"
@@ -40,11 +58,7 @@ export default function LiquidGlassProvider() {
         operator="in"
         result="containedSpecular"
       />
-      <feBlend
-        in="containedSpecular"
-        in2="distorted"
-        mode="screen"
-      />
+      <feBlend in="containedSpecular" in2="distorted" mode="screen" />
     </filter>
   );
 
@@ -56,8 +70,8 @@ export default function LiquidGlassProvider() {
       height="0"
       className="liquid-glass-defs"
     >
-      {renderFilter("glass-distortion-light", 32, 3.6, 0.78)}
-      {renderFilter("glass-distortion-dark", 24, 3, 0.65)}
+      {renderFallback("glass-distortion-light", 32, 3.6, 0.78)}
+      {renderFallback("glass-distortion-dark", 24, 3, 0.65)}
     </svg>
   );
 }

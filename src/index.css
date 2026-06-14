@@ -41,7 +41,7 @@
     --body-grid-opacity: 0;
 
     /* Liquid Glass material tokens — light (clear optical glass) */
-    --glass-bg: 0 0% 100% / 0.18;
+    --glass-bg: 0 0% 100% / 0.10;
     --glass-blur: 16px;
     --glass-saturate: 155%;
     --glass-border: 0 0% 100% / 0.58;
@@ -52,12 +52,23 @@
     --glass-tint-cool: 205 100% 60% / 0.10;
     --glass-tint-warm: 35 100% 62% / 0.08;
     --glass-sheen: 0 0% 100% / 0.22;
-    --glass-bg-strong: 0 0% 100% / 0.34;
+    --glass-bg-strong: 0 0% 100% / 0.14;
     --glass-text-shadow: 220 35% 12% / 0.08;
     --glass-icon: 215 62% 38%;
     --glass-icon-surface: 205 100% 96% / 0.42;
     --glass-focus: 215 90% 56% / 0.62;
     --glass-divider: 215 32% 42% / 0.14;
+
+    /* Physically-based refraction tuning (read by the liquid-glass runtime).
+       Light = clear optical glass: deeper bezel, brighter rim specular. */
+    --lg-thickness: 66;     /* simulated glass depth (px) */
+    --lg-bezel: 22;         /* refracting rim width (px) */
+    --lg-ior: 1.5;          /* index of refraction */
+    --lg-scale: 1;          /* displacement multiplier */
+    --lg-blur: 1.1;         /* pre-displacement softening (px) */
+    --lg-spec-opacity: 0.6; /* rim highlight strength */
+    --lg-spec-sat: 6;       /* chromatic punch of refracted light */
+    --lg-spec-angle: 60;    /* light direction (deg) */
 
     --radius: 0.625rem;
     --sidebar-background: 0 0% 98%;
@@ -198,7 +209,7 @@
     --body-grid-opacity: 0;
 
     /* Liquid Glass material tokens — dark (smoked optical glass) */
-    --glass-bg: 0 0% 11% / 0.30;
+    --glass-bg: 0 0% 11% / 0.10;
     --glass-blur: 18px;
     --glass-saturate: 140%;
     --glass-border: 0 0% 100% / 0.16;
@@ -209,12 +220,23 @@
     --glass-tint-cool: 205 100% 65% / 0.12;
     --glass-tint-warm: 30 100% 60% / 0.10;
     --glass-sheen: 0 0% 100% / 0.10;
-    --glass-bg-strong: 0 0% 11% / 0.40;
+    --glass-bg-strong: 0 0% 11% / 0.16;
     --glass-text-shadow: 0 0% 0% / 0.42;
     --glass-icon: 30 88% 68%;
     --glass-icon-surface: 0 0% 100% / 0.08;
     --glass-focus: 30 92% 62% / 0.72;
     --glass-divider: 0 0% 100% / 0.12;
+
+    /* Dark = smoked optical glass: a touch shallower, dimmer rim specular so
+       highlights read against the dark backdrop without blowing out. */
+    --lg-thickness: 58;
+    --lg-bezel: 22;
+    --lg-ior: 1.5;
+    --lg-scale: 1;
+    --lg-blur: 1.2;
+    --lg-spec-opacity: 0.42;
+    --lg-spec-sat: 5;
+    --lg-spec-angle: 60;
 
     --sidebar-background: 0 0% 7%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -461,7 +483,7 @@
 }
 
 :is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass.glass-panel {
-  background-color: hsl(0 0% 100% / 0.18);
+  background-color: hsl(0 0% 100% / 0.12);
   background-image:
     linear-gradient(135deg, hsl(0 0% 100% / 0.20), transparent 34%),
     linear-gradient(315deg, hsl(var(--glass-tint-cool)), transparent 46%);
@@ -475,7 +497,7 @@
 }
 
 :root.dark .glass.glass-panel {
-  background-color: hsl(0 0% 10% / 0.32);
+  background-color: hsl(0 0% 10% / 0.16);
   background-image:
     linear-gradient(135deg, hsl(0 0% 100% / 0.12), transparent 32%),
     linear-gradient(315deg, hsl(var(--glass-tint-warm)), transparent 45%);
@@ -488,7 +510,7 @@
 }
 
 :is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass.glass-media {
-  background-color: hsl(0 0% 100% / 0.16);
+  background-color: hsl(0 0% 100% / 0.10);
   background-image:
     linear-gradient(145deg, hsl(0 0% 100% / 0.34), transparent 34%),
     linear-gradient(320deg, hsl(var(--glass-tint-cool)), transparent 46%);
@@ -500,7 +522,7 @@
 }
 
 :root.dark .glass.glass-media {
-  background-color: hsl(0 0% 10% / 0.28);
+  background-color: hsl(0 0% 10% / 0.14);
   background-image:
     linear-gradient(145deg, hsl(0 0% 100% / 0.13), transparent 34%),
     linear-gradient(320deg, hsl(var(--glass-tint-warm)), transparent 48%);
@@ -605,8 +627,11 @@
   background: hsl(0 0% 100% / 0.025);
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
-  filter: url("#glass-distortion-light");
-  opacity: 0.88;
+  /* The runtime sets --lg-filter to a per-element physically-based refraction
+     filter; the fallback is the generic turbulence filter (pre-runtime / when
+     canvas displacement is unavailable). */
+  filter: var(--lg-filter, url("#glass-distortion-light"));
+  opacity: 0.92;
   pointer-events: none;
 }
 
@@ -615,7 +640,7 @@
 }
 
 :root.dark :is(.glass, .glass-nav, .affiliations-strip)::before {
-  filter: url("#glass-distortion-dark");
+  filter: var(--lg-filter, url("#glass-distortion-dark"));
 }
 
 :is(:root[data-brand-theme="liquid-glass"], :root.dark) :is(

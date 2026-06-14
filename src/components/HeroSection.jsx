@@ -55,7 +55,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="order-3 mx-auto w-full max-w-sm lg:col-start-2 lg:row-span-5 lg:row-start-1 lg:mx-0 lg:max-w-none lg:self-center"
+            className="order-3 mx-auto w-full max-w-xs sm:max-w-sm lg:col-start-2 lg:row-span-5 lg:row-start-1 lg:max-w-sm lg:self-center lg:justify-self-center"
           >
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
               <img
@@ -122,21 +122,21 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.55 }}
             onClick={() => navigate("/about")}
-            className="glass glass-interactive group order-5 flex w-full max-w-lg items-center justify-between gap-3 rounded-lg px-3 py-3 text-left sm:gap-4 sm:px-4 lg:col-start-1 lg:row-start-4"
+            className="glass glass-interactive group order-5 flex w-full max-w-md items-center justify-between gap-3 rounded-lg px-3 py-2 text-left sm:px-3.5 lg:col-start-1 lg:row-start-4"
           >
-            <span className="flex min-w-0 items-center gap-3">
-              <span className="h-10 w-1 shrink-0 rounded-full bg-gradient-to-b from-chart-1 to-chart-2" />
+            <span className="flex min-w-0 items-center gap-2.5">
+              <span className="h-7 w-0.5 shrink-0 rounded-full bg-gradient-to-b from-chart-1 to-chart-2" />
               <span className="min-w-0">
-                <span className="block text-sm font-semibold text-foreground">
+                <span className="block text-sm font-semibold leading-tight text-foreground">
                   Meet the person behind the work
                 </span>
-                <span className="mt-1 block text-xs leading-relaxed text-muted-foreground">
+                <span className="mt-0.5 block truncate text-xs text-muted-foreground">
                   A quieter look at the path, the purpose, and the why.
                 </span>
               </span>
             </span>
-            <span className="glass flex h-9 w-9 shrink-0 items-center justify-center rounded-md text-foreground transition-transform duration-300 group-hover:translate-x-1">
-              <ArrowRight className="h-4 w-4" />
+            <span className="glass flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-foreground transition-transform duration-300 group-hover:translate-x-1">
+              <ArrowRight className="h-3.5 w-3.5" />
             </span>
           </motion.button>
 
