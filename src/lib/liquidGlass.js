@@ -178,6 +178,14 @@ function classifyVariant(el) {
   return "base";
 }
 
+// Refraction is GPU-expensive (per-element backdrop sampling + SVG displacement),
+// so it is reserved for larger, mostly-static surfaces — cards, panels, modals.
+// Smaller/numerous/animated elements (buttons, pills, badges, nav) keep the
+// cheap blur+tint glass, which is what keeps the page smooth.
+const MIN_REFRACT_W = 200;
+const MIN_REFRACT_H = 150;
+const MIN_REFRACT_AREA = 200 * 150; // ~30k px²
+
 export class LiquidGlassController {
   constructor() {
     this.supported =
@@ -301,19 +309,26 @@ export class LiquidGlassController {
     const entry = this.entries.get(el);
     if (!entry) return;
 
-    // Skip work in non-glass brand themes; drop any stale filter reference.
-    if (!this.glassMode) {
-      if (entry.sig !== null) {
-        entry.sig = null;
-        el.style.removeProperty("--lg-filter");
-      }
-      return;
-    }
-
     const rect = el.getBoundingClientRect();
     const w = Math.round(rect.width);
     const h = Math.round(rect.height);
-    if (w < 8 || h < 8) return;
+
+    // Only large, static surfaces get true refraction; everything else stays
+    // cheap blur-glass (and in non-glass themes nothing is refractive).
+    const eligible =
+      this.glassMode &&
+      w >= MIN_REFRACT_W &&
+      h >= MIN_REFRACT_H &&
+      w * h >= MIN_REFRACT_AREA;
+
+    if (!eligible) {
+      if (entry.sig !== "off") {
+        entry.sig = "off";
+        el.style.removeProperty("--lg-filter");
+        el.removeAttribute("data-lg-refract");
+      }
+      return;
+    }
 
     const cs = getComputedStyle(el);
     const cssRadius = parseFloat(cs.borderTopLeftRadius) || 0;
@@ -331,6 +346,7 @@ export class LiquidGlassController {
       this.cache.set(sig, filterId);
     }
     el.style.setProperty("--lg-filter", `url("#${filterId}")`);
+    el.setAttribute("data-lg-refract", "");
   }
 
   createFilter(w, h, radius, variant) {
@@ -387,6 +403,7 @@ export class LiquidGlassController {
     this.themeObserver?.disconnect();
     for (const el of this.entries.keys()) {
       el.style.removeProperty("--lg-filter");
+      el.removeAttribute("data-lg-refract");
     }
     this.entries.clear();
     this.cache.clear();

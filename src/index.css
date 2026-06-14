@@ -614,11 +614,13 @@
  * backdrop, blurs it, then the supplied SVG filter displaces and lights it.
  * The element's translucent background is the tint plane; ::after is shine.
  */
+/* The refraction plane is GPU-heavy, so the runtime only flags larger, static
+   surfaces with [data-lg-refract]; small/animated glass keeps cheap blur. */
 :is(:root[data-brand-theme="liquid-glass"], :root.dark) :is(
   .glass,
   .glass-nav,
   .affiliations-strip
-)::before {
+)[data-lg-refract]::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -628,18 +630,18 @@
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   /* The runtime sets --lg-filter to a per-element physically-based refraction
-     filter; the fallback is the generic turbulence filter (pre-runtime / when
-     canvas displacement is unavailable). */
+     filter; the fallback turbulence filter only shows for the brief frame
+     before the runtime computes the real map. */
   filter: var(--lg-filter, url("#glass-distortion-light"));
   opacity: 0.92;
   pointer-events: none;
 }
 
-:is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass.glass-panel::before {
+:is(:root[data-brand-theme="liquid-glass"], :root.dark) .glass.glass-panel[data-lg-refract]::before {
   opacity: 1;
 }
 
-:root.dark :is(.glass, .glass-nav, .affiliations-strip)::before {
+:root.dark :is(.glass, .glass-nav, .affiliations-strip)[data-lg-refract]::before {
   filter: var(--lg-filter, url("#glass-distortion-dark"));
 }
 
