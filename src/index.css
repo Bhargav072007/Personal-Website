@@ -391,23 +391,42 @@
 
 :root[data-brand-theme="liquid-glass"] body {
   background-color: hsl(210 28% 97%);
+}
+
+/* Fixed gradient field on its own compositor layer. This replaces
+   `background-attachment: fixed`, which repaints the entire page on every
+   scroll frame — catastrophic alongside backdrop-filter and the single
+   biggest cause of the whole-site lag in the glass themes. A position:fixed
+   layer keeps the same "background stays put" look but is painted once. */
+:root[data-brand-theme="liquid-glass"] body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background-image:
     linear-gradient(125deg, hsl(216 48% 96%), hsl(190 40% 96%) 48%, hsl(38 42% 97%)),
     linear-gradient(24deg, transparent 12%, hsl(205 88% 68% / 0.18) 34%, transparent 56%),
     linear-gradient(154deg, transparent 26%, hsl(35 92% 68% / 0.15) 52%, transparent 74%),
     linear-gradient(92deg, transparent 5%, hsl(173 58% 64% / 0.10) 27%, transparent 48%),
     repeating-linear-gradient(118deg, transparent 0 76px, hsl(220 40% 35% / 0.022) 77px 78px);
-  background-attachment: fixed;
   background-size: cover, 150% 150%, 145% 145%, 165% 165%, auto;
 }
 
 :root.dark body {
   background-color: hsl(0 0% 5%);
+}
+
+:root.dark body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background-image:
     linear-gradient(145deg, hsl(0 0% 4%), hsl(220 10% 7%) 52%, hsl(20 10% 6%)),
     linear-gradient(28deg, transparent 20%, hsl(205 72% 42% / 0.08) 44%, transparent 68%),
     linear-gradient(154deg, transparent 34%, hsl(28 82% 46% / 0.08) 58%, transparent 80%);
-  background-attachment: fixed;
   background-size: cover, 180% 180%, 170% 170%;
 }
 
