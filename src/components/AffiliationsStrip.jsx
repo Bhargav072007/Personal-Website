@@ -27,23 +27,23 @@ export default function AffiliationsStrip() {
           {ALL.map((aff, i) => (
             <div
               key={i}
-              className="flex w-40 sm:w-48 md:w-56 items-center justify-center whitespace-nowrap cursor-default select-none hover:scale-105 transition-transform duration-200"
+              className="flex w-36 sm:w-44 md:w-52 lg:w-56 items-center justify-center whitespace-nowrap cursor-default select-none hover:scale-105 transition-transform duration-200"
             >
               {aff.logoDark ? (
                 <>
                   <img
                     src={aff.logo}
                     alt={aff.name}
-                    className="h-20 sm:h-24 md:h-32 w-full object-contain dark:hidden"
+                    className="h-14 sm:h-20 md:h-24 lg:h-28 w-full object-contain dark:hidden"
                   />
                   <img
                     src={aff.logoDark}
                     alt={aff.name}
-                    className="hidden h-20 sm:h-24 md:h-32 w-full object-contain dark:block"
+                    className="hidden h-14 sm:h-20 md:h-24 lg:h-28 w-full object-contain dark:block"
                   />
                 </>
               ) : (
-                <img src={aff.logo} alt={aff.name} className="h-20 sm:h-24 md:h-32 w-full object-contain" />
+                <img src={aff.logo} alt={aff.name} className="h-14 sm:h-20 md:h-24 lg:h-28 w-full object-contain dark:brightness-0 dark:invert dark:opacity-80" />
               )}
             </div>
           ))}

@@ -50,7 +50,7 @@ export default function ContactSection() {
             <a
               href="/assets/resume/updated-resume.pdf"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
             >
               <Button
                 size="lg"

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const PORTRAIT_URL = "/assets/base44/51fc701c8_1775783839100.png";
+const PORTRAIT_URL = "/assets/base44/bhargav-about-image.jpeg";
 const GREETINGS = [
   "Hi",
   "नमस्ते",

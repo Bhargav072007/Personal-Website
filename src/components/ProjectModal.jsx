@@ -1,14 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowUpRight, ChevronLeft, ChevronRight, Download, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function ProjectModal({ project, onClose }) {
   const [galleryIndex, setGalleryIndex] = useState(0);
-  if (!project) return null;
 
-  const gallery = project.gallery || [project.image].filter(Boolean);
+  const gallery = project?.gallery || [project?.image].filter(Boolean);
   const hasManyImages = gallery.length > 1;
+
+  useEffect(() => {
+    setGalleryIndex(0);
+    gallery.forEach((src) => {
+      if (!src) return;
+      const image = new Image();
+      image.src = src;
+    });
+  }, [project]);
+
+  if (!project) return null;
 
   const prev = (e) => { e.stopPropagation(); setGalleryIndex((i) => (i - 1 + gallery.length) % gallery.length); };
   const next = (e) => { e.stopPropagation(); setGalleryIndex((i) => (i + 1) % gallery.length); };
@@ -119,14 +129,14 @@ export default function ProjectModal({ project, onClose }) {
                 </a>
               )}
               {project.pdfLink && (
-                <a href={project.pdfLink} target="_blank" rel="noopener noreferrer" download>
+                <a href={project.pdfLink} target="_blank" rel="noopener" download>
                   <Button variant="outline" className="gap-2">
                     <Download className="w-4 h-4" /> {project.pdfLabel || "Download PDF"}
                   </Button>
                 </a>
               )}
               {project.pdfLink2 && (
-                <a href={project.pdfLink2} target="_blank" rel="noopener noreferrer" download>
+                <a href={project.pdfLink2} target="_blank" rel="noopener" download>
                   <Button variant="outline" className="gap-2">
                     <Download className="w-4 h-4" /> {project.pdfLabel2 || "Download PDF"}
                   </Button>

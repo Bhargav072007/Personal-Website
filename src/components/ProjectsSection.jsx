@@ -14,12 +14,11 @@ const PROJECTS = [
       "Assurance-focused thinking for autonomous systems",
       "Thesis-oriented research direction",
     ],
-    image: "/assets/base44/ecbdc876f_image.png",
+    image: "/assets/base44/meghyanai-1.png",
     gallery: [
-      "/assets/base44/ecbdc876f_image.png",
-      "/assets/base44/1a3486330_image.png",
-      "/assets/base44/b534440b2_image.png",
-      "/assets/base44/bf86a4d84_image.png",
+      "/assets/base44/meghyanai-1.png",
+      "/assets/base44/meghyanai-3.png",
+      "/assets/base44/meghyanai-2.png",
     ],
     link: "https://meghyanai.com",
     linkLabel: "Visit Website",
@@ -29,33 +28,6 @@ const PROJECTS = [
     pdfLabel2: "Download Research Abstract",
     accent: "from-sky-500/20 to-blue-500/20",
     accentBorder: "group-hover:border-sky-400/40",
-  },
-  {
-    title: "SmartEvent",
-    tag: "Product | Startup",
-    cardLogo: "/assets/base44/fc281c144_SmartEVent.png",
-    description: "A smart venue and event intelligence platform designed to improve crowd movement, event operations, and live attendee experience.",
-    bullets: [
-      "Built around real-time crowd-aware event operations",
-      "Focused on venue navigation, attendee flow, and organizer insights",
-      "Explores intelligent routing, queue visibility, and operational efficiency",
-      "Designed with product thinking, startup execution, and live-event scalability in mind",
-    ],
-    image: "/assets/base44/77f725ce5_WhatsAppImage2026-03-30at64926PM.jpeg",
-    gallery: [
-      "/assets/base44/77f725ce5_WhatsAppImage2026-03-30at64926PM.jpeg",
-      "/assets/base44/bcd8db94e_WhatsAppImage2026-03-30at64925PM.jpeg",
-      "/assets/base44/a068a4cde_WhatsAppImage2026-03-30at64926PM1.jpeg",
-      "/assets/base44/260fc8e58_WhatsAppImage2026-03-30at64926PM2.jpeg",
-      "/assets/base44/17af16ba0_WhatsAppImage2026-03-30at64926PM3.jpeg",
-      "/assets/base44/978bf1c21_WhatsAppImage2026-03-30at64926PM4.jpeg",
-    ],
-    link: "https://smartevent.base44.app",
-    linkLabel: "View SmartEvent",
-    youtubeLink: "https://youtu.be/ZlHUjXczBPc",
-    youtubeLinkLabel: "Watch Demo",
-    accent: "from-orange-500/20 to-amber-500/20",
-    accentBorder: "group-hover:border-amber-400/40",
   },
   {
     title: "The Arogí Foundation",
@@ -128,20 +100,55 @@ const PROJECTS = [
     accentBorder: "group-hover:border-rose-400/40",
   },
   {
-    title: "AI + Career Systems",
-    tag: "AI | Research",
-    description: "Designing a decision-support system for career guidance, not a generic chatbot. Built around intent modeling and structured feedback loops.",
+    title: "SETMIND",
+    tag: "Product | Hackathon",
+    isWinner: true,
+    description: "Hackathon-winning AI-powered set preparation assistant for DJs — real-time crowd analysis, AI-generated set architecture, and live transition planning.",
     bullets: [
-      "Intent modeling based on user input patterns",
-      "Multilingual and varied input handling",
-      "Iterative refinement using feedback loops",
-      "Tested with 150+ students in an ongoing study",
-      "Focused on reducing the access gap in structured career decision-making",
+      "Real-time crowd analysis through Crowd AI and AI-generated set architecture through Set Plan",
+      "Live dual-deck interface with an AI Mixer that plans transitions using BPM, key, energy, and phrase timing",
+      "AI Prompter that responds to natural requests like \"make it darker\" or \"build to peak\"",
+      "Built full-stack with a Node.js backend and React frontend, powered by Crusoe Cloud's Nemotron model",
+      "Hackathon winner across DevNetwork AI + ML Hackathon 2026 and DeveloperWeek New York 2026",
     ],
-    image: "/assets/base44/f9a33e994_GuideBot.png",
+    image: "https://img.youtube.com/vi/v4fAETmxMKs/hqdefault.jpg",
     gallery: [
-      "/assets/base44/f9a33e994_GuideBot.png",
+      "https://img.youtube.com/vi/v4fAETmxMKs/hqdefault.jpg",
+      "/assets/base44/setmind-1.jpg",
+      "/assets/base44/setmind-2.jpg",
+      "/assets/base44/setmind-3.jpg",
+      "/assets/base44/setmind-4.jpg",
+      "/assets/base44/setmind-5.jpg",
+      "/assets/base44/setmind-6.jpg",
     ],
+    link: "https://setmind-l2sq.onrender.com",
+    linkLabel: "Visit SETMIND",
+    youtubeLink: "https://youtu.be/v4fAETmxMKs",
+    youtubeLinkLabel: "Watch Demo",
+    accent: "from-red-500/20 to-orange-500/20",
+    accentBorder: "group-hover:border-red-400/40",
+  },
+  {
+    title: "CriShirt",
+    tag: "Product | Hackathon",
+    isWinner: true,
+    description: "Hackathon-winning AI-curated custom apparel studio — turns a prompt into personalized clothing designs previewed across garments.",
+    bullets: [
+      "AI design generation from a text prompt, with automatic background removal and cleanup for apparel-ready graphics",
+      "Multi-garment preview across T-shirts, hoodies, sweatshirts, crop tops, and long-sleeve tees",
+      "AI-powered style suggestions for garment color, print contrast, and design fit",
+      "Full cart-ready commerce flow",
+      "Hackathon winner, recognized in the Summer Hackathon 2026 Winner Internship Opportunities track",
+    ],
+    image: "https://img.youtube.com/vi/aKtH_DBFaYA/hqdefault.jpg",
+    gallery: [
+      "https://img.youtube.com/vi/aKtH_DBFaYA/hqdefault.jpg",
+      "/assets/base44/crishirt-1.jpg",
+    ],
+    link: "https://crishirtpc.vercel.app",
+    linkLabel: "Visit CriShirt",
+    youtubeLink: "https://youtu.be/aKtH_DBFaYA",
+    youtubeLinkLabel: "Watch Demo",
     accent: "from-violet-500/20 to-purple-500/20",
     accentBorder: "group-hover:border-violet-400/40",
   },
@@ -180,6 +187,11 @@ export default function ProjectsSection() {
               className={`glass glass-panel glass-interactive group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 ${project.accentBorder}`}
             >
               <div className="relative h-44 overflow-hidden">
+                {project.isWinner && (
+                  <span className="absolute top-[18px] -left-[38px] w-[150px] text-center py-[5px] -rotate-[40deg] bg-gradient-to-br from-[#f7d774] to-[#c9971f] text-[#3a2a05] text-[10.5px] font-extrabold tracking-[0.09em] uppercase shadow-[0_4px_10px_rgba(0,0,0,0.35)] border border-white/50 z-10">
+                    Winner
+                  </span>
+                )}
                 {project.cardLogo ? (
                   <div className="glass glass-media w-full h-full flex items-center justify-center p-6">
                     <img src={project.cardLogo} alt={project.title} className="max-h-36 w-auto object-contain" />

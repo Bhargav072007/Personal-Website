@@ -3,7 +3,7 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
-const CURRENTLY_BUILDING = ["SmartEvent", "Quantum-Assisted Assurance", "AI + Career Systems", "AviationAI"];
+const CURRENTLY_BUILDING = ["SETMIND", "Quantum-Assisted Assurance", "CriShirt", "AviationAI"];
 const PORTRAIT_URL = "/assets/base44/51fc701c8_1775783839100.png";
 
 export default function HeroSection() {
@@ -57,7 +57,7 @@ export default function HeroSection() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="order-3 mx-auto w-full max-w-xs sm:max-w-sm lg:col-start-2 lg:row-span-5 lg:row-start-1 lg:max-w-sm lg:self-center lg:justify-self-center"
           >
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
+            <div className="liquid-tilt relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
               <img
                 src={PORTRAIT_URL}
                 alt="Bhargav Malluvajhula"

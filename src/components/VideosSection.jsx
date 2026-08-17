@@ -3,14 +3,19 @@ import { Play } from "lucide-react";
 
 const VIDEOS = [
   {
-    title: "SmartEvent Demo",
-    youtubeId: "ZlHUjXczBPc",
-    description: "Live demo showcasing SmartEvent's venue intelligence and crowd management features.",
+    title: "The Arogi Foundation",
+    youtubeId: "pCtQrJdey8w",
+    description: "Overview of The Arogi Foundation and its impact on community and opportunity access.",
   },
   {
-    title: "The Arogí Foundation",
-    youtubeId: "pCtQrJdey8w",
-    description: "Overview of The Arogí Foundation and its impact on community and opportunity access.",
+    title: "CriShirt Demo",
+    youtubeId: "aKtH_DBFaYA",
+    description: "Hackathon-winning demo of CriShirt, the AI-curated custom apparel studio.",
+  },
+  {
+    title: "SETMIND Demo",
+    youtubeId: "v4fAETmxMKs",
+    description: "Hackathon-winning demo of SETMIND, the AI-powered set preparation assistant for DJs.",
   },
   {
     title: "Dare to Disrupt Challenge",
@@ -36,7 +41,7 @@ export default function VideosSection() {
           </h2>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
           {VIDEOS.map((video, i) => (
             <motion.a
               key={video.youtubeId}
@@ -51,10 +56,9 @@ export default function VideosSection() {
               className="group cursor-pointer"
             >
               <div className="glass glass-panel glass-interactive relative rounded-2xl overflow-hidden transition-all duration-300">
-                {/* Thumbnail */}
-                <div className="relative h-48 overflow-hidden bg-gradient-to-br from-slate-700 to-slate-900">
+                <div className="relative h-64 overflow-hidden bg-gradient-to-br from-slate-700 to-slate-900">
                   <img
-                    src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
+                    src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`}
                     alt={video.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -66,12 +70,11 @@ export default function VideosSection() {
                   </div>
                 </div>
 
-                {/* Content */}
-                <div className="p-4">
-                  <h3 className="text-base font-bold text-foreground mb-2 line-clamp-2 group-hover:text-foreground/90">
+                <div className="p-5">
+                  <h3 className="text-lg font-bold text-foreground mb-2 line-clamp-2 group-hover:text-foreground/90">
                     {video.title}
                   </h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">
+                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
                     {video.description}
                   </p>
                 </div>

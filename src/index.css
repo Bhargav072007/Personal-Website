@@ -41,10 +41,10 @@
     --body-grid-opacity: 0;
 
     /* Liquid Glass material tokens — light (clear optical glass) */
-    --glass-bg: 0 0% 100% / 0.10;
-    --glass-blur: 10px;
-    --glass-saturate: 150%;
-    --glass-border: 0 0% 100% / 0.58;
+    --glass-bg: 0 0% 100% / 0.20;
+    --glass-blur: 20px;
+    --glass-saturate: 180%;
+    --glass-border: 0 0% 100% / 0.65;
     --glass-highlight: 0 0% 100% / 0.85;
     --glass-inner: 220 40% 10% / 0.05;
     --glass-shadow: 0 14px 36px -20px hsl(220 30% 18% / 0.32);
@@ -607,8 +607,31 @@
     inset 0 -1px 0 hsl(0 0% 0% / 0.4);
 }
 
-:root.dark .affiliations-strip img {
-  filter: brightness(0) invert(1) opacity(0.82);
+.affiliation-logo-slot {
+  width: clamp(140px, 16vw, 220px);
+}
+
+.affiliation-logo {
+  height: clamp(56px, 8vw, 96px);
+}
+
+.winner-ribbon {
+  position: absolute;
+  top: 18px;
+  left: -38px;
+  z-index: 20;
+  width: 150px;
+  transform: rotate(-40deg);
+  background: linear-gradient(135deg, #f7d774, #c9971f);
+  color: #3a2a05;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  line-height: 1;
+  padding: 7px 0;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: 0 10px 24px -16px hsl(42 72% 36% / 0.72);
 }
 
 /* Hero photo badges — image-aware glass with local contrast protection so the
@@ -959,4 +982,391 @@
   background: hsl(var(--primary));
   border-color: hsl(var(--primary));
   box-shadow: 0 12px 28px -18px hsl(var(--primary) / 0.7);
+}
+
+/* Performance-first theme pass.
+   The site now supports only a stable light mode and dark mode. This layer
+   intentionally removes SVG distortion, backdrop filters, and animated
+   specular planes from scrollable surfaces so page scrolling stays smooth. */
+:root[data-brand-theme="light"],
+:root[data-brand-theme="dark"] {
+  --glass-blur: 0px;
+  --glass-saturate: 100%;
+}
+
+:root[data-brand-theme="light"] {
+  color-scheme: light;
+  --glass-bg: 0 0% 100% / 0.86;
+  --glass-bg-strong: 0 0% 100% / 0.92;
+  --glass-border: 220 22% 82% / 0.72;
+  --glass-highlight: 0 0% 100% / 0.95;
+  --glass-inner: 220 32% 18% / 0.06;
+  --glass-shadow: 0 16px 34px -26px hsl(220 32% 18% / 0.34);
+  --glass-shadow-pressed: 0 8px 18px -16px hsl(220 32% 18% / 0.32);
+  --glass-divider: 220 22% 34% / 0.12;
+}
+
+:root.dark[data-brand-theme="dark"] {
+  color-scheme: dark;
+  --glass-bg: 0 0% 12% / 0.74;
+  --glass-bg-strong: 0 0% 13% / 0.88;
+  --glass-border: 0 0% 100% / 0.12;
+  --glass-highlight: 0 0% 100% / 0.14;
+  --glass-inner: 0 0% 0% / 0.35;
+  --glass-shadow: 0 18px 38px -24px hsl(0 0% 0% / 0.76);
+  --glass-shadow-pressed: 0 8px 20px -16px hsl(0 0% 0% / 0.72);
+  --glass-divider: 0 0% 100% / 0.10;
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) body::before,
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) .liquid-glass-defs {
+  display: none !important;
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) :is(
+  .glass,
+  .glass-nav,
+  .affiliations-strip
+) {
+  background-color: hsl(var(--glass-bg-strong));
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  border-color: hsl(var(--glass-border));
+  box-shadow:
+    inset 0 1px 0 hsl(var(--glass-highlight)),
+    inset 0 -1px 0 hsl(var(--glass-inner)),
+    var(--glass-shadow);
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) :is(
+  .glass,
+  .glass-nav,
+  .affiliations-strip
+)::before,
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) :is(
+  .glass,
+  .glass-nav,
+  .affiliations-strip
+)::after {
+  content: none !important;
+  display: none !important;
+  animation: none !important;
+  filter: none !important;
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) .glass-panel {
+  background-image:
+    linear-gradient(145deg, hsl(0 0% 100% / 0.18), transparent 42%);
+}
+
+:root.dark[data-brand-theme="dark"] .glass-panel {
+  background-image:
+    linear-gradient(145deg, hsl(0 0% 100% / 0.06), transparent 44%);
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) .glass-interactive {
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) .glass-interactive:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 hsl(var(--glass-highlight)),
+    inset 0 -1px 0 hsl(var(--glass-inner)),
+    0 18px 34px -26px hsl(var(--foreground) / 0.42);
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) .glass-interactive:active {
+  transform: translateY(0);
+  box-shadow:
+    inset 0 1px 0 hsl(var(--glass-highlight)),
+    var(--glass-shadow-pressed);
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) :is(
+  .bg-card,
+  .bg-popover,
+  [role="dialog"],
+  [role="menu"],
+  [data-radix-popper-content-wrapper] > div,
+  [role="tooltip"],
+  [data-sonner-toast],
+  [data-radix-toast-viewport] > *
+) {
+  background-color: hsl(var(--glass-bg-strong));
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  border-color: hsl(var(--glass-border));
+  box-shadow:
+    inset 0 1px 0 hsl(var(--glass-highlight)),
+    inset 0 -1px 0 hsl(var(--glass-inner)),
+    var(--glass-shadow);
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) :is(
+  input,
+  textarea,
+  select,
+  [role="combobox"],
+  .bg-secondary,
+  .bg-accent,
+  .bg-muted
+) {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) * {
+  scroll-behavior: auto;
+}
+
+/* Liquid Glass visual restoration.
+   Keep the simplified light/dark theme model, but restore Claude's frosted
+   material, aurora field, cursor sheen, magnetic controls, and hero tilt. */
+@keyframes auroraDrift {
+  0% {
+    background-position: 0% 0%, 12% 20%, 88% 82%;
+  }
+  100% {
+    background-position: 0% 0%, 92% 62%, 8% 32%;
+  }
+}
+
+@keyframes shimmerText {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+:root[data-brand-theme="light"] {
+  --glass-bg: 0 0% 100% / 0.20;
+  --glass-bg-strong: 0 0% 100% / 0.26;
+  --glass-blur: 20px;
+  --glass-saturate: 180%;
+  --glass-border: 0 0% 100% / 0.65;
+  --glass-highlight: 0 0% 100% / 0.90;
+  --glass-inner: 220 38% 12% / 0.05;
+  --glass-shadow: 0 24px 48px -28px rgba(20, 30, 60, 0.35);
+  --glass-shadow-pressed: 0 12px 28px -22px rgba(20, 30, 60, 0.35);
+  --glass-tint-cool: 216 100% 64% / 0.10;
+  --glass-tint-warm: 36 78% 57% / 0.10;
+  --glass-sheen: 0 0% 100% / 0.55;
+}
+
+:root.dark[data-brand-theme="dark"] {
+  --glass-bg: 0 0% 100% / 0.055;
+  --glass-bg-strong: 0 0% 100% / 0.075;
+  --glass-blur: 18px;
+  --glass-saturate: 145%;
+  --glass-border: 0 0% 100% / 0.14;
+  --glass-highlight: 0 0% 100% / 0.18;
+  --glass-inner: 0 0% 0% / 0.38;
+  --glass-shadow: 0 24px 52px -30px hsl(0 0% 0% / 0.82);
+  --glass-shadow-pressed: 0 10px 24px -18px hsl(0 0% 0% / 0.76);
+  --glass-tint-cool: 205 100% 65% / 0.08;
+  --glass-tint-warm: 32 100% 62% / 0.12;
+  --glass-sheen: 32 100% 78% / 0.24;
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) body {
+  background-color: hsl(var(--background));
+  background-image: none;
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) body::before {
+  content: "" !important;
+  display: block !important;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(135deg, #eef2f8, #eaf5f1 45%, #fbf2e6),
+    linear-gradient(28deg, transparent 16%, rgba(70, 140, 255, 0.16) 42%, transparent 64%),
+    linear-gradient(152deg, transparent 24%, rgba(230, 160, 60, 0.14) 54%, transparent 78%);
+  background-size: cover, 180% 180%, 170% 170%;
+  animation: auroraDrift 26s ease-in-out infinite alternate;
+  transform: translateZ(0);
+}
+
+:root.dark[data-brand-theme="dark"] body::before {
+  background-image:
+    linear-gradient(145deg, hsl(0 0% 4%), hsl(220 10% 7%) 52%, hsl(20 10% 6%)),
+    linear-gradient(28deg, transparent 18%, hsl(205 72% 42% / 0.09) 44%, transparent 68%),
+    linear-gradient(154deg, transparent 30%, hsl(28 82% 46% / 0.10) 58%, transparent 80%);
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) .min-h-screen.bg-background {
+  background-color: transparent;
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) :is(
+  .glass,
+  .glass-nav,
+  .affiliations-strip
+) {
+  isolation: isolate;
+  overflow: hidden;
+  background-color: hsl(var(--glass-bg));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) !important;
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) !important;
+  border-color: hsl(var(--glass-border));
+  box-shadow:
+    inset 0 1px 0 hsl(var(--glass-highlight)),
+    inset 0 -1px 0 hsl(var(--glass-inner)),
+    var(--glass-shadow);
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) .glass {
+  border: 1px solid hsl(var(--glass-border));
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) :is(
+  .glass,
+  .glass-nav,
+  .affiliations-strip
+)::before {
+  content: none !important;
+  display: none !important;
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) :is(
+  .glass,
+  .glass-nav,
+  .affiliations-strip
+)::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  filter: none !important;
+  background:
+    radial-gradient(240px circle at var(--mx, 50%) var(--my, 0%), hsl(var(--glass-sheen)), transparent 62%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.20), transparent 34%),
+    linear-gradient(315deg, rgba(70, 140, 255, 0.10), transparent 46%);
+  opacity: 0.78;
+}
+
+:root.dark[data-brand-theme="dark"] :is(.glass, .glass-nav, .affiliations-strip)::after {
+  background:
+    radial-gradient(240px circle at var(--mx, 50%) var(--my, 0%), hsl(var(--glass-sheen)), transparent 62%),
+    linear-gradient(135deg, hsl(0 0% 100% / 0.08), transparent 34%),
+    linear-gradient(315deg, hsl(var(--glass-tint-warm)), transparent 46%);
+  opacity: 0.68;
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) .glass.glass-panel {
+  background-color: hsl(var(--glass-bg));
+  background-image:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.20), transparent 34%),
+    linear-gradient(315deg, rgba(70, 140, 255, 0.10), transparent 46%);
+  border-color: hsl(var(--glass-border));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(15, 25, 45, 0.05),
+    0 24px 48px -28px rgba(20, 30, 60, 0.35);
+}
+
+:root.dark[data-brand-theme="dark"] .glass.glass-panel {
+  background-color: hsl(var(--glass-bg));
+  background-image:
+    linear-gradient(135deg, hsl(0 0% 100% / 0.08), transparent 34%),
+    linear-gradient(315deg, hsl(var(--glass-tint-warm)), transparent 46%);
+  box-shadow:
+    inset 0 1px 0 hsl(var(--glass-highlight)),
+    inset 0 -1px 0 hsl(var(--glass-inner)),
+    var(--glass-shadow);
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) .glass.glass-primary {
+  color: white;
+  background-color: rgba(47, 95, 217, 0.72);
+  background-image:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.26), transparent 40%),
+    linear-gradient(120deg, rgba(47, 95, 217, 0.88), rgba(31, 143, 121, 0.78));
+  border-color: rgba(255, 255, 255, 0.34);
+  border-radius: 12px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.32),
+    0 18px 34px -20px rgba(47, 95, 217, 0.70);
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) :is(
+  .glass-interactive:not(.glass-primary),
+  .glass.flex.h-7.w-7,
+  .glass.max-w-full.rounded-full
+) {
+  background-color: hsl(var(--glass-bg));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) !important;
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) !important;
+  border: 1px solid hsl(var(--glass-border));
+  box-shadow:
+    inset 0 1px 0 hsl(var(--glass-highlight)),
+    inset 0 -1px 0 hsl(var(--glass-inner)),
+    var(--glass-shadow);
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) .glass-interactive {
+  transform: translate3d(var(--magnet-x, 0px), var(--magnet-y, 0px), 0);
+  transition:
+    transform 180ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) .glass-interactive:active {
+  transform: translate3d(var(--magnet-x, 0px), var(--magnet-y, 0px), 0) scale(0.975);
+  box-shadow:
+    inset 0 1px 0 hsl(var(--glass-highlight)),
+    var(--glass-shadow-pressed);
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) .text-gradient-theme {
+  background-image: linear-gradient(90deg, hsl(220 78% 56%), hsl(173 58% 42%), hsl(220 78% 56%));
+  background-size: 200% 100%;
+  animation: shimmerText 7s ease-in-out infinite alternate;
+}
+
+.liquid-tilt {
+  transform:
+    perspective(900px)
+    rotateX(var(--tilt-x, 0deg))
+    rotateY(var(--tilt-y, 0deg));
+  transform-style: preserve-3d;
+  transition: transform 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: transform;
+}
+
+.liquid-tilt img {
+  transform: translateZ(0);
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) .hero-badge {
+  background-color: hsl(var(--glass-bg-strong));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) !important;
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) !important;
+  border-color: hsl(var(--glass-border));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) body::before,
+  :is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) .text-gradient-theme {
+    animation: none;
+  }
+
+  .liquid-tilt,
+  :is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) .glass-interactive {
+    transform: none;
+  }
 }

@@ -2,41 +2,49 @@ import { motion } from "framer-motion";
 
 const AROGI_IMG = "/assets/base44/b57349fbd_F004_AYIMUN-XIV_IMGL02751.jpg";
 
-// Logos reused from the affiliations strip (light versions only — kept
-// identical in light and dark mode for the experience timeline).
 const LOGOS = {
   omega: { src: "/assets/base44/f15f981d2_OmegaChiSigma.png" },
   aviation: { src: "/assets/base44/5d8e8a4ad_AviationAI.png" },
-  pennState: { src: "/assets/base44/b0e3ee36b_Penn-State-University-Logo-2015-present.png" },
-  arogi: { src: "/assets/base44/7a114f6b7_Arogi.png" },
-  smartEvent: { src: "/assets/base44/fc281c144_SmartEVent.png" },
+  cloudangles: { src: "/assets/base44/cloudangles-logo-experience.png" },
+  arogiNew: { src: "/assets/base44/arogi-new-logo.png" },
+  pennState: { src: "/assets/base44/pennstate-logo-experience.png" },
 };
 
 const TIMELINE = [
   {
-    date: "Apr 2026 - Present",
-    role: "Vice President",
-    org: "Omega Chi Sigma PSU",
+    date: "Present",
+    role: "EECS Learning Assistant",
+    org: "CMPSC 360 — Penn State University",
     description:
-      "Serving as Vice President of Omega Chi Sigma at Penn State, helping lead chapter direction, strengthen member initiatives, and support philanthropic and community impact efforts.",
+      "Supporting students in CMPSC 360 (Discrete Mathematics) through office hours, guided problem-solving, and grading, helping reinforce core computer science and discrete math concepts.",
+    color: "bg-blue-500",
+    dot: "bg-blue-500",
+    logo: LOGOS.pennState,
+  },
+  {
+    date: "Feb 2026 - Present",
+    role: "Vice President",
+    org: "Omega Chi Sigma (STEM Business Frat)",
+    description:
+      "Advanced Omega Chi Sigma's engagement with the Smeal Business Council and secured Happy Valley LaunchBox as a collaborator, while coordinating speakers from AWS and BNY. Conceptualized a fundraising dinner for THON by developing partnerships with local businesses.",
     color: "bg-rose-500",
     dot: "bg-rose-500",
     logo: LOGOS.omega,
   },
   {
-    date: "Feb 2026 - Apr 2026",
-    role: "Philanthropy Chair",
-    org: "Omega Chi Sigma PSU",
+    date: "Jan 2026 - Present",
+    role: "Research Lead",
+    org: "Supervised by Prof. Mahfuza Farooque",
     description:
-      "Led the chapter's philanthropic efforts by building initiatives beyond THON, strengthening local partnerships, and creating measurable community impact.",
-    color: "bg-rose-400",
-    dot: "bg-rose-400",
-    logo: LOGOS.omega,
+      "Developed the Quantum Target Distillation architecture, combining a 4–8–1 neural teacher, a 3-qubit RY/CZ quantum refinement circuit, and a logistic-regression student to rank rare aviation failures across 256 simulated encounter states; submitted the work to IEEE ICTAI 2026.",
+    color: "bg-violet-500",
+    dot: "bg-violet-500",
+    logo: LOGOS.pennState,
   },
   {
-    date: "Jan 2026 - Present",
+    date: "Dec 2025 - Present",
     role: "President",
-    org: "AviationAI @ Penn State",
+    org: "AviationAI (Penn State Student Organization)",
     description:
       "Leading a student-run AI initiative affiliated with State College Regional Airport, developing AI- and IoT-driven solutions for airport operations and security systems.",
     color: "bg-sky-500",
@@ -44,44 +52,24 @@ const TIMELINE = [
     logo: LOGOS.aviation,
   },
   {
-    date: "Jan 2026 - Present",
-    role: "Research Lead",
-    org: "Quantum-Assisted Assurance for Autonomous Aviation Systems",
+    date: "May 2026 - July 2027",
+    role: "Quantum Intern",
+    org: "CloudAngles",
     description:
-      "Contributing to an active quantum computing project, working on algorithmic modeling, simulation, and performance analysis of quantum systems. Working on a thesis.",
-    color: "bg-violet-500",
-    dot: "bg-violet-500",
-    logo: LOGOS.pennState,
+      "Worked on the quantum team by developing a flood prediction system using Quandela's MerLin QML framework and designing an optimized photonic circuit with phase shifters and beam splitters.",
+    color: "bg-cyan-500",
+    dot: "bg-cyan-500",
+    logo: LOGOS.cloudangles,
   },
   {
     date: "Apr 2023 - Present",
-    role: "Founder",
-    org: "The Arogi Foundation",
+    role: "Founder & Director",
+    org: "The Arogí Foundation",
     description:
-      "Established and expanded an NGO dedicated to improving the lives of orphans through birthday celebrations, capacity building, and career guidance. Led 60+ volunteers and executed 150+ projects, raising over $5,000. Recognized by the Hon'ble President of India and affiliated with the United Nations SDGs and Football for the Goals initiatives.",
+      "Established and expanded an NGO dedicated to improving the lives of orphans through birthday celebrations, capacity building, and career guidance. Led 60+ volunteers and executed 150+ projects, raising over $5,000. Recognized by the Hon'ble President of India and affiliated with the United Nations SDGs and Football for the Goals initiatives. Led a large-scale MUN (Arogí MUN'25) at BGS, Bengaluru, managing 100+ delegates, 8+ schools, and 50+ volunteers — raising $2,000+, securing partnerships, and assembling a distinguished Executive Board.",
     color: "bg-emerald-500",
     dot: "bg-emerald-500",
-    logo: LOGOS.arogi,
-  },
-  {
-    date: "Apr 2025 - Aug 2025",
-    role: "Founder",
-    org: "Arogi MUN '25",
-    description:
-      "Conceptualized and organized a large-scale MUN hosted at BGS IRS, Bengaluru. Oversaw 100+ delegates, 8+ schools, and 50+ volunteers. Raised over $2,000, established partnerships, and curated one of the most distinguished executive boards in Bengaluru's MUN circuit.",
-    color: "bg-amber-500",
-    dot: "bg-amber-500",
-    logo: LOGOS.arogi,
-  },
-  {
-    date: "2025 - Present",
-    role: "Founder / Product Builder",
-    org: "SmartEvent",
-    description:
-      "Built a smart venue concept focused on event intelligence, attendee experience, crowd flow, and operational decision support for live events and venues.",
-    color: "bg-orange-500",
-    dot: "bg-orange-500",
-    logo: LOGOS.smartEvent,
+    logo: LOGOS.arogiNew,
   },
 ];
 
@@ -124,14 +112,13 @@ export default function TimelineSection() {
           <div className="space-y-12">
             {TIMELINE.map((entry, i) => (
               <motion.div
-                key={i}
+                key={`${entry.role}-${entry.org}`}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="glass glass-panel relative ml-10 rounded-lg p-5 pl-6 lg:ml-16 lg:p-6 group"
               >
-                {/* Timeline node on the rail */}
                 <span className="absolute -left-[34px] lg:-left-[43px] top-7 flex h-3 w-3 items-center justify-center">
                   <span
                     className={`absolute inline-flex h-full w-full rounded-full ${entry.dot} opacity-60 group-hover:animate-ping`}
@@ -141,12 +128,10 @@ export default function TimelineSection() {
                   />
                 </span>
 
-                {/* Connector line from the rail to the card */}
                 <span
                   className={`absolute top-[34px] h-px -left-[28px] w-7 lg:-left-[37px] lg:w-9 ${entry.dot} opacity-50`}
                 />
 
-                {/* Caret pointing back toward the timeline */}
                 <span
                   className="absolute -left-[7px] top-[28px] h-3.5 w-3.5 rotate-45 rounded-[3px] glass glass-panel border-l border-b border-border"
                   aria-hidden="true"
@@ -160,7 +145,7 @@ export default function TimelineSection() {
                     <p className="text-sm font-medium text-muted-foreground">{entry.org}</p>
                   </div>
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl mt-3">{entry.description}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed max-w-3xl mt-3">{entry.description}</p>
               </motion.div>
             ))}
           </div>
