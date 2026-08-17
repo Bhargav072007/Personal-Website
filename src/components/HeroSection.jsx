@@ -10,7 +10,7 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="heritage-surface relative flex min-h-0 items-center overflow-hidden">
-      <div className="mx-auto w-full max-w-7xl px-5 pb-10 pt-28 sm:px-6 sm:pb-12 lg:px-8 lg:py-20">
+      <div className="mx-auto w-full max-w-7xl px-5 pb-10 pt-28 sm:px-6 sm:pb-12 lg:px-8 lg:pb-20 lg:pt-24">
         {/* DOM order is the mobile order. On lg, explicit grid placement builds
             a balanced two-column composition (text left, portrait right). */}
         <div className="grid grid-cols-1 gap-y-7 sm:gap-y-8 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6">
