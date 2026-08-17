@@ -3,7 +3,7 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
-const CURRENTLY_BUILDING = ["SETMIND", "Quantum-Assisted Assurance", "CriShirt", "AviationAI"];
+const CURRENTLY_BUILDING = ["SmartEvent", "Quantum-Assisted Assurance", "AI + Career Systems", "AviationAI"];
 const PORTRAIT_URL = "/assets/base44/51fc701c8_1775783839100.png";
 
 export default function HeroSection() {

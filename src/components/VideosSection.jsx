@@ -3,14 +3,14 @@ import { Play } from "lucide-react";
 
 const VIDEOS = [
   {
-    title: "The Arogi Foundation",
+    title: "The Arogí Foundation",
     youtubeId: "pCtQrJdey8w",
-    description: "Overview of The Arogi Foundation and its impact on community and opportunity access.",
+    description: "Overview of The Arogí Foundation and its impact on community and opportunity access.",
   },
   {
-    title: "CriShirt Demo",
-    youtubeId: "aKtH_DBFaYA",
-    description: "Hackathon-winning demo of CriShirt, the AI-curated custom apparel studio.",
+    title: "Dare to Disrupt Challenge",
+    youtubeId: "J3lEXCghZIk",
+    description: "Presentation at the Dare to Disrupt Challenge showcasing innovation and entrepreneurial thinking.",
   },
   {
     title: "SETMIND Demo",
@@ -18,9 +18,9 @@ const VIDEOS = [
     description: "Hackathon-winning demo of SETMIND, the AI-powered set preparation assistant for DJs.",
   },
   {
-    title: "Dare to Disrupt Challenge",
-    youtubeId: "J3lEXCghZIk",
-    description: "Presentation at the Dare to Disrupt Challenge showcasing innovation and entrepreneurial thinking.",
+    title: "CriShirt Demo",
+    youtubeId: "aKtH_DBFaYA",
+    description: "Hackathon-winning demo of CriShirt, the AI-curated custom apparel studio.",
   },
 ];
 

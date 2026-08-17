@@ -1370,3 +1370,37 @@
     transform: none;
   }
 }
+
+/* Neutral reference treatment: no page tint, cursor sheen, or magnetic drift. */
+:root[data-brand-theme="light"] {
+  --glass-bg: 0 0% 100% / 0.86;
+  --glass-bg-strong: 0 0% 100% / 0.92;
+  --glass-blur: 0px;
+  --glass-saturate: 100%;
+  --glass-border: 220 22% 82% / 0.72;
+  --glass-highlight: 0 0% 100% / 0.95;
+  --glass-inner: 220 32% 18% / 0.06;
+  --glass-shadow: 0 16px 34px -26px hsl(220 32% 18% / 0.34);
+  --glass-shadow-pressed: 0 8px 18px -16px hsl(220 32% 18% / 0.32);
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) body::before,
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) :is(.glass, .glass-nav, .affiliations-strip)::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  animation: none !important;
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) .glass.glass-panel {
+  background-color: hsl(var(--glass-bg-strong));
+  background-image: linear-gradient(145deg, hsl(0 0% 100% / 0.18), transparent 42%);
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) .glass-interactive {
+  transform: none !important;
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) .text-gradient-theme {
+  animation: none !important;
+}

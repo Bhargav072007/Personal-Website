@@ -8,7 +8,6 @@ import Honors from './pages/Honors';
 import Experience from './pages/Experience';
 import Contact from './pages/Contact';
 import ScrollToTopButton from './components/ScrollToTopButton';
-import { useLiquidInteractions } from './hooks/useLiquidInteractions';
 // Add page imports here
 
 const NotFound = () => (
@@ -54,8 +53,6 @@ const ScrollToTopOnRouteChange = () => {
 };
 
 function App() {
-  useLiquidInteractions();
-
   return (
     <Router>
       <ScrollToTopOnRouteChange />

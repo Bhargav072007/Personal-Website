@@ -14,11 +14,12 @@ const PROJECTS = [
       "Assurance-focused thinking for autonomous systems",
       "Thesis-oriented research direction",
     ],
-    image: "/assets/base44/meghyanai-1.png",
+    image: "/assets/base44/ecbdc876f_image.png",
     gallery: [
-      "/assets/base44/meghyanai-1.png",
-      "/assets/base44/meghyanai-3.png",
-      "/assets/base44/meghyanai-2.png",
+      "/assets/base44/ecbdc876f_image.png",
+      "/assets/base44/1a3486330_image.png",
+      "/assets/base44/b534440b2_image.png",
+      "/assets/base44/bf86a4d84_image.png",
     ],
     link: "https://meghyanai.com",
     linkLabel: "Visit Website",
@@ -154,6 +155,8 @@ const PROJECTS = [
   },
 ];
 
+const DISPLAY_PROJECTS = [PROJECTS[0], PROJECTS[4], PROJECTS[5], PROJECTS[1], PROJECTS[2], PROJECTS[3]];
+
 export default function ProjectsSection() {
   const [selected, setSelected] = useState(null);
 
@@ -175,7 +178,7 @@ export default function ProjectsSection() {
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {PROJECTS.map((project, i) => (
+          {DISPLAY_PROJECTS.map((project, i) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 30 }}
@@ -204,13 +207,9 @@ export default function ProjectsSection() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 )}
-                {!project.cardLogo && !project.cardLogoText && (
-                  <div className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-60`} />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
                 <span className="glass absolute top-3 right-3 text-xs font-medium tracking-wide text-foreground px-2.5 py-1 rounded-full">
                   {project.tag}
                 </span>
