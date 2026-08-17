@@ -108,7 +108,7 @@ export default function TimelineSection() {
         </motion.div>
 
         <div className="relative">
-          <div className="absolute left-4 lg:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-slate-400 via-slate-500/60 to-transparent" />
+          <div className="absolute left-4 lg:left-8 top-0 bottom-0 w-[1.3px] bg-gradient-to-b from-slate-400 via-slate-500/60 to-transparent" />
           <div className="space-y-12">
             {TIMELINE.map((entry, i) => (
               <motion.div
