@@ -1384,7 +1384,6 @@
   --glass-shadow-pressed: 0 8px 18px -16px hsl(220 32% 18% / 0.32);
 }
 
-:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) body::before,
 :is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) :is(.glass, .glass-nav, .affiliations-strip)::after {
   content: none !important;
   display: none !important;
