@@ -21,7 +21,7 @@ const RECOMMENDATIONS = [
 
 export default function RecommendationsSection() {
   return (
-    <section id="recommendations" className="py-20 lg:py-28 bg-primary/[0.02] border-y border-border">
+    <section id="recommendations" className="py-16 lg:py-20 bg-primary/[0.02] border-y border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -86,7 +86,7 @@ function CompanyLogo({ logo, alt }) {
 
 export default function TimelineSection() {
   return (
-    <section id="experience" className="py-20 lg:py-28 relative overflow-hidden border-y border-border">
+    <section id="experience" className="py-16 lg:py-20 relative overflow-hidden border-y border-border">
       <div
         className="absolute inset-0 bg-cover bg-center opacity-[0.12] pointer-events-none"
         style={{ backgroundImage: `url(${AROGI_IMG})` }}

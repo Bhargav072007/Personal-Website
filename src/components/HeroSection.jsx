@@ -3,15 +3,14 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
-const CURRENTLY_BUILDING = ["SmartEvent", "Quantum-Assisted Assurance", "AI + Career Systems", "AviationAI"];
 const PORTRAIT_URL = "/assets/base44/51fc701c8_1775783839100.png";
 
 export default function HeroSection() {
   const navigate = useNavigate();
 
   return (
-    <section id="home" className="heritage-surface relative flex min-h-0 items-center overflow-hidden lg:min-h-screen">
-      <div className="mx-auto w-full max-w-7xl px-5 pb-12 pt-28 sm:px-6 sm:pb-16 lg:px-8 lg:py-24">
+    <section id="home" className="heritage-surface relative flex min-h-0 items-center overflow-hidden">
+      <div className="mx-auto w-full max-w-7xl px-5 pb-10 pt-28 sm:px-6 sm:pb-12 lg:px-8 lg:py-20">
         {/* DOM order is the mobile order. On lg, explicit grid placement builds
             a balanced two-column composition (text left, portrait right). */}
         <div className="grid grid-cols-1 gap-y-7 sm:gap-y-8 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6">
@@ -35,9 +34,9 @@ export default function HeroSection() {
             transition={{ duration: 0.7 }}
             className="order-2 min-w-0 lg:col-start-1 lg:row-start-2"
           >
-            <h1 className="mb-5 min-w-0 text-4xl font-bold leading-[1.02] tracking-tight text-foreground sm:mb-6 sm:text-6xl lg:text-7xl">
+            <h1 className="mb-5 min-w-0 text-4xl font-bold leading-[1.1] tracking-tight text-foreground sm:mb-6 sm:text-6xl lg:text-7xl">
               <span className="block">Bhargav</span>
-              <span className="text-gradient-theme block max-w-full break-words font-serif text-[0.94em] font-normal italic sm:text-[1em]">
+              <span className="text-gradient-theme block max-w-full break-words pb-[0.08em] font-serif text-[0.94em] font-normal italic sm:text-[1em]">
                 Malluvajhula
               </span>
             </h1>
@@ -147,30 +146,6 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* 7 — Currently building (full-width, structured — not a floating card) */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          className="mt-9 border-t border-border pt-5 sm:mt-12 sm:pt-6"
-        >
-          <div className="flex min-w-0 flex-wrap items-center gap-2.5 sm:gap-3">
-            <span className="mr-1 w-full text-xs font-medium uppercase tracking-widest text-muted-foreground sm:mr-2 sm:w-auto">
-              Currently building
-            </span>
-            {CURRENTLY_BUILDING.map((item, i) => (
-              <motion.span
-                key={item}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.9 + i * 0.1 }}
-                className="glass max-w-full rounded-full px-3 py-1.5 text-xs font-medium text-foreground transition-colors cursor-default"
-              >
-                {item}
-              </motion.span>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

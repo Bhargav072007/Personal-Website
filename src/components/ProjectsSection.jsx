@@ -14,12 +14,11 @@ const PROJECTS = [
       "Assurance-focused thinking for autonomous systems",
       "Thesis-oriented research direction",
     ],
-    image: "/assets/base44/ecbdc876f_image.png",
+    image: "/assets/base44/meghyanai-1.png",
     gallery: [
-      "/assets/base44/ecbdc876f_image.png",
-      "/assets/base44/1a3486330_image.png",
-      "/assets/base44/b534440b2_image.png",
-      "/assets/base44/bf86a4d84_image.png",
+      "/assets/base44/meghyanai-1.png",
+      "/assets/base44/meghyanai-3.png",
+      "/assets/base44/meghyanai-2.png",
     ],
     link: "https://meghyanai.com",
     linkLabel: "Visit Website",
@@ -161,7 +160,7 @@ export default function ProjectsSection() {
   const [selected, setSelected] = useState(null);
 
   return (
-    <section id="projects" className="py-14 lg:py-20">
+    <section id="projects" className="py-12 lg:py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

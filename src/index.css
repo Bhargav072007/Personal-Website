@@ -1384,7 +1384,6 @@
   --glass-shadow-pressed: 0 8px 18px -16px hsl(220 32% 18% / 0.32);
 }
 
-:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) body::before,
 :is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) :is(.glass, .glass-nav, .affiliations-strip)::after {
   content: none !important;
   display: none !important;
@@ -1403,4 +1402,28 @@
 
 :is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) .text-gradient-theme {
   animation: none !important;
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) .font-serif.italic {
+  color: transparent;
+  background-image: linear-gradient(90deg, hsl(220 78% 56%), hsl(173 58% 42%));
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+:is(:root[data-brand-theme="light"], :root[data-brand-theme="dark"]) body::before {
+  content: "" !important;
+  display: block !important;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    url("/assets/base44/meghyanai-3.png"),
+    url("/assets/base44/setmind-1.jpg");
+  background-position: right -170px top 110px, left -180px bottom 90px;
+  background-repeat: no-repeat;
+  background-size: 560px auto, 500px auto;
+  filter: grayscale(1);
+  opacity: 0.15;
 }
