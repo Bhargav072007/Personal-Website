@@ -32,6 +32,7 @@ const PROJECTS = [
   {
     title: "The Arogí Foundation",
     tag: "Nonprofit | Impact",
+    tagTextClass: "text-black",
     description: "Founded and scaled a nonprofit focused on structured access to opportunity, recognized by the Hon'ble President of India.",
     bullets: [
       "Executed 150+ initiatives across education, capacity building, and community support",
@@ -54,6 +55,7 @@ const PROJECTS = [
   {
     title: "AviationAI",
     tag: "AI | Aviation",
+    tagTextClass: "text-black",
     description: "A student-led initiative developing AI and IoT-driven solutions for airport operations, security optimization, and passenger flow intelligence.",
     bullets: [
       "Developing AI and IoT-driven solutions for airport operations",
@@ -209,7 +211,7 @@ export default function ProjectsSection() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 )}
-                <span className="glass absolute top-3 right-3 text-xs font-medium tracking-wide text-foreground px-2.5 py-1 rounded-full">
+                <span className={`glass absolute top-3 right-3 rounded-full px-2.5 py-1 text-xs font-medium tracking-wide ${project.tagTextClass || "text-foreground"}`}>
                   {project.tag}
                 </span>
               </div>
