@@ -13,7 +13,7 @@ export default function HeroSection() {
       <div className="mx-auto w-full max-w-7xl px-5 pb-10 pt-28 sm:px-6 sm:pb-12 lg:px-8 lg:pb-20 lg:pt-24">
         {/* DOM order is the mobile order. On lg, explicit grid placement builds
             a balanced two-column composition (text left, portrait right). */}
-        <div className="grid grid-cols-1 gap-y-7 sm:gap-y-8 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6">
+        <div className="grid grid-cols-1 gap-y-7 sm:gap-y-8 lg:grid-cols-2 lg:grid-rows-[auto_1fr_auto] lg:gap-x-16 lg:gap-y-6">
           {/* 1 — Availability */}
           {/* 2 — Name + introduction */}
           <motion.div
@@ -69,7 +69,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.45 }}
-            className="order-4 flex flex-wrap items-center gap-3 lg:col-start-1 lg:row-start-2"
+            className="order-4 flex flex-wrap items-center gap-3 lg:col-start-1 lg:row-start-2 lg:self-center"
           >
             <Button
               size="lg"
@@ -102,7 +102,7 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.65 }}
-            className="order-5 inline-flex items-start gap-2 text-xs leading-relaxed text-muted-foreground lg:col-start-1 lg:row-start-3 lg:self-start"
+            className="order-5 inline-flex items-start gap-2 text-xs leading-relaxed text-muted-foreground lg:col-start-1 lg:row-start-3 lg:self-end"
           >
             <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
             <span>Recognized by the Hon&apos;ble President of India</span>
