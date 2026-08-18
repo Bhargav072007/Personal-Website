@@ -15,6 +15,7 @@ const CERTIFICATIONS = [
     title: "Trinity College London Grade 5",
     issuer: "Trinity College London",
     description: "Earned Grade 5 Communication Skills, Level 2 Certificate, with Distinction.",
+    image: "/assets/honors/trinity-college-london-certificate.jpg",
     pdf: "/assets/honors/trinity-college-london-certificate.pdf",
   },
   {
@@ -34,6 +35,7 @@ const CERTIFICATIONS = [
     title: "Internship Completion Letter",
     issuer: "Professional Internship",
     description: "Successfully completed a professional internship, recognized with an official letter of completion.",
+    image: "/assets/honors/internship-completion-letter.jpg",
     pdf: "/assets/honors/internship-completion-letter.pdf",
   },
 ];
@@ -96,11 +98,20 @@ const HonorCard = ({ item, icon: Icon }) => (
         </span>
       )}
       {item.image ? (
-        <img
-          src={item.image}
-          alt={item.title}
-          className={`h-full w-full object-contain p-3 transition-transform duration-300 ${item.imageDark ? "dark:hidden" : ""} ${item.imageClass || "group-hover:scale-[1.02]"}`}
-        />
+        <>
+          <img
+            src={item.image}
+            alt={item.title}
+            className={`h-full w-full object-contain p-3 transition-transform duration-300 ${item.imageDark ? "dark:hidden" : ""} ${item.imageClass || "group-hover:scale-[1.02]"}`}
+          />
+          {item.imageDark && (
+            <img
+              src={item.imageDark}
+              alt={item.title}
+              className={`hidden h-full w-full object-contain p-3 transition-transform duration-300 dark:block ${item.imageClass || "group-hover:scale-[1.02]"}`}
+            />
+          )}
+        </>
       ) : (
         <div className="h-full w-full flex items-center justify-center">
           <BadgeCheck className="h-16 w-16 text-muted-foreground/30" />

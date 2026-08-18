@@ -7,7 +7,10 @@ const LOGOS = {
   aviation: { src: "/assets/base44/5d8e8a4ad_AviationAI.png" },
   cloudangles: { src: "/assets/base44/cloudangles-logo-experience.png" },
   arogiNew: { src: "/assets/base44/arogi-new-logo.png" },
-  pennState: { src: "/assets/base44/pennstate-logo-experience.png" },
+  pennState: {
+    src: "/assets/base44/b0e3ee36b_Penn-State-University-Logo-2015-present.png",
+    srcDark: "/assets/base44/pennstate-logo-experience.png",
+  },
 };
 
 const TIMELINE = [
@@ -75,13 +78,24 @@ const TIMELINE = [
 
 function CompanyLogo({ logo, alt }) {
   if (!logo) return null;
-  return (
-    <img
-      src={logo.src}
-      alt={alt}
-      className="shrink-0 h-12 w-12 lg:h-14 lg:w-14 object-contain"
-    />
-  );
+  if (logo.srcDark) {
+    return (
+      <>
+        <img
+          src={logo.src}
+          alt={alt}
+          className="shrink-0 h-12 w-12 object-contain dark:hidden lg:h-14 lg:w-14"
+        />
+        <img
+          src={logo.srcDark}
+          alt={alt}
+          className="hidden h-12 w-12 shrink-0 object-contain dark:block lg:h-14 lg:w-14"
+        />
+      </>
+    );
+  }
+
+  return <img src={logo.src} alt={alt} className="h-12 w-12 shrink-0 object-contain lg:h-14 lg:w-14" />;
 }
 
 export default function TimelineSection() {
