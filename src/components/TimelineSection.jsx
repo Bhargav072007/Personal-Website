@@ -9,7 +9,7 @@ const LOGOS = {
   arogiNew: { src: "/assets/base44/arogi-new-logo.png" },
   pennState: {
     src: "/assets/base44/b0e3ee36b_Penn-State-University-Logo-2015-present.png",
-    srcDark: "/assets/base44/pennstate-logo-experience.png",
+    srcDark: "/assets/base44/pennstate-logo-experience-dark.png",
   },
 };
 
