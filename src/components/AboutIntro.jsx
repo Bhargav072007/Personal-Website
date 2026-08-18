@@ -58,7 +58,7 @@ export default function AboutIntro() {
               </span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mb-5">
-              I am a Penn State freshman majoring in Computer Science, building at the intersection of AI, research, startups, and community impact.
+              I am a Penn State sophomore majoring in Computer Science, building at the intersection of AI, research, startups, and community impact.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">
               My work moves between practical products, student-focused tools, nonprofit initiatives, and research-driven systems. I care about turning ambitious ideas into useful experiences that can reach real people and keep improving over time.
