@@ -20,7 +20,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="order-2 min-w-0 lg:col-start-1 lg:row-start-1"
+            className="order-2 min-w-0 lg:col-start-1 lg:row-start-1 lg:!translate-y-12"
           >
             <h1 className="mb-5 min-w-0 text-4xl font-bold leading-[1.1] tracking-tight text-foreground sm:mb-6 sm:text-6xl lg:text-7xl">
               <span className="block">Bhargav</span>
