@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -15,24 +15,12 @@ export default function HeroSection() {
             a balanced two-column composition (text left, portrait right). */}
         <div className="grid grid-cols-1 gap-y-7 sm:gap-y-8 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6">
           {/* 1 — Availability */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="order-1 lg:col-start-1 lg:row-start-1 lg:self-end"
-          >
-            <span className="glass inline-flex items-center gap-2 rounded-full px-3 py-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-chart-1 animate-pulse" />
-              <span className="text-xs font-medium text-chart-1">Available for collaborations</span>
-            </span>
-          </motion.div>
-
           {/* 2 — Name + introduction */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="order-2 min-w-0 lg:col-start-1 lg:row-start-2"
+            className="order-2 min-w-0 lg:col-start-1 lg:row-start-1"
           >
             <h1 className="mb-5 min-w-0 text-4xl font-bold leading-[1.1] tracking-tight text-foreground sm:mb-6 sm:text-6xl lg:text-7xl">
               <span className="block">Bhargav</span>
@@ -54,7 +42,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="order-3 mx-auto w-full max-w-xs sm:max-w-sm lg:col-start-2 lg:row-span-5 lg:row-start-1 lg:max-w-sm lg:self-center lg:justify-self-center"
+            className="order-3 mx-auto w-full max-w-xs sm:max-w-sm lg:col-start-2 lg:row-span-3 lg:row-start-1 lg:max-w-sm lg:self-center lg:justify-self-center"
           >
             <div className="liquid-tilt relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
               <img
@@ -81,11 +69,11 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.45 }}
-            className="order-4 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap lg:col-start-1 lg:row-start-3"
+            className="order-4 flex flex-wrap items-center gap-3 lg:col-start-1 lg:row-start-2"
           >
             <Button
               size="lg"
-              className="col-span-2 w-full gap-2 px-5 font-medium sm:col-auto sm:w-auto sm:px-8"
+              className="w-full gap-2 px-5 font-medium sm:w-auto sm:px-8"
               onClick={() => navigate("/creations")}
             >
               Explore my work <ArrowRight className="h-4 w-4" />
@@ -98,48 +86,23 @@ export default function HeroSection() {
             >
               Let&apos;s connect
             </Button>
-            <a
-              className="min-w-0"
-              href="https://www.linkedin.com/in/bhargav-malluvajhula/"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Button
+              size="sm"
+              variant="ghost"
+              className="gap-1.5 px-2 text-muted-foreground"
+              onClick={() => navigate("/about")}
             >
-              <Button size="lg" variant="ghost" className="w-full gap-2 px-4 font-medium text-muted-foreground sm:w-auto sm:px-8">
-                LinkedIn <ExternalLink className="h-3.5 w-3.5" />
-              </Button>
-            </a>
+              About me <ArrowRight className="h-3.5 w-3.5" />
+            </Button>
           </motion.div>
 
           {/* 5 — About / story CTA */}
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.55 }}
-            onClick={() => navigate("/about")}
-            className="glass glass-interactive group order-5 flex w-full max-w-md items-center justify-between gap-3 rounded-lg px-3 py-2 text-left sm:px-3.5 lg:col-start-1 lg:row-start-4"
-          >
-            <span className="flex min-w-0 items-center gap-2.5">
-              <span className="h-7 w-0.5 shrink-0 rounded-full bg-gradient-to-b from-chart-1 to-chart-2" />
-              <span className="min-w-0">
-                <span className="block text-sm font-semibold leading-tight text-foreground">
-                  Meet the person behind the work
-                </span>
-                <span className="mt-0.5 block truncate text-xs text-muted-foreground">
-                  A quieter look at the path, the purpose, and the why.
-                </span>
-              </span>
-            </span>
-            <span className="glass flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-foreground transition-transform duration-300 group-hover:translate-x-1">
-              <ArrowRight className="h-3.5 w-3.5" />
-            </span>
-          </motion.button>
-
           {/* 6 — Recognition line */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.65 }}
-            className="order-6 inline-flex items-start gap-2 text-xs leading-relaxed text-muted-foreground lg:col-start-1 lg:row-start-5 lg:self-start"
+            className="order-5 inline-flex items-start gap-2 text-xs leading-relaxed text-muted-foreground lg:col-start-1 lg:row-start-3 lg:self-start"
           >
             <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
             <span>Recognized by the Hon&apos;ble President of India</span>
