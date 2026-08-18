@@ -69,7 +69,7 @@ const AWARDS = [
   },
   {
     title: "SETMIND — Hackathon Winner",
-    issuer: "DevNetwork AI + ML Hackathon 2026",
+    issuer: "Hoobit Hacks 2026",
     description: "Won recognition for SETMIND, an AI-powered set preparation assistant for DJs, built with real-time crowd analysis and live transition planning.",
     image: "https://img.youtube.com/vi/v4fAETmxMKs/hqdefault.jpg",
     isWinner: true,

@@ -111,7 +111,7 @@ const PROJECTS = [
       "Live dual-deck interface with an AI Mixer that plans transitions using BPM, key, energy, and phrase timing",
       "AI Prompter that responds to natural requests like \"make it darker\" or \"build to peak\"",
       "Built full-stack with a Node.js backend and React frontend, powered by Crusoe Cloud's Nemotron model",
-      "Hackathon winner across DevNetwork AI + ML Hackathon 2026 and DeveloperWeek New York 2026",
+      "Hackathon winner at Hoobit Hacks 2026",
     ],
     image: "https://img.youtube.com/vi/v4fAETmxMKs/hqdefault.jpg",
     gallery: [
@@ -140,7 +140,7 @@ const PROJECTS = [
       "Multi-garment preview across T-shirts, hoodies, sweatshirts, crop tops, and long-sleeve tees",
       "AI-powered style suggestions for garment color, print contrast, and design fit",
       "Full cart-ready commerce flow",
-      "Hackathon winner, recognized in the Summer Hackathon 2026 Winner Internship Opportunities track",
+      "Hackathon winner at Summer Hackathon 2026",
     ],
     image: "https://img.youtube.com/vi/aKtH_DBFaYA/hqdefault.jpg",
     gallery: [
